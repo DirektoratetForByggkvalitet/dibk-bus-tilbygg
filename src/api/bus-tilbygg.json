@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title":
+      "Tilbygg - Bod, sykkelbod, vedbod, søppelskur"
+  },
+  "schema": [
+    {
+      "id": "start",
+      "type": "Page",
+      "heading": "Bygg uten å søke",
+      "children": [
+        {
+          "id": "first",
+          "property": "first",
+          "type": "Radio",
+          "heading": "Søke?",
+          "options": [
+            {
+              "id": "first.yes",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "yes"
+            },
+            {
+              "id": "first.no",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "no"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hooray",
+      "type": "Result",
+      "heading": "Søke",
+      "errorheading": "Du har ikke svart på alle spørsmålene",
+      "lead":
+        "<p><strong>Se over og skriv ut</strong><br />Les nøye gjennom erklæringen før du fortsetter, og sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine. Når du har forsikret deg om at alt stemmer, kan du skrive ut erklæringen nederst på siden.</p>",
+      "errorlead":
+        "Vi kan derfor ikke gi deg svar på om firmaet ditt kan erklære ansvar. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.",
+      "exporter": "dataExport",
+      "children": []
+    }
+  ]
+}
