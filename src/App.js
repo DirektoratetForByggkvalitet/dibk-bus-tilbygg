@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import autobind from 'react-autobind';
 
-import { Wizard, StyleProvider } from 'losen';
+import { Wizard, StyleProvider, trackEvent, track } from 'losen';
 import data from './api/bus-tilbygg.json';
 import dataExport from './exports/data-export';
 import Intro from './pages/Intro';
@@ -19,6 +19,10 @@ export default class App extends Component {
     translations: {},
   };
 
+  static trackIntro() {
+    track(data.meta.name, 'intro', 'Tilbygg - Bod, sykkelbod, vedbod, søppelskur');
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -30,6 +34,7 @@ export default class App extends Component {
   closeIntro() {
     this.setState({ intro: false });
     window.scrollTo(0, 0);
+    trackEvent('close-intro');
   }
 
   showIntro() {
@@ -39,6 +44,7 @@ export default class App extends Component {
 
   render() {
     if (this.state.intro) {
+      App.trackIntro();
       return (
         <Provider store={store}>
           <StyleProvider>

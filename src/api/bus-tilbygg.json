@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title":
-      "Tilbygg - Bod, sykkelbod, vedbod, søppelskur"
+    "title": "Tilbygg - Bod, sykkelbod, vedbod, søppelskur",
+    "name": "tilbygg"
   },
   "schema": [
     {
