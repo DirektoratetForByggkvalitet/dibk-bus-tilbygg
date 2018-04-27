@@ -5,43 +5,286 @@
   },
   "schema": [
     {
-      "id": "start",
+      "id": "kartlegging",
       "type": "Page",
-      "heading": "Bygg uten å søke",
+      "heading": "Om det du skal bygge",
       "children": [
         {
-          "id": "first",
-          "property": "first",
+          "id": "hvaSkalDuBygge",
+          "property": "hvaSkalDuBygge",
           "type": "Radio",
-          "heading": "Søke?",
+          "heading": "Hva skal du bygge?",
           "options": [
             {
-              "id": "first.yes",
+              "id": "hvaSkalDuBygge.terrasseEllerPlatting",
               "type": "Answer",
-              "heading": "Ja",
-              "value": "yes"
+              "heading": "Terrasse eller platting",
+              "value": "terrasse"
             },
             {
-              "id": "first.no",
+              "id": "hvaSkalDuBygge.verandaEllerGlassveranda",
               "type": "Answer",
-              "heading": "Nei",
-              "value": "no"
+              "heading": "Veranda eller glassveranda",
+              "value": "veranda"
+            },
+            {
+              "id": "hvaSkalDuBygge.tilbygg",
+              "type": "Answer",
+              "heading": "Tilbygg (f.eks. bod, sykkelskur eller trapperom)",
+              "value": "tilbygg"
+            },
+            {
+              "id": "hvaSkalDuBygge.takterrasse",
+              "type": "Answer",
+              "heading": "Takterrasse",
+              "value": "takterrasse"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "hvaSkalDuBygge",
+                "operator": "eq",
+                "value": "takterrasse"
+              },
+              "children": [
+                {
+                  "type": "Result",
+                  "id": "ResultatAnsvarligSoker",
+                  "heading": "Computer says no"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bebygd",
+          "property": "bebygd",
+          "type": "Radio",
+          "heading": "Er eiendommen bebygd?",
+          "hide": {
+            "field": "hvaSkalDuBygge",
+            "operator": "not"
+          },
+          "options": [
+            {
+              "id": "bebygd.ja",
+              "type": "Answer",
+              "heading": "Ja, eiendommen er regulert.",
+              "value": "ja"
+            },
+            {
+              "id": "bebygd.nei",
+              "type": "Answer",
+              "heading": "Nei, eiendommen er ikke bebygd.",
+              "value": "nei"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "bebygd",
+                "operator": "eq",
+                "value": "nei"
+              },
+              "children": [
+                {
+                  "type": "Result",
+                  "id": "ResultatTakk",
+                  "heading": "Takk for at du prøvde",
+                  "children": [
+                    {
+                      "id": "bebygd.nei.feil",
+                      "type": "Error",
+                      "show": {
+                        "field": "bebygd",
+                        "operator": "eq",
+                        "value": "nei"
+                      },
+                      "children": [
+                        {
+                          "type": "Text",
+                          "id": "bebygd.nei.feil.tekst",
+                          "warning": true,
+                          "heading": "Når eiendommen din ikke er bebygd må du snakke med kommunen før du gjør noe."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Reference",
+                      "nodeId": "terrasseRekkverk.over05m"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "regulert",
+          "property": "regulert",
+          "type": "Radio",
+          "heading": "Er eiendommen regulert?",
+          "hide": {
+            "field": "bebygd",
+            "operator": "not"
+          },
+          "options": [
+            {
+              "id": "regulert.ja",
+              "type": "Answer",
+              "heading": "Ja, eiendommen er regulert.",
+              "value": "ja"
+            },
+            {
+              "id": "regulert.nei",
+              "type": "Answer",
+              "heading": "Nei, eiendommen er ikke regulert.",
+              "value": "nei"
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "regulert",
+                "operator": "eq",
+                "value": "nei"
+              },
+              "children": [
+                {
+                  "type": "Result",
+                  "id": "ResultatDisp",
+                  "heading": "Du kan kanskje få disp",
+                  "children": [
+                    {
+                      "id": "regulert.nei.feil",
+                      "type": "Error",
+                      "show": {
+                        "field": "regulert",
+                        "operator": "eq",
+                        "value": "nei"
+                      },
+                      "children": [
+                        {
+                          "id": "regulert.nei.feil.tekst",
+                          "type": "Text",
+                          "warning": true,
+                          "heading": "Når eiendommen din ikke er regulert kan det hende du kan få disp, men du må snakke med en voksen i kommunen først."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
       ]
     },
     {
-      "id": "hooray",
-      "type": "Result",
-      "heading": "Søke",
-      "errorheading": "Du har ikke svart på alle spørsmålene",
-      "lead":
-        "<p><strong>Se over og skriv ut</strong><br />Les nøye gjennom erklæringen før du fortsetter, og sjekk at du har svart riktig på alle spørsmålene. I oppsummeringen under kan du klikke deg inn på hvert steg i veiviseren for å legge til og endre svarene dine. Når du har forsikret deg om at alt stemmer, kan du skrive ut erklæringen nederst på siden.</p>",
-      "errorlead":
-        "Vi kan derfor ikke gi deg svar på om firmaet ditt kan erklære ansvar. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.",
-      "exporter": "dataExport",
-      "children": []
+      "type": "Page",
+      "heading": "Hvordan skal greiene du bygger være?",
+      "id": "omBygget",
+      "children": [
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "hvaSkalDuBygge",
+                "operator": "eq",
+                "value": "terrasse"
+              },
+              "children": [
+                {
+                  "id": "terrasseOverBakken",
+                  "property": "terrasseOverBakken",
+                  "type": "Radio",
+                  "heading": "Blir terrasegulvet på noe som helst punkt høyere enn 0,5 meter over bakken?",
+                  "options": [
+                    {
+                      "id": "terrasseOverBakken.ja",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "ja"
+                    },
+                    {
+                      "id": "terrasseOverBakken.nei",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "nei"
+                    }
+                  ]
+                },
+                {
+                  "type": "Branch",
+                  "branches": [
+                    {
+                      "test": {
+                        "field": "terrasseOverBakken",
+                        "operator": "eq",
+                        "value": "nei"
+                      },
+                      "children": [
+                        {
+                          "id": "terrasseRekkverk",
+                          "property": "terrasseRekkverk",
+                          "type": "Radio",
+                          "heading": "Blir terrassen høyere enn 0,5?",
+                          "options": [
+                            {
+                              "id": "terrasseRekkverk.ja",
+                              "type": "Answer",
+                              "heading": "Ja",
+                              "value": "ja"
+                            },
+                            {
+                              "id": "terrasseRekkverk.nei",
+                              "type": "Answer",
+                              "heading": "Nei",
+                              "value": "nei"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "terrasseRekkverk.over05m",
+                          "type": "Error",
+                          "show": {
+                            "field": "terrasseRekkverk",
+                            "operator": "eq",
+                            "value": "ja"
+                          },
+                          "children": [
+                            {
+                              "id": "terrasseRekkverk.over05m.tekst",
+                              "type": "Text",
+                              "warning": true,
+                              "heading": "Hvis terrasserekkverket er over 0,5m må du snakke med kommunen før du gjør noe."
+                            }
+                          ]
+                        },
+                        {
+                          "type": "Reference",
+                          "nodeId": "ResultatTakk"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
