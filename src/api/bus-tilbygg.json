@@ -86,7 +86,8 @@
             },
             "children": [{
               "type": "Result",
-              "id": "ResultatTakk",
+              "id": "ResultatAnsvarligSoker",
+              "title": "Takk for at du prøvde",
               "heading": "Takk for at du prøvde",
               "children": [{
                   "id": "bebygd.nei.feil",
@@ -382,7 +383,6 @@
                     "value": "takTilEksisterende"
                   },
                   "heading": "Du kan ikke søke om å bygge veranda på tak til eksisterende bygg"
-
                 },
                 {
                   "id": "verandaAnnetError",
