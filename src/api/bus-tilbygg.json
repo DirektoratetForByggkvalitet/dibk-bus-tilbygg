@@ -65,7 +65,7 @@
           "options": [{
               "id": "bebygd.ja",
               "type": "Answer",
-              "heading": "Ja, eiendommen er regulert.",
+              "heading": "Ja, eiendommen er bebygd.",
               "value": "ja"
             },
             {
@@ -183,7 +183,7 @@
                 "id": "terrasseOverBakken",
                 "property": "terrasseOverBakken",
                 "type": "Radio",
-                "heading": "Blir terrasegulvet på noe som helst punkt høyere enn 0,5 meter over bakken?",
+                "heading": "Blir terrassegulvet på noe som helst punkt høyere enn 0,5 meter over bakken?",
                 "options": [{
                     "id": "terrasseOverBakken.ja",
                     "type": "Answer",
@@ -283,7 +283,7 @@
               "options": [{
                   "id": "tilbyggVerandaHvor.veggTilEksisterende",
                   "type": "Answer",
-                  "heading": "På vei til eksisterende bygg",
+                  "heading": "På vegg til eksisterende bygg",
                   "value": "veggTilEksisterende"
                 },
                 {
@@ -357,6 +357,12 @@
                   "type": "Answer",
                   "heading": "Inntil bod garasje",
                   "value": "bodGarasje"
+                },
+                {
+                  "id": "tilbyggVerandaPlassering.annet",
+                  "type": "Answer",
+                  "heading": "Annet",
+                  "value": "annet"
                 }
               ]
             },
