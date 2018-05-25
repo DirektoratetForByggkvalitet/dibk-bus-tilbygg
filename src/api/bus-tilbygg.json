@@ -49,7 +49,8 @@
             "children": [{
               "type": "Result",
               "id": "ResultatAnsvarligSoker",
-              "heading": "Computer says no"
+              "heading": "Du må søke",
+              "lead": "<p>Det er søknadspliktig å bygge det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. En liste over disse finner du <a href=\"https://sgregister.dibk.no/\">her</a>.</p><p>Takk for at du prøvde veiviseren!</p>"
             }]
           }]
         },
@@ -88,7 +89,8 @@
               "type": "Result",
               "id": "ResultatAnsvarligSoker",
               "title": "Takk for at du prøvde",
-              "heading": "Takk for at du prøvde",
+              "heading": "Veiviseren kan ikke hjelpe deg",
+              "lead": "Her kan du se hva du har svart på de ulike spørsmålene. Du kan endre svarene dine i oversikten under. Takk for at du prøvde veiviseren!",
               "children": [{
                 "id": "bebygd.nei.feil",
                 "type": "Error",
@@ -141,7 +143,8 @@
             "children": [{
               "type": "Result",
               "id": "ResultatDisp",
-              "heading": "Du kan kanskje få disp",
+              "heading": "Du trenger kanskje dispensasjon",
+              "lead": "<p>Du må undersøke om du trenger dispensasjon. Dette er en søknad som har 12 ukers behandlingstid.</p><p><strong>Trenger du dispensasjon?</strong><br />Da bør du undersøke om du kan unngå dispensasjon, for eksempel ved å endre plassering på det du vil bygge.</p>",
               "children": [{
                 "id": "regulert.nei.feil",
                 "type": "Error",
@@ -164,7 +167,7 @@
     },
     {
       "type": "Page",
-      "heading": "Hvordan skal greiene du bygger være?",
+      "heading": "Hvordan planlegger du å bygge?",
       "id": "omBygget",
       "children": [{
           "type": "Branch",
@@ -260,7 +263,7 @@
         {
           "id": "tilbyggVerandaHvorGroup",
           "type": "Group",
-          "simple": true,
+          "simple": false,
           "show": {
             "type": "or",
             "clauses": [{
