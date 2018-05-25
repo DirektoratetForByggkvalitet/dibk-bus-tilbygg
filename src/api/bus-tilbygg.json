@@ -276,8 +276,8 @@
             ]
           },
           "children": [{
-              "id": "tilbyggVerandaHvorRadio",
               "type": "Radio",
+              "id": "tilbyggVerandaHvorRadio",
               "property": "tilbyggVerandaHvor",
               "heading": "Hvor skal du plassere det du bygger?",
               "options": [{
@@ -337,6 +337,70 @@
               ]
             },
             {
+              "type": "Result",
+              "id": "resultatAnsvarligSoker",
+              "heading": "Resultat ansvarlig søker",
+              "show": {
+                "type": "or",
+                "clauses": [{
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "underBakken"
+                  },
+                  {
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "takTilEksisterende"
+                  },
+                  {
+                    "field": "tilbyggVerandaFeste",
+                    "operator": "eq",
+                    "value": "nei"
+                  }
+                ]
+              },
+              "children": [{
+                  "id": "verandaUnderBakkenError",
+                  "type": "Text",
+                  "show": {
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "underBakken"
+                  },
+                  "text": "Du kan ikke søke om å bygge veranda under bakken"
+                },
+                {
+                  "id": "takTilEksisterendeError",
+                  "type": "Text",
+                  "show": {
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "takTilEksisterende"
+                  },
+                  "text": "Du kan ikke søke om å bygge veranda på tak til eksisterende bygg"
+                },
+                {
+                  "id": "verandaAnnetError",
+                  "type": "Text",
+                  "show": {
+                    "type": "or",
+                    "clauses": [{
+                        "field": "tilbyggVerandaPlassering",
+                        "operator": "eq",
+                        "value": "annet"
+                      },
+                      {
+                        "field": "tilbyggVerandaHvor",
+                        "operator": "eq",
+                        "value": "annet"
+                      }
+                    ]
+                  },
+                  "text": "Du kan ikke søke om å bygge veranda på noe annet enn valgene over"
+                }
+              ]
+            },
+            {
               "id": "tilbyggVerandaPlasseringRadio",
               "property": "tilbyggVerandaPlassering",
               "type": "Radio",
@@ -374,61 +438,6 @@
                   "value": "annet"
                 }
               ]
-            },
-            {
-              "type": "Result",
-              "id": "ResultatTakk",
-              "heading": "Takk for at du prøvde",
-              "show": {
-                "type": "or",
-                "clauses": [{
-                    "field": "tilbyggVerandaHvor",
-                    "operator": "eq",
-                    "value": "underBakken"
-                  },
-                  {
-                    "field": "tilbyggVerandaHvor",
-                    "operator": "eq",
-                    "value": "takTilEksisterende"
-                  },
-                  {
-                    "field": "tilbyggVerandaHvor",
-                    "operator": "eq",
-                    "value": "annet"
-                  }
-                ]
-              },
-              "children": [{
-                  "id": "verandaUnderBakkenError",
-                  "type": "Error",
-                  "show": {
-                    "field": "tilbyggVerandaHvor",
-                    "operator": "eq",
-                    "value": "underBakken"
-                  },
-                  "heading": "Du kan ikke søke om å bygge veranda under bakken"
-                },
-                {
-                  "id": "takTilEksisterendeError",
-                  "type": "Error",
-                  "show": {
-                    "field": "tilbyggVerandaHvor",
-                    "operator": "eq",
-                    "value": "takTilEksisterende"
-                  },
-                  "heading": "Du kan ikke søke om å bygge veranda på tak til eksisterende bygg"
-                },
-                {
-                  "id": "verandaAnnetError",
-                  "type": "Error",
-                  "show": {
-                    "field": "tilbyggVerandaHvor",
-                    "operator": "eq",
-                    "value": "annet"
-                  },
-                  "heading": "Du kan ikke søke om å bygge veranda på noe annet enn valgene over"
-                }
-              ]
             }
           ]
         },
@@ -447,71 +456,182 @@
                 "field": "terassePlassering",
                 "operator": "eq",
                 "value": "bodGarasje"
+              },
+              {
+                "field": "tilbyggVerandaPlassering",
+                "operator": "eq",
+                "value": "husHytte"
               }
             ]
           },
           "children": [{
-            "id": "tilbyggGarasje",
-            "property": "tilbyggGarasje",
-            "type": "Radio",
-            "heading": "Hvor stor blir bod/garasje og det du bygget til sammen?",
-            "options": [{
-                "id": "tilbyggGarasje.under50kvm",
-                "type": "Answer",
-                "heading": "Under 50 kvm",
-                "value": "under50kvm"
-              },
-              {
-                "id": "tilbyggGarasje.inntilBodGarasje",
-                "type": "Answer",
-                "heading": "Over 50 kvm",
-                "value": "over50kvm"
-              }
-            ]
-          }]
-        },
-        {
-          "id": "inntilBygning",
-          "property": "inntilBygning",
-          "type": "Radio",
-          "heading": "Hvor stort blir det du skal bygge?",
-          "show": {
-            "type": "or",
-            "clauses": [{
+              "id": "tilbyggGarasje",
+              "property": "tilbyggGarasje",
+              "type": "Radio",
+              "heading": "Hvor stor blir bod/garasje og det du bygger til sammen?",
+              "show": {
                 "field": "tilbyggVerandaPlassering",
                 "operator": "eq",
-                "value": "husHytte"
+                "value": "bodGarasje"
               },
-              {
-                "field": "tilbyggGarasje",
-                "operator": "eq",
-                "value": "over50kvm"
-              }
-            ]
-          },
-          "options": [{
-              "id": "inntilBygning.under",
-              "type": "Answer",
-              "heading": "Under 15 kvm",
-              "value": "under"
+              "options": [{
+                  "id": "tilbyggGarasje.under50kvm",
+                  "type": "Answer",
+                  "heading": "Under 50 kvm",
+                  "value": "under50kvm"
+                },
+                {
+                  "id": "tilbyggGarasje.inntilBodGarasje",
+                  "type": "Answer",
+                  "heading": "Over 50 kvm",
+                  "value": "over50kvm"
+                }
+              ]
             },
             {
-              "id": "inntilBygning.mellom",
-              "type": "Answer",
-              "heading": "Mellom 15-50 kvm",
-              "value": "mellom"
-            },
-            {
-              "id": "inntilBygning.over",
-              "type": "Answer",
-              "heading": "Over 50 kvm",
-              "value": "over"
+              "id": "inntilBygning",
+              "property": "inntilBygning",
+              "type": "Radio",
+              "heading": "Hvor stort blir det du skal bygge?",
+              "show": {
+                "type": "or",
+                "clauses": [{
+                    "field": "tilbyggVerandaPlassering",
+                    "operator": "eq",
+                    "value": "husHytte"
+                  },
+                  {
+                    "field": "tilbyggGarasje",
+                    "operator": "eq",
+                    "value": "over50kvm"
+                  }
+                ]
+              },
+              "options": [{
+                  "id": "inntilBygning.under",
+                  "type": "Answer",
+                  "heading": "Under 15 kvm",
+                  "value": "under"
+                },
+                {
+                  "id": "inntilBygning.mellom",
+                  "type": "Answer",
+                  "heading": "Mellom 15-50 kvm",
+                  "value": "mellom"
+                },
+                {
+                  "id": "inntilBygning.over",
+                  "type": "Answer",
+                  "heading": "Over 50 kvm",
+                  "value": "over"
+                }
+              ]
             }
           ]
         },
         {
-          "type": "Reference",
-          "nodeÌd": "resultatTakk"
+          "type": "Result",
+          "id": "resultatTakkGarasje",
+          "heading": "Resultat søke selv",
+          "show": {
+            "field": "inntilBygning",
+            "operator": "eq",
+            "value": "mellom"
+          }
+        },
+        {
+          "type": "Result",
+          "id": "resultatAnsvarligSoker",
+          "heading": "Resultat ansvarlig søker",
+          "show": {
+            "field": "inntilBygning",
+            "operator": "eq",
+            "value": "over"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Page",
+      "heading": "Tilbyggets innhold og veranda med isolasjon",
+      "id": "tilbyggInnholdVerandaIsolasjon",
+      "children": [{
+          "id": "tilbyggRom",
+          "property": "tilbyggRom",
+          "type": "Radio",
+          "heading": "Skal den inneholde oppholdsrom som stue, soverom, kjøkken, osv?",
+          "show": {
+            "field": "hvaSkalDuBygge",
+            "operator": "eq",
+            "value": "tilbygg"
+          },
+          "options": [{
+              "id": "tilbyggRom.ja",
+              "type": "Answer",
+              "heading": "Ja",
+              "value": "ja"
+            },
+            {
+              "id": "tilbyggRom.nei",
+              "type": "Answer",
+              "heading": "Nei",
+              "value": "nei"
+            }
+          ]
+        },
+        {
+          "id": "verandaGroup",
+          "type": "Group",
+          "simple": true,
+          "children": [{
+              "id": "verandaRom",
+              "property": "verandaRom",
+              "type": "Radio",
+              "heading": "Skal verandaen ha vegger eller være innglasset?",
+              "show": {
+                "field": "hvaSkalDuBygge",
+                "operator": "eq",
+                "value": "veranda"
+              },
+              "options": [{
+                  "id": "verandaRom.ja",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "ja"
+                },
+                {
+                  "id": "verandaRom.nei",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "nei"
+                }
+              ]
+            },
+            {
+              "id": "verandaIsolert",
+              "property": "verandaIsolert",
+              "type": "Radio",
+              "heading": "Blir hele eller deler isolert?",
+              "show": {
+                "field": "verandaRom",
+                "operator": "eq",
+                "value": "ja"
+              },
+              "options": [{
+                  "id": "verandaIsolert.ja",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "ja"
+                },
+                {
+                  "id": "verandaIsolert.nei",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "nei"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
