@@ -635,6 +635,11 @@
               ]
             }
           ]
+        },
+        {
+          "id": "sokeSelvResultat",
+          "type": "Result",
+          "heading": "Resultat søke selv"
         }
       ]
     }
