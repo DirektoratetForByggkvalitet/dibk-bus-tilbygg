@@ -1,12 +1,12 @@
 {
   "name": "dibk-bus-tilbygg",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
-    "losen": "^2.1.1",
+    "losen": "^2.1.3",
     "lodash.get": "^4.4.2",
     "prop-types": "^15.6.0",
-    "react": "^15.6.1",
+    "react": "^16.4.0",
     "react-autobind": "^1.0.6",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",

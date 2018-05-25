@@ -90,25 +90,20 @@
               "title": "Takk for at du prøvde",
               "heading": "Takk for at du prøvde",
               "children": [{
-                  "id": "bebygd.nei.feil",
-                  "type": "Error",
-                  "show": {
-                    "field": "bebygd",
-                    "operator": "eq",
-                    "value": "nei"
-                  },
-                  "children": [{
-                    "type": "Text",
-                    "id": "bebygd.nei.feil.tekst",
-                    "warning": true,
-                    "heading": "Når eiendommen din ikke er bebygd må du snakke med kommunen før du gjør noe."
-                  }]
+                "id": "bebygd.nei.feil",
+                "type": "Error",
+                "show": {
+                  "field": "bebygd",
+                  "operator": "eq",
+                  "value": "nei"
                 },
-                {
-                  "type": "Reference",
-                  "nodeId": ""
-                }
-              ]
+                "children": [{
+                  "type": "Text",
+                  "id": "bebygd.nei.feil.tekst",
+                  "warning": true,
+                  "heading": "Når eiendommen din ikke er bebygd må du snakke med kommunen før du gjør noe."
+                }]
+              }]
             }]
           }]
         },
@@ -207,51 +202,56 @@
                     "value": "nei"
                   },
                   "children": [{
-                      "type": "Group",
-                      "simple": true,
-                      "id": "terrasseRekkverkGroup",
-                      "children": [{
-                          "id": "terrasseRekkverk",
-                          "property": "terrasseRekkverk",
-                          "type": "Radio",
-                          "heading": "Blir terrassen høyere enn 0,5?",
-                          "options": [{
-                              "id": "terrasseRekkverk.ja",
-                              "type": "Answer",
-                              "heading": "Ja",
-                              "value": "ja"
-                            },
-                            {
-                              "id": "terrasseRekkverk.nei",
-                              "type": "Answer",
-                              "heading": "Nei",
-                              "value": "nei"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "terrasseRekkverk.over05m",
-                          "type": "Error",
-                          "simple": true,
-                          "show": {
-                            "field": "terrasseRekkverk",
-                            "operator": "eq",
+                    "type": "Group",
+                    "simple": true,
+                    "id": "terrasseRekkverkGroup",
+                    "children": [{
+                        "id": "terrasseRekkverk",
+                        "property": "terrasseRekkverk",
+                        "type": "Radio",
+                        "heading": "Blir terrassen høyere enn 0,5?",
+                        "options": [{
+                            "id": "terrasseRekkverk.ja",
+                            "type": "Answer",
+                            "heading": "Ja",
                             "value": "ja"
                           },
-                          "children": [{
-                            "id": "terrasseRekkverk.over05m.tekst",
-                            "type": "Text",
-                            "warning": true,
-                            "heading": "Hvis terrasserekkverket er over 0,5m må du snakke med kommunen før du gjør noe."
-                          }]
+                          {
+                            "id": "terrasseRekkverk.nei",
+                            "type": "Answer",
+                            "heading": "Nei",
+                            "value": "nei"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "terrasseRekkverk.over05m.ja",
+                        "type": "Result",
+                        "heading": "ResultatDisp",
+                        "show": {
+                          "field": "terrasseRekkverk",
+                          "operator": "eq",
+                          "value": "ja"
+                        },
+                        "children": [{
+                          "id": "terrasseRekkverk.over05m.tekst",
+                          "type": "Text",
+                          "warning": true,
+                          "heading": "Hvis terrasserekkverket er over 0,5m må du snakke med kommunen før du gjør noe."
+                        }]
+                      },
+                      {
+                        "id": "terrasseRekkverk.over05m.nei",
+                        "type": "Result",
+                        "heading": "Resultat jippii under ",
+                        "show": {
+                          "field": "terrasseRekkverk",
+                          "operator": "eq",
+                          "value": "nei"
                         }
-                      ]
-                    },
-                    {
-                      "type": "Reference",
-                      "nodeId": "ResultatTakk"
-                    }
-                  ]
+                      }
+                    ]
+                  }]
                 }]
               }
             ]
@@ -342,9 +342,18 @@
               "type": "Radio",
               "heading": "Hvor skal det du bygger ligge?",
               "show": {
-                "field": "tilbyggVerandaHvor",
-                "operator": "eq",
-                "value": "paaBakken"
+                "type": "or",
+                "clauses": [{
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "paaBakken"
+                  },
+                  {
+                    "field": "tilbyggVerandaFeste",
+                    "operator": "eq",
+                    "value": "ja"
+                  }
+                ]
               },
               "options": [{
                   "id": "tilbyggVerandaPlassering.inntilHusHytte",
@@ -357,13 +366,38 @@
                   "type": "Answer",
                   "heading": "Inntil bod garasje",
                   "value": "bodGarasje"
+                },
+                {
+                  "id": "tilbyggVerandaPlassering.annet",
+                  "type": "Answer",
+                  "heading": "Annet",
+                  "value": "annet"
                 }
               ]
             },
             {
               "type": "Result",
-              "id": "ResultatAnsvarligSoker",
+              "id": "ResultatTakk",
               "heading": "Takk for at du prøvde",
+              "show": {
+                "type": "or",
+                "clauses": [{
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "underBakken"
+                  },
+                  {
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "takTilEksisterende"
+                  },
+                  {
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "annet"
+                  }
+                ]
+              },
               "children": [{
                   "id": "verandaUnderBakkenError",
                   "type": "Error",
@@ -397,6 +431,87 @@
               ]
             }
           ]
+        },
+        {
+          "id": "tilbyggGarasjeGroup",
+          "type": "Group",
+          "simple": "true",
+          "show": {
+            "type": "or",
+            "clauses": [{
+                "field": "tilbyggVerandaPlassering",
+                "operator": "eq",
+                "value": "bodGarasje"
+              },
+              {
+                "field": "terassePlassering",
+                "operator": "eq",
+                "value": "bodGarasje"
+              }
+            ]
+          },
+          "children": [{
+            "id": "tilbyggGarasje",
+            "property": "tilbyggGarasje",
+            "type": "Radio",
+            "heading": "Hvor stor blir bod/garasje og det du bygget til sammen?",
+            "options": [{
+                "id": "tilbyggGarasje.under50kvm",
+                "type": "Answer",
+                "heading": "Under 50 kvm",
+                "value": "under50kvm"
+              },
+              {
+                "id": "tilbyggGarasje.inntilBodGarasje",
+                "type": "Answer",
+                "heading": "Over 50 kvm",
+                "value": "over50kvm"
+              }
+            ]
+          }]
+        },
+        {
+          "id": "inntilBygning",
+          "property": "inntilBygning",
+          "type": "Radio",
+          "heading": "Hvor stort blir det du skal bygge?",
+          "show": {
+            "type": "or",
+            "clauses": [{
+                "field": "tilbyggVerandaPlassering",
+                "operator": "eq",
+                "value": "husHytte"
+              },
+              {
+                "field": "tilbyggGarasje",
+                "operator": "eq",
+                "value": "over50kvm"
+              }
+            ]
+          },
+          "options": [{
+              "id": "inntilBygning.under",
+              "type": "Answer",
+              "heading": "Under 15 kvm",
+              "value": "under"
+            },
+            {
+              "id": "inntilBygning.mellom",
+              "type": "Answer",
+              "heading": "Mellom 15-50 kvm",
+              "value": "mellom"
+            },
+            {
+              "id": "inntilBygning.over",
+              "type": "Answer",
+              "heading": "Over 50 kvm",
+              "value": "over"
+            }
+          ]
+        },
+        {
+          "type": "Reference",
+          "nodeÌd": "resultatTakk"
         }
       ]
     }
