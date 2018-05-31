@@ -3,6 +3,27 @@
     "title": "Tilbygg - Bod, sykkelbod, vedbod, søppelskur",
     "name": "tilbygg"
   },
+  "computed": {
+    "grenser": {
+      "type": "or",
+      "clauses": [{
+          "field": "nabogrense",
+          "operator": "eq",
+          "value": "ja"
+        },
+        {
+          "field": "byggegrenseOk",
+          "operator": "eq",
+          "value": "ja"
+        },
+        {
+          "field": "byggegrenseOk",
+          "operator": "eq",
+          "value": "tilatelse"
+        }
+      ]
+    }
+  },
   "schema": [{
       "id": "kartlegging",
       "type": "Page",
@@ -1003,28 +1024,33 @@
           "id": "hoydeGroup",
           "type": "Group",
           "simple": true,
+          "show": {
+            "type": "or",
+            "clauses": [{
+                "field": "$computed.grenser",
+                "operator": "eq",
+                "value": true
+              },
+              {
+                "field": "forHoy",
+                "operator": "eq",
+                "value": "kommuneOk"
+              },
+              {
+                "field": "forHoy",
+                "operator": "eq",
+                "value": "nei"
+              }
+            ]
+          },
           "children": [{
               "id": "forHoy",
               "property": "forHoy",
               "type": "Radio",
               "show": {
-                "type": "or",
-                "clauses": [{
-                    "field": "nabogrense",
-                    "operator": "eq",
-                    "value": "ja"
-                  },
-                  {
-                    "field": "byggegrenseOk",
-                    "operator": "eq",
-                    "value": "ja"
-                  },
-                  {
-                    "field": "byggegrenseOk",
-                    "operator": "eq",
-                    "value": "tilatelse"
-                  }
-                ]
+                "field": "$computed.grenser",
+                "operator": "eq",
+                "value": true
               },
               "heading": "Blir det du skal bygge på noe som helst punkt høyere enn bygget som står der fra før?",
               "options": [{
@@ -1123,6 +1149,24 @@
           "id": "arealGroup",
           "type": "Group",
           "simple": true,
+          "test": {
+            "type": "or",
+            "clauses": [{
+                "field": "hoyestePunkt",
+                "operator": "eq",
+                "value": "under"
+              },
+              {
+                "field": "hoyestePunkt",
+                "operator": "eq",
+                "value": "overOk"
+              }, {
+                "field": "areal",
+                "operator": "eq",
+                "value": "ja"
+              }
+            ]
+          },
           "children": [{
               "id": "areal",
               "property": "areal",
