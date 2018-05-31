@@ -724,7 +724,8 @@
               "id": "verandaRom",
               "property": "verandaRom",
               "type": "Radio",
-              "heading": "Skal verandaen ha vegger eller være innglasset?",
+              "heading": "Skal det du bygger ha vegger eller være innglasset?",
+              "text": "<p>Dette gjelder for eksempel om du skal bygge en innglasset veranda.</p>",
               "show": {
                 "field": "hvaSkalDuBygge",
                 "operator": "eq",
@@ -748,7 +749,8 @@
               "id": "verandaIsolasjon",
               "property": "verandaIsolasjon",
               "type": "Radio",
-              "heading": "Blir hele eller deler isolert?",
+              "heading": "Skal du isolere denne delen?",
+              "text": "<p>Dette gjelder hvis du for eksempel vil bygge en vinterhage eller en innglasset veranda som er isolert.</p>",
               "show": {
                 "field": "verandaRom",
                 "operator": "eq",
@@ -889,41 +891,18 @@
               "id": "byggegrense",
               "property": "byggegrense",
               "type": "Radio",
-              "heading": "Finnes det en byggegrense mot nabo?",
+              "heading": "Finnes det en byggegrense mot naboeiendommer i reguleringsplanen?",
+              "text": "<p>En byggegrense bestemmer hvor langt unna du kan bygge mot f eks vei eller nabo. Du finner informasjon om byggegrense i reguleringsplanen, reguleringsbestemmelser eller i kommuneplanens arealdel. </p>",
               "options": [{
                   "id": "byggegrense.ja",
                   "type": "Answer",
-                  "heading": "Ja",
+                  "heading": "Ja, det finnes byggegrense mot naboeiendommer",
                   "value": "ja"
                 },
                 {
                   "id": "byggegrense.nei",
                   "type": "Answer",
-                  "heading": "Nei",
-                  "value": "nei"
-                }
-              ]
-            },
-            {
-              "id": "nabogrense",
-              "property": "nabogrense",
-              "type": "Radio",
-              "heading": "Minst 4 meter til nabogrense fra tilbygget?",
-              "show": {
-                "field": "byggegrense",
-                "operator": "eq",
-                "value": "nei"
-              },
-              "options": [{
-                  "id": "nabogrense.ja",
-                  "type": "Answer",
-                  "heading": "Ja",
-                  "value": "ja"
-                },
-                {
-                  "id": "nabogrense.nei",
-                  "type": "Answer",
-                  "heading": "Nei",
+                  "heading": "Nei, det finnes ikke byggegrense mot naboeiendommer",
                   "value": "nei"
                 }
               ]
@@ -933,6 +912,7 @@
               "property": "byggegrenseOk",
               "type": "Radio",
               "heading": "Blir tilbygget innenfor byggegrensene?",
+              "text": "<p>For å slippe å søke, må bygningen være innenfor byggegrensene.</p>",
               "show": {
                 "type": "or",
                 "clauses": [{
@@ -964,6 +944,31 @@
                   "type": "Answer",
                   "heading": "Nei, men har tillatelse",
                   "value": "tilatelse"
+                }
+              ]
+            },
+            {
+              "id": "nabogrense",
+              "property": "nabogrense",
+              "type": "Radio",
+              "heading": "Blir det du skal bygge minst 4 meter fra nabogrensa?",
+              "text": "<p>Hvis det ikke finnes byggegrense mot naboer, er hovedregelen at du kan bygge 4,0 meter fra nabogrensa. Det du bygger, kan ikke på noe som helst punkt være nærmere naboen enn 4,0 meter.</p>",
+              "show": {
+                "field": "byggegrense",
+                "operator": "eq",
+                "value": "nei"
+              },
+              "options": [{
+                  "id": "nabogrense.ja",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "ja"
+                },
+                {
+                  "id": "nabogrense.nei",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "nei"
                 }
               ]
             }
