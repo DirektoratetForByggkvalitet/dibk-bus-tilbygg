@@ -87,7 +87,7 @@
             },
             "children": [{
               "type": "Result",
-              "id": "ResultatAnsvarligSoker",
+              "id": "ResultatTakk",
               "title": "Takk for at du prøvde",
               "heading": "Veiviseren kan ikke hjelpe deg",
               "lead": "Her kan du se hva du har svart på de ulike spørsmålene. Du kan endre svarene dine i oversikten under. Takk for at du prøvde veiviseren!",
@@ -232,7 +232,9 @@
                 {
                   "id": "terrasseRekkverk.over05m.ja",
                   "type": "Result",
-                  "heading": "ResultatTakk",
+                  "heading": "Du trenger kanskje dispensasjon",
+                  "lead": "<p>Du må undersøke om du trenger dispensasjon. Dette er en søknad som har 12 ukers behandlingstid.</p><p><strong>Trenger du dispensasjon?</strong><br />Da bør du undersøke om du kan unngå dispensasjon, for eksempel ved å endre plassering på det du vil bygge.</p>",
+
                   "show": {
                     "field": "terrasseRekkverk",
                     "operator": "eq",
@@ -391,8 +393,9 @@
             },
             {
               "type": "Result",
-              "id": "resultatAnsvarligSoker",
-              "heading": "Resultat ansvarlig søker",
+              "id": "ResultatAnsvarligSoker",
+              "heading": "Du må søke",
+              "lead": "<p>Det er søknadspliktig å bygge det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. En liste over disse finner du <a href=\"https://sgregister.dibk.no/\">her</a>.</p><p>Takk for at du prøvde veiviseren!</p>",
               "show": {
                 "type": "or",
                 "clauses": [{
@@ -586,6 +589,7 @@
           "type": "Result",
           "id": "resultatTakkGarasje",
           "heading": "Resultat søke selv",
+          "lead": "Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan å få en komplett byggesøknad i vår guide <a href=\"https://dibk.no/om-oss/pilot-veien-til-komplett-byggesoknad/\">\"Veien til komplett byggesøknad\"</a>",
           "show": {
             "field": "inntilBygning",
             "operator": "eq",
@@ -594,8 +598,9 @@
         },
         {
           "type": "Result",
-          "id": "resultatAnsvarligSoker",
-          "heading": "Resultat ansvarlig søker",
+          "id": "ResultatAnsvarligSoker",
+          "heading": "Du må søke",
+          "lead": "<p>Det er søknadspliktig å bygge det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. En liste over disse finner du <a href=\"https://sgregister.dibk.no/\">her</a>.</p><p>Takk for at du prøvde veiviseren!</p>",
           "show": {
             "field": "inntilBygning",
             "operator": "eq",
@@ -708,7 +713,8 @@
         {
           "id": "sokeSelvResultat",
           "type": "Result",
-          "heading": "Resultat søke selv"
+          "heading": "Resultat søke selv",
+          "lead": "Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan å få en komplett byggesøknad i vår guide <a href=\"https://dibk.no/om-oss/pilot-veien-til-komplett-byggesoknad/\">\"Veien til komplett byggesøknad\"</a>"
         }
       ]
     }
