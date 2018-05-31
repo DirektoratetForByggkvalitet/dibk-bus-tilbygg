@@ -929,16 +929,10 @@
               "show": {
                 "type": "or",
                 "clauses": [{
-                    "field": "byggegrense",
-                    "operator": "eq",
-                    "value": "ja"
-                  },
-                  {
-                    "field": "nabogrense",
-                    "operator": "eq",
-                    "value": "ja"
-                  }
-                ]
+                  "field": "byggegrense",
+                  "operator": "eq",
+                  "value": "ja"
+                }]
               },
               "options": [{
                   "id": "byggegrenseOk.ja",
@@ -987,6 +981,217 @@
             "simple": true,
             "children": [{
               "id": "grenseresultat.text",
+              "type": "Text",
+              "warning": true,
+              "heading": "varsel"
+            }]
+          }]
+        },
+        {
+          "id": "hoydeGroup",
+          "type": "Group",
+          "simple": true,
+          "children": [{
+              "id": "forHoy",
+              "property": "forHoy",
+              "type": "Radio",
+              "show": {
+                "type": "or",
+                "clauses": [{
+                    "field": "nabogrense",
+                    "operator": "eq",
+                    "value": "ja"
+                  },
+                  {
+                    "field": "byggegrenseOk",
+                    "operator": "eq",
+                    "value": "ja"
+                  },
+                  {
+                    "field": "byggegrenseOk",
+                    "operator": "eq",
+                    "value": "tilatelse"
+                  }
+                ]
+              },
+              "heading": "Blir det du skal bygge på noe som helst punkt høyere enn bygget som står der fra før?",
+              "options": [{
+                  "id": "forHoy.ja",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "ja"
+                },
+                {
+                  "id": "forHoy.nei",
+                  "type": "Answer",
+                  "heading": "Ja men kommune sier ok",
+                  "value": "kommuneOk"
+                },
+                {
+                  "id": "forHoy.nei",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "nei"
+                }
+              ]
+            },
+            {
+              "id": "hoyestePunkt",
+              "property": "hoyestePunkt",
+              "type": "Radio",
+              "heading": "Hvor høyt er det fra bakken til høyeste punkt på det du bygger?",
+              "show": {
+                "type": "or",
+                "clauses": [{
+                    "field": "forHoy",
+                    "operator": "eq",
+                    "value": "kommuneOk"
+                  },
+                  {
+                    "field": "forHoy",
+                    "operator": "eq",
+                    "value": "nei"
+                  }
+                ]
+              },
+              "options": [{
+                  "id": "hoyestePunkt.ja",
+                  "type": "Answer",
+                  "heading": "Over 5 meter",
+                  "value": "over"
+                },
+                {
+                  "id": "hoyestePunkt.nei",
+                  "type": "Answer",
+                  "heading": "Under 5 meter",
+                  "value": "under"
+                },
+                {
+                  "id": "hoyestePunkt.nei",
+                  "type": "Answer",
+                  "heading": "Over 5 meter men kommune sier ok",
+                  "value": "overOk"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hoydeResultat",
+          "type": "Result",
+          "heading": "ResultatTakk",
+          "lead": "heading",
+          "show": {
+            "type": "or",
+            "clauses": [{
+                "field": "forHoy",
+                "operator": "eq",
+                "value": "ja"
+              },
+              {
+                "field": "hoyestePunkt",
+                "operator": "eq",
+                "value": "over"
+              }
+            ]
+          },
+          "children": [{
+            "id": "hoydeResultat.error",
+            "type": "Error",
+            "simple": true,
+            "children": [{
+              "id": "hoydeResultat.text",
+              "type": "Text",
+              "warning": true,
+              "heading": "varsel"
+            }]
+          }]
+        },
+        {
+          "id": "arealGroup",
+          "type": "Group",
+          "simple": true,
+          "children": [{
+              "id": "areal",
+              "property": "areal",
+              "type": "Radio",
+              "show": {
+                "type": "or",
+                "clauses": [{
+                    "field": "hoyestePunkt",
+                    "operator": "eq",
+                    "value": "under"
+                  },
+                  {
+                    "field": "hoyestePunkt",
+                    "operator": "eq",
+                    "value": "overOk"
+                  }
+                ]
+              },
+              "heading": "Har eiendommen din stort nok areal til bygningen du ønsker å sette opp?",
+              "options": [{
+                  "id": "areal.nei",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "nei"
+                },
+                {
+                  "id": "areal.vetIkke",
+                  "type": "Answer",
+                  "heading": "Vet ikke",
+                  "value": "vetIkke"
+                },
+                {
+                  "id": "areal.ja",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "ja"
+                }
+              ]
+            },
+            {
+              "id": "plan",
+              "property": "plan",
+              "type": "Radio",
+              "heading": "Finnes det begrensninger i kommuneplanens arealdel eller reguleringsplan?",
+              "show": {
+                "field": "areal",
+                "operator": "eq",
+                "value": "ja"
+              },
+              "options": [{
+                  "id": "plan.ja",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "ja"
+                },
+                {
+                  "id": "plan.nei",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "nei"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hoydeResultat",
+          "type": "Result",
+          "heading": "ResultatTakk",
+          "lead": "heading",
+          "show": {
+            "field": "areal",
+            "operator": "eq",
+            "value": "vetIkke"
+          },
+          "children": [{
+            "id": "hoydeResultat.error",
+            "type": "Error",
+            "simple": true,
+            "children": [{
+              "id": "hoydeResultat.text",
               "type": "Text",
               "warning": true,
               "heading": "varsel"
