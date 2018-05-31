@@ -1168,9 +1168,12 @@
           "type": "Group",
           "simple": true,
           "test": {
-            "field": "$computed.visAreal",
-            "operator": "eq",
-            "value": true
+            "type": "or",
+            "clauses": [{
+              "field": "$computed.visAreal",
+              "operator": "eq",
+              "value": true
+            }]
           },
           "children": [{
               "id": "areal",
@@ -1187,6 +1190,11 @@
                     "field": "hoyestePunkt",
                     "operator": "eq",
                     "value": "overOk"
+                  },
+                  {
+                    "field": "areal",
+                    "operator": "eq",
+                    "value": "ja"
                   }
                 ]
               },
