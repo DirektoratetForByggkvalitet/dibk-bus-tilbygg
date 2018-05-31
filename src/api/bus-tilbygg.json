@@ -313,7 +313,8 @@
               {
                 "type": "Result",
                 "id": "terrassePlanResult",
-                "heading": "ResultatDisp",
+                "heading": "Du trenger kanskje dispensasjon",
+                "lead": "<p>Du må undersøke om du trenger dispensasjon. Dette er en søknad som har 12 ukers behandlingstid.</p><p><strong>Trenger du dispensasjon?</strong><br />Da bør du undersøke om du kan unngå dispensasjon, for eksempel ved å endre plassering på det du vil bygge.</p>",
                 "show": {
                   "field": "terrassePlan",
                   "operator": "eq",
@@ -547,7 +548,8 @@
               "id": "tilbyggGarasje",
               "property": "tilbyggGarasje",
               "type": "Radio",
-              "heading": "Hvor stor blir bod/garasje og det du bygger til sammen?",
+              "heading": "Hvor stor får det som står der nå og det du bygger til sammen?",
+              "text": "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
               "show": {
                 "field": "tilbyggVerandaPlassering",
                 "operator": "eq",
@@ -572,6 +574,7 @@
               "property": "inntilBygning",
               "type": "Radio",
               "heading": "Hvor stort blir det du skal bygge?",
+              "text": "<p>Her er vi kun ute etter arealet på det du skal bygge, og ikke på det som står der fra før. Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
               "show": {
                 "type": "or",
                 "clauses": [{
