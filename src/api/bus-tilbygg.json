@@ -59,6 +59,7 @@
           "property": "bebygd",
           "type": "Radio",
           "heading": "Er eiendommen bebygd?",
+          "text": "<p>Eiendommen din er bebygd hvis det for eksempel er et bolighus eller en hytte på eiendommen fra før.</p>",
           "hide": {
             "field": "hvaSkalDuBygge",
             "operator": "not"
@@ -113,7 +114,8 @@
           "id": "regulert",
           "property": "regulert",
           "type": "Radio",
-          "heading": "Er eiendommen regulert?",
+          "heading": "Finnes det en reguleringsplan for eiendommen?",
+          "text": "<p>Sjekk med kommunen din om det finnes en reguleringsplan for eiendommen. Dette kan du som regel finne på kommunens nettsted.</p>",
           "hide": {
             "field": "bebygd",
             "operator": "not"
@@ -121,13 +123,13 @@
           "options": [{
               "id": "regulert.ja",
               "type": "Answer",
-              "heading": "Ja, eiendommen er regulert.",
+              "heading": "Ja, det finnes en reguleringsplan.",
               "value": "ja"
             },
             {
               "id": "regulert.nei",
               "type": "Answer",
-              "heading": "Nei, eiendommen er ikke regulert.",
+              "heading": "Nei, det finnes ikke en reguleringsplan.",
               "value": "nei"
             }
           ]
@@ -179,7 +181,7 @@
             },
             "children": [{
               "type": "Group",
-              "simple": true,
+              "simple": false,
               "id": "terrasseRekkverkGroup",
               "show": {
                 "type": "or",
@@ -204,7 +206,7 @@
                   "id": "terrasseOverBakken",
                   "property": "terrasseOverBakken",
                   "type": "Radio",
-                  "heading": "Blir terrassegulvet på noe som helst punkt høyere enn 0,5 meter over bakken?",
+                  "heading": "Blir terrassegulvet eller plattingen på noe som helst punkt høyere enn 0,5 meter over bakken?",
                   "show": {
                     "field": "hvaSkalDuBygge",
                     "operator": "eq",
@@ -213,13 +215,13 @@
                   "options": [{
                       "id": "terrasseOverBakken.ja",
                       "type": "Answer",
-                      "heading": "Ja",
+                      "heading": "Ja, hele eller deler av gulvet blir høyere enn 0,5 meter over bakken",
                       "value": "ja"
                     },
                     {
                       "id": "terrasseOverBakken.nei",
                       "type": "Answer",
-                      "heading": "Nei",
+                      "heading": "Nei, hele gulvet er lavere enn 0,5 meter over bakken",
                       "value": "nei"
                     }
                   ]
@@ -228,7 +230,8 @@
                   "id": "terrasseRekkverk",
                   "property": "terrasseRekkverk",
                   "type": "Radio",
-                  "heading": "Blir terrassen høyere enn 0,5?",
+                  "heading": "Blir noe av terrassen høyere enn 0,5 meter over bakken?",
+                  "text": "<p>Husk å regne med for eksempel rekkverk, levegg, glassvegger og annet som er festet i terrassegulvet.</p>",
                   "show": {
                     "field": "terrasseOverBakken",
                     "operator": "eq",
@@ -237,13 +240,13 @@
                   "options": [{
                       "id": "terrasseRekkverk.ja",
                       "type": "Answer",
-                      "heading": "Ja",
+                      "heading": "Ja, hele eller deler av terrassen blir høyere enn 0,5 meter over bakken",
                       "value": "ja"
                     },
                     {
                       "id": "terrasseRekkverk.nei",
                       "type": "Answer",
-                      "heading": "Nei",
+                      "heading": "Nei, hele terrassen er lavere enn 0,5 meter over bakken",
                       "value": "nei"
                     }
                   ]
@@ -334,7 +337,7 @@
         {
           "id": "tilbyggVerandaHvorGroup",
           "type": "Group",
-          "simple": true,
+          "simple": false,
           "show": {
             "type": "or",
             "clauses": [{
@@ -357,31 +360,31 @@
               "options": [{
                   "id": "tilbyggVerandaHvor.veggTilEksisterende",
                   "type": "Answer",
-                  "heading": "På vegg til eksisterende bygg",
+                  "heading": "På veggen til en eksisterende bygg",
                   "value": "veggTilEksisterende"
                 },
                 {
                   "id": "tilbyggVerandaHvor.takTilEksisterende",
                   "type": "Answer",
-                  "heading": "På tak til eksisterende bygg",
+                  "heading": "På taket til en eksisterende bygning",
                   "value": "takTilEksisterende"
                 },
                 {
                   "id": "tilbyggVerandaHvor.paaBakken",
                   "type": "Answer",
-                  "heading": "På bakken",
+                  "heading": "Rett på bakken",
                   "value": "paaBakken"
                 },
                 {
                   "id": "tilbyggVerandaHvor.underBakken",
                   "type": "Answer",
-                  "heading": "Under bakken",
+                  "heading": "Under bakkenivå (for eksempel lysgrav)",
                   "value": "underBakken"
                 },
                 {
                   "id": "tilbyggVerandaHvor.annet",
                   "type": "Answer",
-                  "heading": "Annet",
+                  "heading": "Ingen av alternativene passer",
                   "value": "annet"
                 }
               ]
@@ -390,7 +393,8 @@
               "id": "tilbyggVerandaFesteRadio",
               "property": "tilbyggVerandaFeste",
               "type": "Radio",
-              "heading": "Er det understøttet / festet i bakken?",
+              "heading": "Blir det du bygger understøttet og festet til bakken?",
+              "text": "<p>Du kan svare ja hvis du for eksempel skal bygge en veranda med en bærekonstruksjon som står på bakken.</p>",
               "show": {
                 "field": "tilbyggVerandaHvor",
                 "operator": "eq",
@@ -479,7 +483,7 @@
               "id": "tilbyggVerandaPlasseringRadio",
               "property": "tilbyggVerandaPlassering",
               "type": "Radio",
-              "heading": "Hvor skal det du bygger ligge?",
+              "heading": "Hva skal det du bygger ligge inntil?",
               "show": {
                 "type": "or",
                 "clauses": [{
@@ -497,19 +501,19 @@
               "options": [{
                   "id": "tilbyggVerandaPlassering.inntilHusHytte",
                   "type": "Answer",
-                  "heading": "Inntil hus / hytte",
+                  "heading": "Inntil hus, hytte, eller annen bolig",
                   "value": "husHytte"
                 },
                 {
                   "id": "tilbyggVerandaPlassering.inntilBodGarasje",
                   "type": "Answer",
-                  "heading": "Inntil bod garasje",
+                  "heading": "Inntil bod, hobbyverksted, drivhus, eller garasje",
                   "value": "bodGarasje"
                 },
                 {
                   "id": "tilbyggVerandaPlassering.annet",
                   "type": "Answer",
-                  "heading": "Annet",
+                  "heading": "Ingen av alternativene passer",
                   "value": "annet"
                 }
               ]
@@ -519,7 +523,7 @@
         {
           "id": "tilbyggGarasjeGroup",
           "type": "Group",
-          "simple": true,
+          "simple": false,
           "show": {
             "type": "or",
             "clauses": [{
