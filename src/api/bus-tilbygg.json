@@ -22,6 +22,24 @@
           "value": "tilatelse"
         }
       ]
+    },
+    "visAreal": {
+      "type": "or",
+      "clauses": [{
+          "field": "hoyestePunkt",
+          "operator": "eq",
+          "value": "under"
+        },
+        {
+          "field": "hoyestePunkt",
+          "operator": "eq",
+          "value": "overOk"
+        }, {
+          "field": "areal",
+          "operator": "eq",
+          "value": "ja"
+        }
+      ]
     }
   },
   "schema": [{
@@ -1150,22 +1168,9 @@
           "type": "Group",
           "simple": true,
           "test": {
-            "type": "or",
-            "clauses": [{
-                "field": "hoyestePunkt",
-                "operator": "eq",
-                "value": "under"
-              },
-              {
-                "field": "hoyestePunkt",
-                "operator": "eq",
-                "value": "overOk"
-              }, {
-                "field": "areal",
-                "operator": "eq",
-                "value": "ja"
-              }
-            ]
+            "field": "$computed.visAreal",
+            "operator": "eq",
+            "value": true
           },
           "children": [{
               "id": "areal",
