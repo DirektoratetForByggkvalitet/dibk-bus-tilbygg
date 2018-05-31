@@ -173,23 +173,103 @@
           "type": "Branch",
           "branches": [{
             "test": {
-              "field": "hvaSkalDuBygge",
+              "field": "regulert",
               "operator": "eq",
-              "value": "terrasse"
+              "value": "ja"
             },
             "children": [{
-                "id": "terrasseOverBakken",
-                "property": "terrasseOverBakken",
+              "type": "Group",
+              "simple": true,
+              "id": "terrasseRekkverkGroup",
+              "children": [{
+                  "id": "terrasseOverBakken",
+                  "property": "terrasseOverBakken",
+                  "type": "Radio",
+                  "heading": "Blir terrassegulvet på noe som helst punkt høyere enn 0,5 meter over bakken?",
+                  "show": {
+                    "field": "hvaSkalDuBygge",
+                    "operator": "eq",
+                    "value": "terrasse"
+                  },
+                  "options": [{
+                      "id": "terrasseOverBakken.ja",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "ja"
+                    },
+                    {
+                      "id": "terrasseOverBakken.nei",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "nei"
+                    }
+                  ]
+                },
+                {
+                  "id": "terrasseRekkverk",
+                  "property": "terrasseRekkverk",
+                  "type": "Radio",
+                  "heading": "Blir terrassen høyere enn 0,5?",
+                  "show": {
+                    "field": "terrasseOverBakken",
+                    "operator": "eq",
+                    "value": "nei"
+                  },
+                  "options": [{
+                      "id": "terrasseRekkverk.ja",
+                      "type": "Answer",
+                      "heading": "Ja",
+                      "value": "ja"
+                    },
+                    {
+                      "id": "terrasseRekkverk.nei",
+                      "type": "Answer",
+                      "heading": "Nei",
+                      "value": "nei"
+                    }
+                  ]
+                },
+                {
+                  "id": "terrasseRekkverk.over05m.ja",
+                  "type": "Result",
+                  "heading": "ResultatTakk",
+                  "show": {
+                    "field": "terrasseRekkverk",
+                    "operator": "eq",
+                    "value": "ja"
+                  },
+                  "children": [{
+                    "id": "terrasseRekkverk.over05m.tekst",
+                    "type": "Text",
+                    "warning": true,
+                    "heading": "Hvis terrasserekkverket er over 0,5m må du snakke med kommunen før du gjør noe."
+                  }]
+                }
+              ]
+            }]
+          }]
+        },
+        {
+          "type": "Branch",
+          "branches": [{
+            "test": {
+              "field": "terrasseRekkverk",
+              "operator": "eq",
+              "value": "nei"
+            },
+            "children": [{
+                "id": "terrassePlan",
+                "property": "terrassePlan",
                 "type": "Radio",
-                "heading": "Blir terrassegulvet på noe som helst punkt høyere enn 0,5 meter over bakken?",
+                "heading": "Finnes det begrensninger i kommuneplanens arealdel eller reguleringsplan?",
                 "options": [{
-                    "id": "terrasseOverBakken.ja",
+                    "id": "terrassePlan.ja",
                     "type": "Answer",
                     "heading": "Ja",
                     "value": "ja"
                   },
                   {
-                    "id": "terrasseOverBakken.nei",
+                    "id": "terrassePlan.nei",
                     "type": "Answer",
                     "heading": "Nei",
                     "value": "nei"
@@ -197,63 +277,33 @@
                 ]
               },
               {
-                "type": "Branch",
-                "branches": [{
-                  "test": {
-                    "field": "terrasseOverBakken",
-                    "operator": "eq",
-                    "value": "nei"
-                  },
+                "type": "Result",
+                "id": "terrassePlanResult",
+                "heading": "ResultatJippiUnder05m",
+                "show": {
+                  "field": "terrassePlan",
+                  "operator": "eq",
+                  "value": "nei"
+                }
+              },
+              {
+                "type": "Result",
+                "id": "terrassePlanResult",
+                "heading": "ResultatDisp",
+                "show": {
+                  "field": "terrassePlan",
+                  "operator": "eq",
+                  "value": "ja"
+                },
+                "children": [{
+                  "id": "terrassePlanResultError",
+                  "type": "Error",
+                  "warning": true,
                   "children": [{
-                    "type": "Group",
-                    "simple": true,
-                    "id": "terrasseRekkverkGroup",
-                    "children": [{
-                        "id": "terrasseRekkverk",
-                        "property": "terrasseRekkverk",
-                        "type": "Radio",
-                        "heading": "Blir terrassen høyere enn 0,5?",
-                        "options": [{
-                            "id": "terrasseRekkverk.ja",
-                            "type": "Answer",
-                            "heading": "Ja",
-                            "value": "ja"
-                          },
-                          {
-                            "id": "terrasseRekkverk.nei",
-                            "type": "Answer",
-                            "heading": "Nei",
-                            "value": "nei"
-                          }
-                        ]
-                      },
-                      {
-                        "id": "terrasseRekkverk.over05m.ja",
-                        "type": "Result",
-                        "heading": "ResultatDisp",
-                        "show": {
-                          "field": "terrasseRekkverk",
-                          "operator": "eq",
-                          "value": "ja"
-                        },
-                        "children": [{
-                          "id": "terrasseRekkverk.over05m.tekst",
-                          "type": "Text",
-                          "warning": true,
-                          "heading": "Hvis terrasserekkverket er over 0,5m må du snakke med kommunen før du gjør noe."
-                        }]
-                      },
-                      {
-                        "id": "terrasseRekkverk.over05m.nei",
-                        "type": "Result",
-                        "heading": "Resultat jippii under ",
-                        "show": {
-                          "field": "terrasseRekkverk",
-                          "operator": "eq",
-                          "value": "nei"
-                        }
-                      }
-                    ]
+                    "id": "terrassePlanResultTekst",
+                    "type": "Text",
+                    "warning": true,
+                    "heading": "varsel"
                   }]
                 }]
               }
@@ -558,6 +608,25 @@
       "type": "Page",
       "heading": "Tilbyggets innhold og veranda med isolasjon",
       "id": "tilbyggInnholdVerandaIsolasjon",
+      "show": {
+        "type": "or",
+        "clauses": [{
+            "field": "inntilBygning",
+            "operator": "eq",
+            "value": "over"
+          },
+          {
+            "field": "inntilBygning",
+            "operator": "eq",
+            "value": "under"
+          },
+          {
+            "field": "inntilBygning",
+            "operator": "eq",
+            "value": "mellom"
+          }
+        ]
+      },
       "children": [{
           "id": "tilbyggRom",
           "property": "tilbyggRom",
