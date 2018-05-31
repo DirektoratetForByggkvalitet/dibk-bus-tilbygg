@@ -181,6 +181,25 @@
               "type": "Group",
               "simple": true,
               "id": "terrasseRekkverkGroup",
+              "show": {
+                "type": "or",
+                "clauses": [{
+                    "field": "hvaSkalDuBygge",
+                    "operator": "eq",
+                    "value": "terrasse"
+                  },
+                  {
+                    "field": "terrasseOverBakken",
+                    "operator": "eq",
+                    "value": "nei"
+                  },
+                  {
+                    "field": "terrasseRekkverk",
+                    "operator": "eq",
+                    "value": "ja"
+                  }
+                ]
+              },
               "children": [{
                   "id": "terrasseOverBakken",
                   "property": "terrasseOverBakken",
@@ -315,7 +334,7 @@
         {
           "id": "tilbyggVerandaHvorGroup",
           "type": "Group",
-          "simple": false,
+          "simple": true,
           "show": {
             "type": "or",
             "clauses": [{
@@ -500,7 +519,7 @@
         {
           "id": "tilbyggGarasjeGroup",
           "type": "Group",
-          "simple": "true",
+          "simple": true,
           "show": {
             "type": "or",
             "clauses": [{
@@ -588,13 +607,23 @@
         {
           "type": "Result",
           "id": "resultatTakkGarasje",
-          "heading": "Resultat søke selv",
+          "heading": "ResultatSokeSelv",
           "lead": "Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan å få en komplett byggesøknad i vår guide <a href=\"https://dibk.no/om-oss/pilot-veien-til-komplett-byggesoknad/\">\"Veien til komplett byggesøknad\"</a>",
           "show": {
             "field": "inntilBygning",
             "operator": "eq",
             "value": "mellom"
-          }
+          },
+          "children": [{
+            "id": "resultatTakkGarasje.error",
+            "type": "Error",
+            "children": [{
+              "id": "resultatTakkGarasje.text",
+              "type": "Text",
+              "warning": true,
+              "heading": "feilmelding"
+            }]
+          }]
         },
         {
           "type": "Result",
@@ -605,7 +634,17 @@
             "field": "inntilBygning",
             "operator": "eq",
             "value": "over"
-          }
+          },
+          "children": [{
+            "id": "ResultatAnsvarligSoker.error",
+            "type": "Error",
+            "children": [{
+              "id": "ResultatAnsvarligSoker.text",
+              "type": "Text",
+              "warning": true,
+              "heading": "feilmelding"
+            }]
+          }]
         }
       ]
     },
@@ -660,6 +699,20 @@
           "id": "verandaGroup",
           "type": "Group",
           "simple": true,
+          "show": {
+            "type": "or",
+            "clauses": [{
+                "field": "hvaSkalDuBygge",
+                "operator": "eq",
+                "value": "veranda"
+              },
+              {
+                "field": "verandaRom",
+                "operator": "eq",
+                "value": "ja"
+              }
+            ]
+          },
           "children": [{
               "id": "verandaRom",
               "property": "verandaRom",
@@ -685,8 +738,8 @@
               ]
             },
             {
-              "id": "verandaIsolert",
-              "property": "verandaIsolert",
+              "id": "verandaIsolasjon",
+              "property": "verandaIsolasjon",
               "type": "Radio",
               "heading": "Blir hele eller deler isolert?",
               "show": {
@@ -695,13 +748,13 @@
                 "value": "ja"
               },
               "options": [{
-                  "id": "verandaIsolert.ja",
+                  "id": "verandaIsolasjon.ja",
                   "type": "Answer",
                   "heading": "Ja",
                   "value": "ja"
                 },
                 {
-                  "id": "verandaIsolert.nei",
+                  "id": "verandaIsolasjon.nei",
                   "type": "Answer",
                   "heading": "Nei",
                   "value": "nei"
@@ -714,7 +767,231 @@
           "id": "sokeSelvResultat",
           "type": "Result",
           "heading": "Resultat søke selv",
-          "lead": "Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan å få en komplett byggesøknad i vår guide <a href=\"https://dibk.no/om-oss/pilot-veien-til-komplett-byggesoknad/\">\"Veien til komplett byggesøknad\"</a>"
+          "lead": "Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan å få en komplett byggesøknad i vår guide <a href=\"https://dibk.no/om-oss/pilot-veien-til-komplett-byggesoknad/\">\"Veien til komplett byggesøknad\"</a>",
+          "show": {
+            "type": "or",
+            "clauses": [{
+                "field": "tilbyggRom",
+                "operator": "eq",
+                "value": "ja"
+              },
+              {
+                "field": "verandaIsolasjon",
+                "operator": "eq",
+                "value": "ja"
+              }
+            ]
+          },
+          "children": [{
+            "id": "sokeSelvResultat.error",
+            "type": "Error",
+            "simple": true,
+            "children": [{
+              "id": "sokeSelvResultat.text",
+              "type": "Text",
+              "warning": true,
+              "heading": "varsel"
+            }]
+          }]
+        }
+      ]
+    },
+    {
+      "type": "Page",
+      "heading": "Byggets grenser og dimensjoner",
+      "id": "byggetsGrenserOgDimensjoner",
+      "show": {
+        "type": "or",
+        "clauses": [{
+            "type": "or",
+            "clauses": [{
+                "field": "tilbyggRom",
+                "operator": "eq",
+                "value": "nei"
+              },
+              {
+                "field": "verandaRom",
+                "operator": "eq",
+                "value": "nei"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [{
+                "field": "hvaSkalDuBygge",
+                "operator": "eq",
+                "value": "terrasse"
+              },
+              {
+                "field": "inntilBygning",
+                "operator": "eq",
+                "value": "under"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [{
+                "field": "hvaSkalDuBygge",
+                "operator": "eq",
+                "value": "veranda"
+              },
+              {
+                "field": "verandaRom",
+                "operator": "eq",
+                "value": "nei"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [{
+                "field": "hvaSkalDuBygge",
+                "operator": "eq",
+                "value": "veranda"
+              },
+              {
+                "field": "verandaIsolasjon",
+                "operator": "eq",
+                "value": "nei"
+              }
+            ]
+          },
+          {
+            "type": "and",
+            "clauses": [{
+                "field": "hvaSkalDuBygge",
+                "operator": "eq",
+                "value": "tilbygg"
+              },
+              {
+                "field": "verandaRom",
+                "operator": "eq",
+                "value": "nei"
+              }
+            ]
+          }
+        ]
+      },
+      "children": [{
+          "id": "grenseGroup",
+          "type": "Group",
+          "simple": true,
+          "children": [{
+              "id": "byggegrense",
+              "property": "byggegrense",
+              "type": "Radio",
+              "heading": "Finnes det en byggegrense mot nabo?",
+              "options": [{
+                  "id": "byggegrense.ja",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "ja"
+                },
+                {
+                  "id": "byggegrense.nei",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "nei"
+                }
+              ]
+            },
+            {
+              "id": "nabogrense",
+              "property": "nabogrense",
+              "type": "Radio",
+              "heading": "Minst 4 meter til nabogrense fra tilbygget?",
+              "show": {
+                "field": "byggegrense",
+                "operator": "eq",
+                "value": "nei"
+              },
+              "options": [{
+                  "id": "nabogrense.ja",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "ja"
+                },
+                {
+                  "id": "nabogrense.nei",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "nei"
+                }
+              ]
+            },
+            {
+              "id": "byggegrenseOk",
+              "property": "byggegrenseOk",
+              "type": "Radio",
+              "heading": "Blir tilbygget innenfor byggegrensene?",
+              "show": {
+                "type": "or",
+                "clauses": [{
+                    "field": "byggegrense",
+                    "operator": "eq",
+                    "value": "ja"
+                  },
+                  {
+                    "field": "nabogrense",
+                    "operator": "eq",
+                    "value": "ja"
+                  }
+                ]
+              },
+              "options": [{
+                  "id": "byggegrenseOk.ja",
+                  "type": "Answer",
+                  "heading": "Ja",
+                  "value": "ja"
+                },
+                {
+                  "id": "byggegrenseOk.nei",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "nei"
+                },
+                {
+                  "id": "byggegrenseOk.tilatelse",
+                  "type": "Answer",
+                  "heading": "Nei, men har tillatelse",
+                  "value": "tilatelse"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "grenseresultat",
+          "type": "Result",
+          "heading": "ResultatTakk",
+          "lead": "heading",
+          "show": {
+            "type": "or",
+            "clauses": [{
+                "field": "byggegrenseOk",
+                "operator": "eq",
+                "value": "nei"
+              },
+              {
+                "field": "nabogrense",
+                "operator": "eq",
+                "value": "nei"
+              }
+            ]
+          },
+          "children": [{
+            "id": "grenseresultat.error",
+            "type": "Error",
+            "simple": true,
+            "children": [{
+              "id": "grenseresultat.text",
+              "type": "Text",
+              "warning": true,
+              "heading": "varsel"
+            }]
+          }]
         }
       ]
     }
