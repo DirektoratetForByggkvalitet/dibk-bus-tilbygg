@@ -140,10 +140,14 @@
                   "value": "nei"
                 },
                 "children": [{
-                  "type": "Text",
-                  "id": "bebygd.nei.feil.tekst",
-                  "warning": true,
-                  "heading": "Når eiendommen din ikke er bebygd må du snakke med kommunen før du gjør noe."
+                  "id": "resultatTakkError",
+                  "type": "Warning",
+                  "children": [{
+                    "id": "bebygd.nei.feil.tekst",
+                    "type": "Text",
+                    "warning": true,
+                    "heading": "Når eiendommen din ikke er bebygd må du snakke med kommunen før du gjør noe."
+                  }]
                 }]
               }]
             }]
@@ -1168,35 +1172,18 @@
           "type": "Group",
           "simple": true,
           "test": {
-            "type": "or",
-            "clauses": [{
-              "field": "$computed.visAreal",
-              "operator": "eq",
-              "value": true
-            }]
+            "field": "$computed.visAreal",
+            "operator": "eq",
+            "value": true
           },
           "children": [{
               "id": "areal",
               "property": "areal",
               "type": "Radio",
               "show": {
-                "type": "or",
-                "clauses": [{
-                    "field": "hoyestePunkt",
-                    "operator": "eq",
-                    "value": "under"
-                  },
-                  {
-                    "field": "hoyestePunkt",
-                    "operator": "eq",
-                    "value": "overOk"
-                  },
-                  {
-                    "field": "areal",
-                    "operator": "eq",
-                    "value": "ja"
-                  }
-                ]
+                "field": "$computed.visAreal",
+                "operator": "eq",
+                "value": true
               },
               "heading": "Har eiendommen din stort nok areal til bygningen du ønsker å sette opp?",
               "options": [{
