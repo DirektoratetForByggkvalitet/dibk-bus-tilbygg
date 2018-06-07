@@ -724,24 +724,30 @@
       "children": [{
           "id": "tilbyggRom",
           "property": "tilbyggRom",
-          "type": "Radio",
-          "heading": "Skal den inneholde oppholdsrom som stue, soverom, kjøkken, osv?",
+          "type": "Checkbox",
+          "heading": "Hva skal du bruke bygget til?",
           "show": {
             "field": "hvaSkalDuBygge",
             "operator": "eq",
             "value": "tilbygg"
           },
           "options": [{
+              "id": "tilbyggRom.nei",
+              "type": "Answer",
+              "text": "Bod, sykkelskur, vedskjul, gang, trapp eller trapperom",
+              "value": "nei"
+            },
+            {
               "id": "tilbyggRom.ja",
               "type": "Answer",
-              "heading": "Ja",
+              "text": "Stue, kjøkken, soverom, verksted, atelier eller kontor",
               "value": "ja"
             },
             {
-              "id": "tilbyggRom.nei",
+              "id": "tilbyggRom.annet",
               "type": "Answer",
-              "heading": "Nei",
-              "value": "nei"
+              "text": "Noe annet",
+              "value": "annet"
             }
           ]
         },
@@ -1084,7 +1090,7 @@
                 {
                   "id": "forHoy.nei",
                   "type": "Answer",
-                  "heading": "Ja men kommune sier ok",
+                  "heading": "Ja, men det er avklart med kommunen at jeg kan bygge høyere uten å søke",
                   "value": "kommuneOk"
                 },
                 {
