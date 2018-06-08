@@ -83,22 +83,29 @@
             }
           ]
         },
+
         {
           "id": "hvaSkalDuByggeBranch",
           "type": "Branch",
           "branches": [
             {
               "test": {
-                "type": "or",
-                "clauses": [
-                  {
-                    "field": "hvaSkalDuBygge",
-                    "operator": "eq",
-                    "value": "takterrasse"
-                  }
-                ]
+                "field": "hvaSkalDuBygge",
+                "operator": "eq",
+                "value": "takterrasse"
               },
               "children": [
+                {
+                  "id": "hvaSkalDuByggeBranch.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "hvaSkalDuByggeBranch.text",
+                      "type": "Text",
+                      "heading": "Du kan ikke bygge takterrasse?"
+                    }
+                  ]
+                },
                 {
                   "type": "Result",
                   "id": "resultatAnsvarligSoker",
@@ -110,6 +117,7 @@
             }
           ]
         },
+
         {
           "id": "bebygd",
           "property": "bebygd",
@@ -232,6 +240,13 @@
                         "Når eiendommen din ikke er regulert kan det hende du kan få disp, men du må snakke med en voksen i kommunen først."
                     }
                   ]
+                },
+                {
+                  "id": "resultatDisp",
+                  "type": "Result",
+                  "text": "Du må søke om dispensasjon",
+                  "heading": "Du kan søke, men du må søke om dispensasjon",
+                  "lead": "<p>Resultat dispensasjon</p>"
                 }
               ]
             }
@@ -353,12 +368,13 @@
                         }
                       ]
                     },
+
                     {
                       "id": "terrassePlassering",
                       "property": "terrassePlassering",
                       "type": "Radio",
                       "heading": "Hvor skal du ha terrassen?",
-                      "text": "<p>Husk å regne med rekkverk og sånnt</p>",
+                      "text": "<p></p>",
                       "show": {
                         "field": "terrasseOverBakken",
                         "operator": "eq",
@@ -366,21 +382,21 @@
                       },
                       "options": [
                         {
-                          "id": "terrassePlassering.inntilBodGarasje",
+                          "id": "terrassePlassering.inntilBod",
                           "type": "Answer",
-                          "heading": "Inntil bod garasje",
-                          "value": "inntilBodGarasje"
+                          "heading": "Inntil bod / garasje",
+                          "value": "inntilBod"
                         },
                         {
-                          "id": "terrassePlassering.inntilHusHytte",
+                          "id": "terrassePlassering.inntilHus",
                           "type": "Answer",
                           "heading": "Inntil hus / hytte",
-                          "value": "inntilHusHytte"
+                          "value": "inntilHus"
                         },
                         {
                           "id": "terrassePlassering.frittliggende",
                           "type": "Answer",
-                          "heading": "Frittliggende og 1 meter i fra",
+                          "heading": "Frittliggende og 1 meter fra",
                           "value": "frittliggende"
                         },
                         {
@@ -391,14 +407,166 @@
                         }
                       ]
                     },
+
                     {
-                      "nodeId": "resultatTakk",
-                      "type": "Reference",
+                      "id": "frittliggende",
+                      "property": "frittliggende",
+                      "type": "Radio",
+                      "heading": "Hvor stort blir det du skal bygge?",
+                      "text": "<p>Husk å regne med rekkverk og sånnt</p>",
                       "show": {
-                        "field": "terrasseRekkverk",
+                        "field": "terrassePlassering",
                         "operator": "eq",
-                        "value": "ja"
-                      }
+                        "value": "frittliggende"
+                      },
+                      "options": [
+                        {
+                          "id": "frittliggende.under",
+                          "type": "Answer",
+                          "heading": "Under 50 kvm",
+                          "value": "under"
+                        },
+                        {
+                          "id": "frittliggende.mellom",
+                          "type": "Answer",
+                          "heading": "Mellom 50 - 70 kvm",
+                          "value": "mellom"
+                        },
+                        {
+                          "id": "frittliggende.over",
+                          "type": "Answer",
+                          "heading": "Frittliggende og 1 meter i fra",
+                          "value": "over"
+                        }
+                      ]
+                    },
+
+                    {
+                      "id": "frittliggende.under.branch",
+                      "type": "Branch",
+                      "branches": [
+                        {
+                          "test": {
+                            "field": "frittliggende",
+                            "operator": "eq",
+                            "value": "under"
+                          },
+                          "children": [
+                            {
+                              "id": "frittliggende.under.text",
+                              "type": "Text",
+                              "warning": true,
+                              "text":
+                                "Vi anbefaler deg å ta veiviseren \"Bygg uten å søke\" (<a href='http://byggutenåsøke.dibk.no'>http://byggutenåsøke.dibk.no</a>). Den er laget for boder og garasjer, men samme reglene gjelder for bygging av terrasser som er høyere enn 0,5 meter over bakken."
+                            },
+                            {
+                              "nodeId": "resultatTakk",
+                              "type": "Reference"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+
+                    {
+                      "id": "frittliggende.mellom.branch",
+                      "type": "Branch",
+                      "branches": [
+                        {
+                          "test": {
+                            "field": "frittliggende",
+                            "operator": "eq",
+                            "value": "mellom"
+                          },
+                          "children": [
+                            {
+                              "id": "frittliggende.mellom.text",
+                              "type": "Error",
+                              "children": [
+                                {
+                                  "id": "frittliggende.mellom.text",
+                                  "type": "Text",
+                                  "warning": true,
+                                  "heading":
+                                    "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
+                                }
+                              ]
+                            },
+                            {
+                              "id": "resultatSokeSelv",
+                              "type": "Result",
+                              "heading": "Resultat søke selv",
+                              "text": "<p>Du må søke selv :( :)</p>"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+
+                    {
+                      "id": "frittliggende.over.branch",
+                      "type": "Branch",
+                      "branches": [
+                        {
+                          "test": {
+                            "field": "frittliggende",
+                            "operator": "eq",
+                            "value": "over"
+                          },
+                          "children": [
+                            {
+                              "id": "frittliggende.over.error",
+                              "type": "Error",
+                              "children": [
+                                {
+                                  "id": "frittliggende.over.text",
+                                  "type": "Text",
+                                  "warning": true,
+                                  "heading":
+                                    "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
+                                }
+                              ]
+                            },
+                            {
+                              "nodeId": "resultatAnsvarligSoker",
+                              "type": "Reference"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+
+                    {
+                      "id": "terrasseplan.branch",
+                      "type": "Branch",
+                      "branches": [
+                        {
+                          "test": {
+                            "field": "terrasseRekkverk",
+                            "operator": "eq",
+                            "value": "ja"
+                          },
+                          "children": [
+                            {
+                              "id": "terrasseplan.error",
+                              "type": "Error",
+                              "simple": true,
+                              "children": [
+                                {
+                                  "id": "terrasseplan.text",
+                                  "type": "Text",
+                                  "warning": true,
+                                  "heading": "Interessant at den blir høyere enn 0.5 meter"
+                                }
+                              ]
+                            },
+                            {
+                              "nodeId": "resultatTakk",
+                              "type": "Reference"
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -438,14 +606,70 @@
                   ]
                 },
                 {
-                  "type": "Result",
-                  "id": "terrassePlanResult",
-                  "heading": "ResultatJippiUnder05m",
-                  "show": {
-                    "field": "terrassePlan",
-                    "operator": "eq",
-                    "value": "nei"
-                  }
+                  "id": "terrasseplanNei.branch",
+                  "type": "Branch",
+                  "branches": [
+                    {
+                      "test": {
+                        "field": "terrassePlanNei",
+                        "operator": "eq",
+                        "value": "nei"
+                      },
+                      "children": [
+                        {
+                          "id": "terrasseplanNei.error",
+                          "type": "Error",
+                          "simple": true,
+                          "children": [
+                            {
+                              "id": "terrasseplanNei.text",
+                              "type": "Text",
+                              "warning": true,
+                              "heading": "det må være lenger enn 4 meter til nabogrensen"
+                            }
+                          ]
+                        },
+                        {
+                          "id": "resultatJippiUnder05",
+                          "type": "Result",
+                          "heading": "Resultat jippi under 0.5 meter",
+                          "text": "<p>Du kan bygge fordi under 0.5 meter</p>"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "terrasseplanJa.branch",
+                  "type": "Branch",
+                  "branches": [
+                    {
+                      "test": {
+                        "field": "terrassePlan",
+                        "operator": "eq",
+                        "value": "ja"
+                      },
+                      "children": [
+                        {
+                          "id": "terrasseplanJa.error",
+                          "type": "Error",
+                          "simple": true,
+                          "children": [
+                            {
+                              "id": "terrasseplanJa.text",
+                              "type": "Text",
+                              "warning": true,
+                              "heading": "Du må søke om dispensasjon"
+                            }
+                          ]
+                        },
+                        {
+                          "nodeId": "resultatDisp",
+                          "type": "Reference"
+                        }
+                      ]
+                    }
+                  ]
                 },
                 {
                   "type": "Result",
@@ -562,6 +786,36 @@
                     {
                       "nodeId": "resultatTakk",
                       "type": "Reference"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "tilbyggUnderBakken",
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "underBakken"
+                  },
+                  "children": [
+                    {
+                      "id": "tilbyggUnderBakken.error",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "tilbyggUnderBakken.text",
+                          "type": "Text",
+                          "heading": "Du kan ikke søke under bakken"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Reference",
+                      "nodeId": "resultatAnsvarligSoker"
                     }
                   ]
                 }
@@ -756,6 +1010,34 @@
               "heading": "Hvor stor får det som står der nå og det du bygger til sammen?",
               "text":
                 "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
+              "options": [
+                {
+                  "id": "tilbyggGarasje.under50kvm",
+                  "type": "Answer",
+                  "heading": "Under 50 kvm",
+                  "value": "under50kvm"
+                },
+                {
+                  "id": "tilbyggGarasje.inntilBodGarasje",
+                  "type": "Answer",
+                  "heading": "Over 50 kvm",
+                  "value": "over50kvm"
+                },
+                {
+                  "id": "tilbyggGarasje.inntilBodGarasje",
+                  "type": "Answer",
+                  "heading": "Over 50 kvm",
+                  "value": "over50kvm"
+                }
+              ]
+            },
+            {
+              "id": "tilbyggGarasje",
+              "property": "tilbyggGarasje",
+              "type": "Radio",
+              "heading": "Hvor stor får det som står der nå og det du bygger til sammen?",
+              "text":
+                "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
 
               "options": [
                 {
@@ -838,12 +1120,42 @@
                   "value": "over"
                 }
               ]
+            },
+            {
+              "id": "inntilBygningBranch",
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "inntilBygning",
+                    "operator": "eq",
+                    "value": "over"
+                  },
+                  "children": [
+                    {
+                      "id": "inntilBygningBranch.error",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "inntilBygningBranch.text",
+                          "type": "Text",
+                          "heading": "Over 50kvm er veldig mye"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Reference",
+                      "nodeId": "resultatAnsvarligSoker"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
         {
           "type": "Result",
-          "id": "resultatTakkGarasje",
+          "id": "resultatSokeSelv",
           "heading": "ResultatSokeSelv",
           "lead":
             "Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan å få en komplett byggesøknad i vår guide <a href=\"https://dibk.no/om-oss/pilot-veien-til-komplett-byggesoknad/\">\"Veien til komplett byggesøknad\"</a>",
@@ -854,14 +1166,45 @@
           },
           "children": [
             {
-              "id": "resultatTakkGarasje.error",
+              "id": "resultatSokeSelv.error",
               "type": "Error",
               "children": [
                 {
-                  "id": "resultatTakkGarasje.text",
+                  "id": "resultatSokeSelv.text",
                   "type": "Text",
                   "warning": true,
                   "heading": "feilmelding"
+                }
+              ]
+            },
+            {
+              "type": "Branch",
+              "id": "resultatAnsvarligSoker.branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "resultatAnsvarligSoker",
+                    "operator": "eq",
+                    "value": "yes"
+                  },
+                  "children": [
+                    {
+                      "id": "ResultatAnsvarligSoker.error",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "ResultatAnsvarligSoker.text",
+                          "type": "Text",
+                          "warning": true,
+                          "heading": "feilmelding"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Reference",
+                      "nodeId": "ResultatAnsvarligSoker"
+                    }
+                  ]
                 }
               ]
             }
@@ -1517,7 +1860,38 @@
                 }
               ]
             },
-
+            {
+              "id": "jaaaaaaaaaaa.branch",
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "arealGroup",
+                    "operator": "eq",
+                    "value": "nei"
+                  },
+                  "children": [
+                    {
+                      "id": "jaaaaaaaaaaa.error",
+                      "type": "Error",
+                      "simple": true,
+                      "children": [
+                        {
+                          "id": "jaaaaaaaaaaa.text",
+                          "type": "Text",
+                          "warning": true,
+                          "heading": "Du må ha stort nok areal til bygningen du ønsker å sette opp"
+                        }
+                      ]
+                    },
+                    {
+                      "nodeId": "resultatDisp",
+                      "type": "Reference"
+                    }
+                  ]
+                }
+              ]
+            },
             {
               "id": "plan",
               "property": "plan",
@@ -1541,6 +1915,38 @@
                   "type": "Answer",
                   "heading": "Nei",
                   "value": "nei"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "planJa.branch",
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "plan",
+                "operator": "eq",
+                "value": "ja"
+              },
+              "children": [
+                {
+                  "id": "planJa.error",
+                  "type": "Error",
+                  "simple": true,
+                  "children": [
+                    {
+                      "id": "planJa.text",
+                      "type": "Text",
+                      "warning": true,
+                      "heading": "Det finnes begrensninger"
+                    }
+                  ]
+                },
+                {
+                  "nodeId": "resultatDisp",
+                  "type": "Reference"
                 }
               ]
             }
