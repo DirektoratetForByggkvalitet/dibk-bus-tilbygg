@@ -154,98 +154,26 @@
                 {
                   "id": "error.bebygd.nei",
                   "type": "Error",
-                  "text":
-                    "Når eiendommen din ikke er bebygd må du snakke med kommunen før du gjør noe.",
                   "show": {
                     "field": "bebygd",
                     "operator": "eq",
                     "value": "nei"
-                  }
-                },
-                {
-                  "id": "error.terrasserekkverk.ja",
-                  "type": "Error",
-                  "text": "terrasserekkverk ja",
-                  "show": {
-                    "field": "terrasseRekkverk",
-                    "operator": "eq",
-                    "value": "ja"
-                  }
-                },
-                {
-                  "id": "error.tilbyggverandahvor.annet",
-                  "type": "Error",
-                  "text": "tilbyggVerandaHvor annet",
-                  "show": {
-                    "field": "tilbyggVerandaHvor",
-                    "operator": "eq",
-                    "value": "annet"
-                  }
-                },
-                {
-                  "id": "error.tilbyggverandahvorannet",
-                  "type": "Error",
-                  "text": "frittliggende under",
-                  "show": {
-                    "field": "frittliggende",
-                    "operator": "eq",
-                    "value": "under"
-                  }
-                },
-                {
-                  "id": "error.byggegrenseOk",
-                  "type": "Error",
-                  "text": "byggegrenseOk nei",
-                  "show": {
-                    "field": "byggegrenseOk",
-                    "operator": "eq",
-                    "value": "nei"
-                  }
-                },
-                {
-                  "id": "error.nabogrense",
-                  "type": "Error",
-                  "text": "nabogrense nei",
-                  "show": {
-                    "field": "nabogrense",
-                    "operator": "eq",
-                    "value": "nei"
-                  }
-                },
-                {
-                  "id": "error.forHoy",
-                  "type": "Error",
-                  "text": "forHoy ja",
-                  "show": {
-                    "field": "forHoy",
-                    "operator": "eq",
-                    "value": "ja"
-                  }
-                },
-                {
-                  "id": "error.hoyestePunkt",
-                  "type": "Error",
-                  "text": "hoyestePunkt over",
-                  "show": {
-                    "field": "hoyestePunkt",
-                    "operator": "eq",
-                    "value": "over"
-                  }
-                },
-                {
-                  "id": "text.areal",
-                  "type": "Text",
-                  "text": "areal vetIkke",
-                  "show": {
-                    "field": "areal",
-                    "operator": "eq",
-                    "value": "vetIkke"
-                  }
+                  },
+                  "children": [
+                    {
+                      "id": "error.bebygd.nei",
+                      "type": "Text",
+                      "heading":
+                        "Når eiendommen din ikke er bebygd må du snakke med kommunen før du gjør noe."
+                    }
+                  ]
                 },
                 {
                   "id": "resultatTakk",
                   "type": "Result",
-                  "text": "Resultada!"
+                  "text": "ResultatTakk",
+                  "heading": "Takk, men nei...",
+                  "lead": "<p>Resultat takk </p>"
                 }
               ]
             }
@@ -398,6 +326,34 @@
                       ]
                     },
                     {
+                      "id": "dawad",
+                      "type": "Branch",
+                      "branches": [
+                        {
+                          "test": {
+                            "field": "terrasseRekkverk",
+                            "operator": "eq",
+                            "value": "ja"
+                          },
+                          "children": [
+                            {
+                              "id": "resultatTakkTerrasseRekkverk",
+                              "type": "Error",
+                              "children": [
+                                {
+                                  "id": "terrasseRekkverk.over05m.tekst",
+                                  "type": "Text",
+                                  "warning": true,
+                                  "heading":
+                                    "Hvis terrasserekkverket er over 0,5m må du snakke med kommunen før du gjør noe."
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
                       "id": "terrassePlassering",
                       "property": "terrassePlassering",
                       "type": "Radio",
@@ -436,26 +392,13 @@
                       ]
                     },
                     {
-                      "id": "terrasseRekkverk.over05m.ja",
-                      "type": "Result",
-                      "heading": "Du trenger kanskje dispensasjon",
-                      "lead":
-                        "<p>Du må undersøke om du trenger dispensasjon. Dette er en søknad som har 12 ukers behandlingstid.</p><p><strong>Trenger du dispensasjon?</strong><br />Da bør du undersøke om du kan unngå dispensasjon, for eksempel ved å endre plassering på det du vil bygge.</p>",
-
+                      "nodeId": "resultatTakk",
+                      "type": "Reference",
                       "show": {
                         "field": "terrasseRekkverk",
                         "operator": "eq",
                         "value": "ja"
-                      },
-                      "children": [
-                        {
-                          "id": "terrasseRekkverk.over05m.tekst",
-                          "type": "Text",
-                          "warning": true,
-                          "heading":
-                            "Hvis terrasserekkverket er over 0,5m må du snakke med kommunen før du gjør noe."
-                        }
-                      ]
+                      }
                     }
                   ]
                 }
@@ -595,6 +538,36 @@
               ]
             },
             {
+              "id": "tilbyggVerandaHvor.annet.branch",
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "annet"
+                  },
+                  "children": [
+                    {
+                      "id": "error.bebygd.nei",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "error.bebygd.nei",
+                          "type": "Text",
+                          "heading": "noen av alternativene må passe!"
+                        }
+                      ]
+                    },
+                    {
+                      "nodeId": "resultatTakk",
+                      "type": "Reference"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "id": "tilbyggVerandaFesteRadio",
               "property": "tilbyggVerandaFeste",
               "type": "Radio",
@@ -666,7 +639,7 @@
         },
         {
           "type": "Branch",
-          "id": "resultAnsvarligSokerVerandaPlassering",
+          "id": "tilbyggVerandaHvorBranch",
           "branches": [
             {
               "test": {
@@ -692,13 +665,20 @@
               "children": [
                 {
                   "type": "Error",
-                  "id": "resultAnsvarligSokerVerandaPlassering.error",
+                  "id": "tilbyggVerandaHvor.error",
                   "text": "feilmelding frittliggende over",
                   "show": {
                     "field": "tilbyggVerandaHvor",
                     "operator": "eq",
                     "value": "underBakken"
-                  }
+                  },
+                  "children": [
+                    {
+                      "id": "tilbyggGarasje.error.text",
+                      "type": "Text",
+                      "heading": "det kan ikke bli så lite"
+                    }
+                  ]
                 },
                 {
                   "type": "Reference",
@@ -789,6 +769,30 @@
                   "type": "Answer",
                   "heading": "Over 50 kvm",
                   "value": "over50kvm"
+                }
+              ]
+            },
+            {
+              "id": "tilbyggVerandaHvor.annet.branch",
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "tilbyggGarasje",
+                    "operator": "eq",
+                    "value": "under50kvm"
+                  },
+                  "children": [
+                    {
+                      "id": "tilbyggGarasje.error.text",
+                      "type": "Text",
+                      "heading": "det kan ikke bli så lite, uten varsel"
+                    },
+                    {
+                      "nodeId": "resultatTakk",
+                      "type": "Reference"
+                    }
+                  ]
                 }
               ]
             },
@@ -1242,36 +1246,64 @@
           ]
         },
         {
-          "id": "grenseresultat",
-          "type": "Result",
-          "heading": "ResultatTakk",
-          "lead": "heading",
-          "show": {
-            "type": "or",
-            "clauses": [
-              {
+          "id": "grenseresultat.branch",
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "nabogrense",
+                "operator": "eq",
+                "value": "nei"
+              },
+              "children": [
+                {
+                  "id": "grenseresultat.error",
+                  "type": "Error",
+                  "simple": true,
+                  "children": [
+                    {
+                      "id": "grenseresultat.text",
+                      "type": "Text",
+                      "warning": true,
+                      "heading": "det må være lenger enn 4 meter til nabogrensen"
+                    }
+                  ]
+                },
+                {
+                  "nodeId": "resultatTakk",
+                  "type": "Reference"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "byggegrenseOk.branch",
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
                 "field": "byggegrenseOk",
                 "operator": "eq",
                 "value": "nei"
               },
-              {
-                "field": "nabogrense",
-                "operator": "eq",
-                "value": "nei"
-              }
-            ]
-          },
-          "children": [
-            {
-              "id": "grenseresultat.error",
-              "type": "Error",
-              "simple": true,
               "children": [
                 {
-                  "id": "grenseresultat.text",
-                  "type": "Text",
-                  "warning": true,
-                  "heading": "varsel"
+                  "id": "byggegrenseOk.error",
+                  "type": "Error",
+                  "simple": true,
+                  "children": [
+                    {
+                      "id": "byggegrenseOk.text",
+                      "type": "Text",
+                      "warning": true,
+                      "heading": "det må være innenfor byggegrensene"
+                    }
+                  ]
+                },
+                {
+                  "nodeId": "resultatTakk",
+                  "type": "Reference"
                 }
               ]
             }
@@ -1322,7 +1354,7 @@
                   "value": "ja"
                 },
                 {
-                  "id": "forHoy.nei",
+                  "id": "forHoy.kommuneOk",
                   "type": "Answer",
                   "heading":
                     "Ja, men det er avklart med kommunen at jeg kan bygge høyere uten å søke",
@@ -1358,19 +1390,19 @@
               },
               "options": [
                 {
-                  "id": "hoyestePunkt.ja",
+                  "id": "hoyestePunkt.over",
                   "type": "Answer",
                   "heading": "Over 5 meter",
                   "value": "over"
                 },
                 {
-                  "id": "hoyestePunkt.nei",
+                  "id": "hoyestePunkt.under",
                   "type": "Answer",
                   "heading": "Under 5 meter",
                   "value": "under"
                 },
                 {
-                  "id": "hoyestePunkt.nei",
+                  "id": "hoyestePunkt.overOk",
                   "type": "Answer",
                   "heading": "Over 5 meter men kommune sier ok",
                   "value": "overOk"
@@ -1380,36 +1412,64 @@
           ]
         },
         {
-          "id": "hoydeResultat",
-          "type": "Result",
-          "heading": "ResultatTakk",
-          "lead": "heading",
-          "show": {
-            "type": "or",
-            "clauses": [
-              {
+          "id": "forHoy.branch",
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
                 "field": "forHoy",
                 "operator": "eq",
                 "value": "ja"
               },
-              {
+              "children": [
+                {
+                  "id": "forHoy.error",
+                  "type": "Error",
+                  "simple": true,
+                  "children": [
+                    {
+                      "id": "forHoy.text",
+                      "type": "Text",
+                      "warning": true,
+                      "heading": "det kan ikke bli høyere enn bygget du har fra før"
+                    }
+                  ]
+                },
+                {
+                  "nodeId": "resultatTakk",
+                  "type": "Reference"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hoyestePunkt.branch",
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
                 "field": "hoyestePunkt",
                 "operator": "eq",
                 "value": "over"
-              }
-            ]
-          },
-          "children": [
-            {
-              "id": "hoydeResultat.error",
-              "type": "Error",
-              "simple": true,
+              },
               "children": [
                 {
-                  "id": "hoydeResultat.text",
-                  "type": "Text",
-                  "warning": true,
-                  "heading": "varsel"
+                  "id": "hoyestePunkt.error",
+                  "type": "Error",
+                  "simple": true,
+                  "children": [
+                    {
+                      "id": "hoyestePunkt.text",
+                      "type": "Text",
+                      "warning": true,
+                      "heading": "det kan ikke bli over 5 meter"
+                    }
+                  ]
+                },
+                {
+                  "nodeId": "resultatTakk",
+                  "type": "Reference"
                 }
               ]
             }
@@ -1420,7 +1480,7 @@
           "property": "arealGroup",
           "type": "Group",
           "simple": true,
-          "test": {
+          "show": {
             "field": "$computed.visAreal",
             "operator": "eq",
             "value": true
@@ -1457,6 +1517,7 @@
                 }
               ]
             },
+
             {
               "id": "plan",
               "property": "plan",
@@ -1486,26 +1547,32 @@
           ]
         },
         {
-          "id": "hoydeResultat",
-          "type": "Result",
-          "heading": "ResultatTakk",
-          "lead": "heading",
-          "show": {
-            "field": "areal",
-            "operator": "eq",
-            "value": "vetIkke"
-          },
-          "children": [
+          "id": "hoydeResultat.branch",
+          "type": "Branch",
+          "branches": [
             {
-              "id": "hoydeResultat.error",
-              "type": "Error",
-              "simple": true,
+              "test": {
+                "field": "areal",
+                "operator": "eq",
+                "value": "vetIkke"
+              },
               "children": [
                 {
-                  "id": "hoydeResultat.text",
-                  "type": "Text",
-                  "warning": true,
-                  "heading": "varsel"
+                  "id": "hoydeResultat.error",
+                  "type": "Error",
+                  "simple": true,
+                  "children": [
+                    {
+                      "id": "hoydeResultat.text",
+                      "type": "Text",
+                      "warning": true,
+                      "heading": "du må vite om det er stort nok areal til å bygge"
+                    }
+                  ]
+                },
+                {
+                  "nodeId": "resultatTakk",
+                  "type": "Reference"
                 }
               ]
             }
