@@ -61,19 +61,31 @@
               "id": "hvaSkalDuBygge.terrasseEllerPlatting",
               "type": "Answer",
               "heading": "Terrasse eller platting",
-              "value": "terrasse"
+              "value": "terrasse",
+              "image": {
+                "url": "/images/Forside_terrasse.png",
+                "alt": "Hus med terrasse"
+              }
             },
             {
               "id": "hvaSkalDuBygge.verandaEllerGlassveranda",
               "type": "Answer",
               "heading": "Veranda eller glassveranda",
-              "value": "veranda"
+              "value": "veranda",
+              "image": {
+                "url": "/images/Forside_veranda.png",
+                "alt": "Hus med veranda"
+              }
             },
             {
               "id": "hvaSkalDuBygge.tilbygg",
               "type": "Answer",
               "heading": "Tilbygg (f.eks. bod, sykkelskur eller trapperom)",
-              "value": "tilbygg"
+              "value": "tilbygg",
+              "image": {
+                "url": "/images/Forside_tilbygg.png",
+                "alt": "Hus med tilbygg"
+              }
             },
             {
               "id": "hvaSkalDuBygge.takterrasse",
@@ -987,7 +999,7 @@
               "property": "tilbyggGarasje",
               "type": "Radio",
               "heading": "Hvor stor får det som står der nå og det du bygger til sammen?",
-              "text": "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
+              "text": "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA). <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Hva er BRA/BYA?</a></p>",
               "options": [
                 {
                   "id": "tilbyggGarasje.under50kvm",
@@ -1014,7 +1026,7 @@
               "property": "tilbyggGarasje",
               "type": "Radio",
               "heading": "Hvor stor får det som står der nå og det du bygger til sammen?",
-              "text": "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
+              "text": "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA). <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Hva er BRA/BYA?</a></p>",
               "options": [
                 {
                   "id": "tilbyggGarasje.under50kvm",
@@ -1059,7 +1071,7 @@
               "property": "inntilBygning",
               "type": "Radio",
               "heading": "Hvor stort blir det du skal bygge?",
-              "text": "<p>Her er vi kun ute etter arealet på det du skal bygge, og ikke på det som står der fra før. Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
+              "text": "<p>Her er vi kun ute etter arealet på det du skal bygge, og ikke på det som står der fra før. Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA). <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Hva er BRA/BYA?</a></p>",
               "show": {
                 "type": "or",
                 "clauses": [
@@ -1830,7 +1842,7 @@
                 "value": true
               },
               "heading": "Har eiendommen din stort nok areal til bygningen du ønsker å sette opp?",
-              "text": "<p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p><ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul><p>For å finne ut hvor mye plass du har igjen å bygge på, må du regne ut hvor mye plass de eksisterende bygningene opptar.</p><p>Du kan ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp (LENKE).</p>",
+              "text": "<p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p><ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul><p>For å finne ut hvor mye plass du har igjen å bygge på, må du regne ut hvor mye plass de eksisterende bygningene opptar.</p><p>Du kan ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp.</p>",
               "options": [
                 {
                   "id": "areal.ja",
