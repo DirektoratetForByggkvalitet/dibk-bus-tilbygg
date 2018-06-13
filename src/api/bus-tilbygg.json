@@ -421,6 +421,36 @@
                       ]
                     },
                     {
+                      "id": "terrasseplasseringAnnetResult",
+                      "type": "Branch",
+                      "branches": [
+                        {
+                          "test": {
+                            "field": "terrassePlassering",
+                            "operator": "eq",
+                            "value": "annet"
+                          },
+                          "children": [
+                            {
+                              "id": "terrasseplasseringAnnetResult.error",
+                              "type": "Error",
+                              "children": [
+                                {
+                                  "id": "terrasseplasseringAnnetResult.text",
+                                  "type": "Text",
+                                  "heading": "Ingen av alternativene passer"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Reference",
+                              "nodeId": "resultatTakk"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
                       "id": "frittliggende",
                       "property": "frittliggende",
                       "type": "Radio",
@@ -922,7 +952,8 @@
                         {
                           "id": "tilbyggVerandaResult.text",
                           "type": "Text",
-                          "heading": "Det må ligge inntil noe vanlig"
+                          "heading":
+                            "Veiviseren dekker dessverre ikke ditt tilfelle. Takk for at du prøve veiviseren!"
                         }
                       ]
                     },
@@ -1035,12 +1066,12 @@
                       {
                         "field": "terrassePlassering",
                         "operator": "eq",
-                        "value": "inntilBodGarasje"
+                        "value": "inntilBod"
                       },
                       {
                         "field": "terrassePlassering",
                         "operator": "eq",
-                        "value": "inntilHusHytte"
+                        "value": "inntilHus"
                       }
                     ]
                   }
@@ -1112,7 +1143,7 @@
                 "type": "or",
                 "clauses": [
                   {
-                    "field": "tilbyggVerandaPlasseringRadio",
+                    "field": "tilbyggVerandaPlassering",
                     "operator": "eq",
                     "value": "husHytte"
                   },
@@ -1120,6 +1151,11 @@
                     "field": "tilbyggGarasje",
                     "operator": "eq",
                     "value": "over50kvm"
+                  },
+                  {
+                    "field": "terrassePlassering",
+                    "operator": "eq",
+                    "value": "inntilHus"
                   }
                 ]
               },
@@ -1323,19 +1359,9 @@
           "type": "Group",
           "simple": false,
           "show": {
-            "type": "or",
-            "clauses": [
-              {
-                "field": "hvaSkalDuBygge",
-                "operator": "eq",
-                "value": "veranda"
-              },
-              {
-                "field": "verandaRom",
-                "operator": "eq",
-                "value": "ja"
-              }
-            ]
+            "field": "hvaSkalDuBygge",
+            "operator": "eq",
+            "value": "veranda"
           },
           "children": [
             {
@@ -1390,46 +1416,46 @@
                   "value": "nei"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "sokeSelvResultatBranch",
-          "type": "Branch",
-          "branches": [
+            },
             {
-              "test": {
-                "type": "or",
-                "clauses": [
-                  {
-                    "field": "tilbyggRom",
-                    "operator": "eq",
-                    "value": "ja"
-                  },
-                  {
-                    "field": "verandaIsolasjon",
-                    "operator": "eq",
-                    "value": "ja"
-                  }
-                ]
-              },
-              "children": [
+              "id": "sokeSelvResultatBranch",
+              "type": "Branch",
+              "branches": [
                 {
-                  "id": "sokeSelvResultat.error",
-                  "type": "Error",
-                  "simple": true,
+                  "test": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "tilbyggRom.ja",
+                        "operator": "eq",
+                        "value": true
+                      },
+                      {
+                        "field": "verandaIsolasjon",
+                        "operator": "eq",
+                        "value": "ja"
+                      }
+                    ]
+                  },
                   "children": [
                     {
-                      "id": "sokeSelvResultat.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading": "varsel"
+                      "id": "sokeSelvResultat.error",
+                      "type": "Error",
+                      "simple": true,
+                      "children": [
+                        {
+                          "id": "sokeSelvResultat.text",
+                          "type": "Text",
+                          "warning": true,
+                          "heading": "du kan ikke isolere"
+                        }
+                      ]
+                    },
+                    {
+                      "nodeId": "resultatSokeSelv",
+                      "type": "Reference"
                     }
                   ]
-                },
-                {
-                  "nodeId": "resultatSokeSelv",
-                  "type": "Reference"
                 }
               ]
             }
