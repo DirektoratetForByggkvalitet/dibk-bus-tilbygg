@@ -836,6 +836,47 @@
               ]
             },
             {
+              "id": "tilbygVerandaHvorResult",
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "tilbyggVerandaHvor",
+                        "operator": "eq",
+                        "value": "takTilEksisterende"
+                      },
+                      {
+                        "field": "tilbyggVerandaHvor",
+                        "operator": "eq",
+                        "value": "underBakken"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "id": "tilbygVerandaHvorResult.error",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "tilbygVerandaHvorResult.text",
+                          "type": "Text",
+                          "heading":
+                            "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Reference",
+                      "nodeId": "resultatAnsvarligSoker"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "id": "tilbyggUnderBakken",
               "type": "Branch",
               "branches": [
@@ -1966,16 +2007,86 @@
               },
               "options": [
                 {
-                  "id": "terrassePlan.ja",
+                  "id": "plan.ja",
                   "type": "Answer",
                   "heading": "Ja, det finnes begrensninger",
                   "value": "ja"
                 },
                 {
-                  "id": "terrassePlan.nei",
+                  "id": "plan.nei",
                   "type": "Answer",
                   "heading": "Nei, det finnes ikke begrensninger",
                   "value": "nei"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "planNeiTerrasse.branch",
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "plan",
+                    "operator": "eq",
+                    "value": "nei"
+                  },
+                  {
+                    "field": "hvaSkalDuBygge",
+                    "operator": "eq",
+                    "value": "terrasse"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "nodeId": "resultatJippiUnder05",
+                  "type": "Reference"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "planNeiTilbyggVeranda.branch",
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "plan",
+                    "operator": "eq",
+                    "value": "nei"
+                  },
+                  {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "hvaSkalDuBygge",
+                        "operator": "eq",
+                        "value": "veranda"
+                      },
+                      {
+                        "field": "hvaSkalDuBygge",
+                        "operator": "eq",
+                        "value": "tilbygg"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "id": "resultatHurraMenHusk",
+                  "type": "Result",
+                  "heading": "Resultat hurra men husk",
+                  "lead": "<p>Her kommer fin tekst</p>"
                 }
               ]
             }
