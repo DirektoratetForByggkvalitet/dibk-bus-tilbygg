@@ -496,7 +496,8 @@
                               "id": "resultatSokeSelv",
                               "type": "Result",
                               "heading": "Resultat søke selv",
-                              "text": "<p>Du må søke selv :( :)</p>"
+                              "lead":
+                                "Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan å få en komplett byggesøknad i vår guide <a href=\"https://dibk.no/om-oss/pilot-veien-til-komplett-byggesoknad/\">\"Veien til komplett byggesøknad\"</a>"
                             }
                           ]
                         }
@@ -1371,37 +1372,42 @@
           ]
         },
         {
-          "id": "sokeSelvResultat",
-          "type": "Result",
-          "heading": "Resultat søke selv",
-          "lead":
-            "Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan å få en komplett byggesøknad i vår guide <a href=\"https://dibk.no/om-oss/pilot-veien-til-komplett-byggesoknad/\">\"Veien til komplett byggesøknad\"</a>",
-          "show": {
-            "type": "or",
-            "clauses": [
-              {
-                "field": "tilbyggRom",
-                "operator": "eq",
-                "value": "ja"
-              },
-              {
-                "field": "verandaIsolasjon",
-                "operator": "eq",
-                "value": "ja"
-              }
-            ]
-          },
-          "children": [
+          "id": "sokeSelvResultatBranch",
+          "type": "Branch",
+          "branches": [
             {
-              "id": "sokeSelvResultat.error",
-              "type": "Error",
-              "simple": true,
+              "test": {
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "tilbyggRom",
+                    "operator": "eq",
+                    "value": "ja"
+                  },
+                  {
+                    "field": "verandaIsolasjon",
+                    "operator": "eq",
+                    "value": "ja"
+                  }
+                ]
+              },
               "children": [
                 {
-                  "id": "sokeSelvResultat.text",
-                  "type": "Text",
-                  "warning": true,
-                  "heading": "varsel"
+                  "id": "sokeSelvResultat.error",
+                  "type": "Error",
+                  "simple": true,
+                  "children": [
+                    {
+                      "id": "sokeSelvResultat.text",
+                      "type": "Text",
+                      "warning": true,
+                      "heading": "varsel"
+                    }
+                  ]
+                },
+                {
+                  "nodeId": "resultatSokeSelv",
+                  "type": "Reference"
                 }
               ]
             }
