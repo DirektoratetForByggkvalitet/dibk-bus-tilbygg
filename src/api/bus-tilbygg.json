@@ -903,6 +903,36 @@
                   "value": "annet"
                 }
               ]
+            },
+            {
+              "id": "tilbyggVerandaResult",
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "tilbyggVerandaPlassering",
+                    "operator": "eq",
+                    "value": "annet"
+                  },
+                  "children": [
+                    {
+                      "id": "tilbyggVerandaResult.error",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "tilbyggVerandaResult.text",
+                          "type": "Text",
+                          "heading": "Det må ligge inntil noe vanlig"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Reference",
+                      "nodeId": "resultatTakk"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -1026,6 +1056,11 @@
               "heading": "Hvor stor blir bod/garasje og det du bygger til sammen?",
               "text":
                 "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA). <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Hva er BRA/BYA?</a></p>",
+              "show": {
+                "field": "tilbyggVerandaPlassering",
+                "operator": "eq",
+                "value": "bodGarasje"
+              },
               "options": [
                 {
                   "id": "tilbyggGarasje.under50kvm",
@@ -1035,28 +1070,6 @@
                 },
                 {
                   "id": "tilbyggGarasje.over50kvm",
-                  "type": "Answer",
-                  "heading": "Over 50 kvm",
-                  "value": "over50kvm"
-                }
-              ]
-            },
-            {
-              "id": "tilbyggGarasje",
-              "property": "tilbyggGarasje",
-              "type": "Radio",
-              "heading": "Hvor stor får det som står der nå og det du bygger til sammen?",
-              "text":
-                "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA). <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Hva er BRA/BYA?</a></p>",
-              "options": [
-                {
-                  "id": "tilbyggGarasje.under50kvm",
-                  "type": "Answer",
-                  "heading": "Under 50 kvm",
-                  "value": "under50kvm"
-                },
-                {
-                  "id": "tilbyggGarasje.inntilBodGarasje",
                   "type": "Answer",
                   "heading": "Over 50 kvm",
                   "value": "over50kvm"
@@ -1099,7 +1112,7 @@
                 "type": "or",
                 "clauses": [
                   {
-                    "field": "tilbyggVerandaPlassering",
+                    "field": "tilbyggVerandaPlasseringRadio",
                     "operator": "eq",
                     "value": "husHytte"
                   },
