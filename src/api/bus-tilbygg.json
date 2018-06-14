@@ -1133,9 +1133,19 @@
               "text":
                 "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA). <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Hva er BRA/BYA?</a></p>",
               "show": {
-                "field": "tilbyggVerandaPlassering",
-                "operator": "eq",
-                "value": "bodGarasje"
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "tilbyggVerandaPlassering",
+                    "operator": "eq",
+                    "value": "bodGarasje"
+                  },
+                  {
+                    "field": "terrassePlassering",
+                    "operator": "eq",
+                    "value": "inntilBod"
+                  }
+                ]
               },
               "options": [
                 {
@@ -1856,70 +1866,70 @@
                   "value": "overOk"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "forHoy.branch",
-          "type": "Branch",
-          "branches": [
+            },
             {
-              "test": {
-                "field": "forHoy",
-                "operator": "eq",
-                "value": "ja"
-              },
-              "children": [
+              "id": "forHoy.branch",
+              "type": "Branch",
+              "branches": [
                 {
-                  "id": "forHoy.error",
-                  "type": "Error",
-                  "simple": true,
+                  "test": {
+                    "field": "forHoy",
+                    "operator": "eq",
+                    "value": "ja"
+                  },
                   "children": [
                     {
-                      "id": "forHoy.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading":
-                        "Du må høre med kommunen din om det du skal bygge blir så høyt at du må søke."
+                      "id": "forHoy.error",
+                      "type": "Error",
+                      "simple": true,
+                      "children": [
+                        {
+                          "id": "forHoy.text",
+                          "type": "Text",
+                          "warning": true,
+                          "heading":
+                            "Du må høre med kommunen din om det du skal bygge blir så høyt at du må søke."
+                        }
+                      ]
+                    },
+                    {
+                      "nodeId": "resultatTakk",
+                      "type": "Reference"
                     }
                   ]
-                },
-                {
-                  "nodeId": "resultatTakk",
-                  "type": "Reference"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "hoyestePunkt.branch",
-          "type": "Branch",
-          "branches": [
+            },
             {
-              "test": {
-                "field": "hoyestePunkt",
-                "operator": "eq",
-                "value": "over"
-              },
-              "children": [
+              "id": "hoyestePunkt.branch",
+              "type": "Branch",
+              "branches": [
                 {
-                  "id": "hoyestePunkt.error",
-                  "type": "Error",
-                  "simple": true,
+                  "test": {
+                    "field": "hoyestePunkt",
+                    "operator": "eq",
+                    "value": "over"
+                  },
                   "children": [
                     {
-                      "id": "hoyestePunkt.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading":
-                        "Du må høre med kommunen din om det du skal bygge blir så høyt at du må søke."
+                      "id": "hoyestePunkt.error",
+                      "type": "Error",
+                      "simple": true,
+                      "children": [
+                        {
+                          "id": "hoyestePunkt.text",
+                          "type": "Text",
+                          "warning": true,
+                          "heading":
+                            "Du må høre med kommunen din om det du skal bygge blir så høyt at du må søke."
+                        }
+                      ]
+                    },
+                    {
+                      "nodeId": "resultatTakk",
+                      "type": "Reference"
                     }
                   ]
-                },
-                {
-                  "nodeId": "resultatTakk",
-                  "type": "Reference"
                 }
               ]
             }
@@ -2181,6 +2191,11 @@
           ]
         }
       ]
+    },
+    {
+      "type": "Result",
+      "id": "resultatIkkeFerdig",
+      "heading": "Du har ikke svart på alle spørsmålene"
     }
   ]
 }
