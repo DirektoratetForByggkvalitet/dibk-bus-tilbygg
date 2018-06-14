@@ -264,7 +264,7 @@
                           "id": "regulert.nei.feil.tekst",
                           "type": "Text",
                           "warning": true,
-                          "heading": "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det ikke finnes en reguleringsplan. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                          "text": "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det ikke finnes en reguleringsplan. Hør med kommunen om hva det er lov å gjøre på eiendommen."
                         }
                       ]
                     },
@@ -650,14 +650,6 @@
           },
           "children": [
             {
-              "type": "Image",
-              "id": "tilbyggVerandaHvorImage",
-              "image": {
-                "url": "/images/plasseringbygning.png",
-                "alt": "Room"
-              }
-            },
-            {
               "type": "Radio",
               "id": "tilbyggVerandaHvorRadio",
               "property": "tilbyggVerandaHvor",
@@ -794,19 +786,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "Image",
-              "id": "tilbyggVerandaFesteImage",
-              "image": {
-                "url": "/images/Feste.png",
-                "alt": "Room"
-              },
-              "show": {
-                "field": "tilbyggVerandaHvor",
-                "operator": "eq",
-                "value": "veggTilEksisterende"
-              }
             },
             {
               "id": "tilbyggVerandaFesteRadio",
@@ -1745,7 +1724,6 @@
                   },
                   "children": [
                     {
-<<<<<<< HEAD
                       "id": "grenseresultat.error",
                       "type": "Error",
                       "simple": true,
@@ -1762,12 +1740,6 @@
                     {
                       "nodeId": "resultatSokeSelv",
                       "type": "Reference"
-=======
-                      "id": "grenseresultat.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
->>>>>>> e7edde84c424c04bc6b830a1042f3a048e72795e
                     }
                   ]
                 }
@@ -1785,7 +1757,6 @@
                   },
                   "children": [
                     {
-<<<<<<< HEAD
                       "id": "byggegrenseOk.error",
                       "type": "Error",
                       "simple": true,
@@ -1794,20 +1765,13 @@
                           "id": "byggegrenseOk.text",
                           "type": "Text",
                           "warning": true,
-                          "heading":
-                            "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                          "text": "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
                         }
                       ]
                     },
                     {
                       "nodeId": "resultatDisp",
                       "type": "Reference"
-=======
-                      "id": "byggegrenseOk.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading": "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
->>>>>>> e7edde84c424c04bc6b830a1042f3a048e72795e
                     }
                   ]
                 }
@@ -2232,7 +2196,7 @@
                       "id": "planJa.text",
                       "type": "Text",
                       "warning": true,
-                      "heading": "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                      "text": "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
                     }
                   ]
                 },
@@ -2249,7 +2213,7 @@
     {
       "type": "Result",
       "id": "resultatIkkeFerdig",
-      "heading": "Du har ikke svart på alle spørsmålene",
+      "heading": "Du skal aldri se denne resultatsiden",
       "errorheading": "Du har ikke svart på alle spørsmålene",
       "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
     }
