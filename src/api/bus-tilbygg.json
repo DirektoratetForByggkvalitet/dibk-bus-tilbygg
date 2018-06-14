@@ -647,41 +647,6 @@
                   ]
                 },
                 {
-                  "id": "terrasseplanNei.branch",
-                  "type": "Branch",
-                  "branches": [
-                    {
-                      "test": {
-                        "field": "terrassePlanNei",
-                        "operator": "eq",
-                        "value": "nei"
-                      },
-                      "children": [
-                        {
-                          "id": "terrasseplanNei.error",
-                          "type": "Error",
-                          "simple": true,
-                          "children": [
-                            {
-                              "id": "terrasseplanNei.text",
-                              "type": "Text",
-                              "warning": true,
-                              "heading": "det må være lenger enn 4 meter til nabogrensen"
-                            }
-                          ]
-                        },
-                        {
-                          "id": "resultatJippiUnder05",
-                          "type": "Result",
-                          "heading": "Du trenger ikke søke",
-                          "text":
-                            "<p>Dine svar viser at du slipper å søke!</p><p>Du kan plassere terrassen helt inntil nabogrensa, så lenge du ikke har rekkverk.</p><p>Du kan sjekke svarene dine under for å være sikker på at du har svart riktig.</p><p>Takk for at du prøvde veiviseren!</p>"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
                   "id": "terrasseplanJa.branch",
                   "type": "Branch",
                   "branches": [
@@ -1085,6 +1050,41 @@
                     "field": "tilbyggVerandaFeste",
                     "operator": "eq",
                     "value": "ja"
+                  }
+                ]
+              },
+              {
+                "type": "or",
+                "clauses": [
+                  {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "hvaSkalDuBygge",
+                        "operator": "eq",
+                        "value": "tilbygg"
+                      },
+                      {
+                        "field": "tilbyggVerandaPlassering",
+                        "operator": "eq",
+                        "value": "bodGarasje"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "hvaSkalDuBygge",
+                        "operator": "eq",
+                        "value": "tilbygg"
+                      },
+                      {
+                        "field": "tilbyggVerandaPlassering",
+                        "operator": "eq",
+                        "value": "husHytte"
+                      }
+                    ]
                   }
                 ]
               },
@@ -1527,6 +1527,11 @@
             ]
           },
           {
+            "field": "terrasseRekkverk",
+            "operator": "eq",
+            "value": "nei"
+          },
+          {
             "type": "and",
             "clauses": [
               {
@@ -1922,9 +1927,19 @@
           "type": "Group",
           "simple": false,
           "show": {
-            "field": "$computed.visAreal",
-            "operator": "eq",
-            "value": true
+            "type": "or",
+            "clauses": [
+              {
+                "field": "$computed.visAreal",
+                "operator": "eq",
+                "value": true
+              },
+              {
+                "field": "terrasseRekkverk",
+                "operator": "eq",
+                "value": "nei"
+              }
+            ]
           },
           "children": [
             {
