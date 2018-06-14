@@ -213,11 +213,11 @@
           ]
         },
         {
-          "id": "bebygdGroup",
+          "id": "regulertGroup",
           "type": "Group",
           "simple": true,
           "show": {
-            "field": "hvaSkalDuBygge",
+            "field": "bebygd",
             "operator": "is"
           },
           "children": [
@@ -649,106 +649,6 @@
           ]
         },
         {
-          "type": "Branch",
-          "branches": [
-            {
-              "test": {
-                "field": "terrasseRekkverk",
-                "operator": "eq",
-                "value": "nei"
-              },
-              "children": [
-                {
-                  "id": "terrassePlan",
-                  "property": "terrassePlan",
-                  "type": "Radio",
-                  "heading":
-                    "Finnes det begrensninger i kommuneplanens arealdel eller reguleringsplan?",
-                  "text":
-                    "<p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette kan du finne informasjon om i kommunale dokumenter som reguleringsplan, kommuneplanens arealdel eller situasjonskart.</p><p>Eksempel på slike begresninger er om du skal gjøre noe i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Er du usikker bør du sjekke med kommunen.</p>",
-                  "options": [
-                    {
-                      "id": "terrassePlan.ja",
-                      "type": "Answer",
-                      "heading": "Ja, det finnes begrensninger",
-                      "value": "ja"
-                    },
-                    {
-                      "id": "terrassePlan.nei",
-                      "type": "Answer",
-                      "heading": "Nei, det finnes ikke begrensninger",
-                      "value": "nei"
-                    }
-                  ]
-                },
-                {
-                  "id": "terrasseplanJa.branch",
-                  "type": "Branch",
-                  "branches": [
-                    {
-                      "test": {
-                        "field": "terrassePlan",
-                        "operator": "eq",
-                        "value": "ja"
-                      },
-                      "children": [
-                        {
-                          "id": "terrasseplanJa.error",
-                          "type": "Error",
-                          "simple": true,
-                          "children": [
-                            {
-                              "id": "terrasseplanJa.text",
-                              "type": "Text",
-                              "warning": true,
-                              "heading":
-                                "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
-                            }
-                          ]
-                        },
-                        {
-                          "nodeId": "resultatDisp",
-                          "type": "Reference"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "Result",
-                  "id": "terrassePlanResult",
-                  "heading": "Du trenger kanskje dispensasjon",
-                  "lead":
-                    "<p>Du må undersøke om du trenger dispensasjon. Dette er en søknad som har 12 ukers behandlingstid.</p><p><strong>Trenger du dispensasjon?</strong><br />Da bør du undersøke om du kan unngå dispensasjon, for eksempel ved å endre plassering på det du vil bygge.</p>",
-                  "errorheading": "Du har ikke svart på alle spørsmålene",
-                  "errorlead":
-                    "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
-                  "show": {
-                    "field": "terrassePlan",
-                    "operator": "eq",
-                    "value": "ja"
-                  },
-                  "children": [
-                    {
-                      "id": "terrassePlanResultError",
-                      "type": "Error",
-                      "warning": true,
-                      "children": [
-                        {
-                          "id": "terrassePlanResultTekst",
-                          "type": "Text",
-                          "warning": true,
-                          "heading": "varsel"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "id": "tilbyggVerandaHvorGroup",
           "property": "tilbyggVerandaHvorGroup",
           "type": "Group",
@@ -1098,8 +998,7 @@
           "id": "tilbyggGarasjeGroup",
           "property": "tilbyggGarasjeGroup",
           "type": "Group",
-          "simple": false,
-          "heading": "Størrelse",
+          "simple": true,
           "show": {
             "type": "or",
             "clauses": [
@@ -1761,6 +1660,10 @@
           "type": "Group",
           "simple": false,
           "heading": "Byggegrense mot nabo",
+          "hide": {
+            "field": "terrasseRekkverk",
+            "operator": "is"
+          },
           "children": [
             {
               "id": "byggegrense",
@@ -2215,9 +2118,19 @@
               "text":
                 "<p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette kan du finne informasjon om i kommunale dokumenter som reguleringsplan, kommuneplanens arealdel eller situasjonskart.</p><p>Eksempel på slike begresninger er om du skal gjøre noe i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Er du usikker bør du sjekke med kommunen.</p>",
               "show": {
-                "field": "areal",
-                "operator": "eq",
-                "value": "ja"
+                "type": "or",
+                "clauses": [
+                  {
+                    "field": "areal",
+                    "operator": "eq",
+                    "value": "ja"
+                  },
+                  {
+                    "field": "terrasseRekkverk",
+                    "operator": "eq",
+                    "value": "nei"
+                  }
+                ]
               },
               "options": [
                 {
