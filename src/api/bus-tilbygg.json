@@ -49,7 +49,7 @@
     {
       "id": "kartlegging",
       "type": "Page",
-      "heading": "Om det du skal bygge",
+      "heading": "Plan for bygningen",
       "children": [
         {
           "id": "hvaSkalDuBygge",
@@ -266,7 +266,7 @@
     },
     {
       "type": "Page",
-      "heading": "Hvordan planlegger du å bygge?",
+      "heading": "Plassering og størrelse",
       "id": "omBygget",
       "children": [
         {
@@ -1364,7 +1364,7 @@
     },
     {
       "type": "Page",
-      "heading": "Tilbyggets innhold og veranda med isolasjon",
+      "heading": "Bruk av bygget",
       "id": "tilbyggInnholdVerandaIsolasjon",
       "show": {
         "type": "or",
@@ -1423,6 +1423,7 @@
           "property": "verandaGroup",
           "type": "Group",
           "simple": false,
+          "heading": "Isolasjon av veranda",
           "show": {
             "field": "hvaSkalDuBygge",
             "operator": "eq",
@@ -1529,7 +1530,7 @@
     },
     {
       "type": "Page",
-      "heading": "Byggets grenser og dimensjoner",
+      "heading": "Byggegrenser og andre begrensninger",
       "id": "byggetsGrenserOgDimensjoner",
       "show": {
         "type": "or",
@@ -1622,6 +1623,7 @@
           "property": "grenseGroup",
           "type": "Group",
           "simple": false,
+          "heading": "Byggegrense mot nabo",
           "children": [
             {
               "id": "byggegrense",
@@ -1778,6 +1780,7 @@
           "property": "hoydeGroup",
           "type": "Group",
           "simple": false,
+          "heading": "Høyde på bygget",
           "show": {
             "type": "or",
             "clauses": [
@@ -1942,6 +1945,7 @@
           "property": "arealGroup",
           "type": "Group",
           "simple": false,
+          "heading": "Regler for din eiendom",
           "show": {
             "type": "or",
             "clauses": [
