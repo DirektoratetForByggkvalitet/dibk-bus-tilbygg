@@ -400,7 +400,7 @@
                                   "type": "Text",
                                   "warning": true,
                                   "heading":
-                                    "Hvis terrasserekkverket er over 0,5m må du snakke med kommunen før du gjør noe."
+                                    "Hvis terrasserekkverket er over 0,5 meter må du snakke med kommunen før du gjør noe."
                                 }
                               ]
                             },
@@ -671,6 +671,14 @@
           },
           "children": [
             {
+              "type": "Image",
+              "id": "tilbyggVerandaHvorImage",
+              "image": {
+                "url": "/images/plasseringbygning.png",
+                "alt": "Room"
+              }
+            },
+            {
               "type": "Radio",
               "id": "tilbyggVerandaHvorRadio",
               "property": "tilbyggVerandaHvor",
@@ -679,7 +687,7 @@
                 {
                   "id": "tilbyggVerandaHvor.veggTilEksisterende",
                   "type": "Answer",
-                  "heading": "På veggen til en eksisterende bygg",
+                  "heading": "På veggen til et eksisterende bygg",
                   "value": "veggTilEksisterende"
                 },
                 {
@@ -810,6 +818,19 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "Image",
+              "id": "tilbyggVerandaFesteImage",
+              "image": {
+                "url": "/images/Feste.png",
+                "alt": "Room"
+              },
+              "show": {
+                "field": "tilbyggVerandaHvor",
+                "operator": "eq",
+                "value": "veggTilEksisterende"
+              }
             },
             {
               "id": "tilbyggVerandaFesteRadio",
@@ -1157,7 +1178,7 @@
                       "id": "tilbyggGarasje.error.text",
                       "type": "Text",
                       "text":
-                        "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>, og svare som om du skal bygge en ny bygning under 50 kvm.  Finner du ikke begresninger der, kan du utvide bygningen som står der i dag slik du ønsker."
+                        "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>, og svare som om du skal bygge en ny bygning under 50 kvm.  Finner du ikke begrensninger der, kan du utvide bygningen som står der i dag slik du ønsker."
                     },
                     {
                       "nodeId": "resultatTakk",
@@ -1566,7 +1587,7 @@
     },
     {
       "type": "Page",
-      "heading": "Byggegrenser og andre begrensninger",
+      "heading": "Mulige begrensninger",
       "id": "byggetsGrenserOgDimensjoner",
       "show": {
         "type": "or",
@@ -1659,7 +1680,7 @@
           "property": "grenseGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Byggegrense mot nabo",
+          "heading": "Grense mot naboeiendom",
           "hide": {
             "field": "terrasseRekkverk",
             "operator": "is"
@@ -1855,8 +1876,7 @@
                 "operator": "eq",
                 "value": true
               },
-              "heading":
-                "Blir det du skal bygge på noe som helst punkt høyere enn bygget som står der fra før?",
+              "heading": "Blir det du skal bygge høyere enn bygget som står der fra før?",
               "options": [
                 {
                   "id": "forHoy.ja",
