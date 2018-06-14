@@ -1389,22 +1389,83 @@
           },
           "options": [
             {
-              "id": "tilbyggRom.nei",
+              "id": "tilbyggRom.bod",
               "type": "Answer",
               "text": "Bod, sykkelskur, vedskjul, gang, trapp eller trapperom",
-              "value": "nei"
+              "value": "bod"
             },
             {
-              "id": "tilbyggRom.ja",
+              "id": "tilbyggRom.stue",
               "type": "Answer",
               "text": "Stue, kjøkken, soverom, verksted, atelier eller kontor",
-              "value": "ja"
+              "value": "stue"
             },
             {
               "id": "tilbyggRom.annet",
               "type": "Answer",
               "text": "Noe annet",
               "value": "annet"
+            }
+          ]
+        },
+        {
+          "id": "tilbyggRomAnnet",
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "tilbyggRom.annet",
+                "operator": "eq",
+                "value": true
+              },
+              "children": [
+                {
+                  "id": "tilbyggRomAnnet.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "tilbyggRomAnnet.text",
+                      "type": "Text",
+                      "heading": "Du må høre med kommunen om det du bygger er søknadspliktig."
+                    }
+                  ]
+                },
+                {
+                  "type": "Reference",
+                  "nodeId": "resultatTakk"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tilbyggRomStue",
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "tilbyggRom.stue",
+                "operator": "eq",
+                "value": true
+              },
+              "children": [
+                {
+                  "id": "tilbyggRomStue.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "tilbyggRomStue.text",
+                      "type": "Text",
+                      "heading":
+                        "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
+                    }
+                  ]
+                },
+                {
+                  "type": "Reference",
+                  "nodeId": "resultatTakk"
+                }
+              ]
             }
           ]
         },
@@ -1529,9 +1590,9 @@
             "type": "or",
             "clauses": [
               {
-                "field": "tilbyggRom",
+                "field": "tilbyggRom.bod",
                 "operator": "eq",
-                "value": "nei"
+                "value": true
               },
               {
                 "field": "verandaRom",
