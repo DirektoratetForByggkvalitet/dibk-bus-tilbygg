@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Tilbygg - Bod, sykkelbod, vedbod, søppelskur",
+    "title": "Bygg uten å søke: Tilbygg",
     "name": "tilbygg"
   },
   "computed": {
@@ -1511,7 +1511,7 @@
                           "id": "sokeSelvResultat.text",
                           "type": "Text",
                           "warning": true,
-                          "heading": "du kan ikke isolere"
+                          "heading": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
                         }
                       ]
                     },
@@ -1766,7 +1766,7 @@
                   ]
                 },
                 {
-                  "nodeId": "resultatTakk",
+                  "nodeId": "resultatDisp",
                   "type": "Reference"
                 }
               ]
@@ -2010,7 +2010,7 @@
                           "id": "arealNei.text",
                           "type": "Text",
                           "warning": true,
-                          "heading": "Du må ha stort nok areal til bygningen du ønsker å sette opp"
+                          "heading": "Du kan søke om en dispensasjon, og det er opp til kommunen å vurdere om du får lov eller ikke."
                         }
                       ]
                     },
@@ -2042,7 +2042,7 @@
                           "id": "hoydeResultat.text",
                           "type": "Text",
                           "warning": true,
-                          "heading": "du må vite om det er stort nok areal til å bygge"
+                          "text": "Vi anbefaler å ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp til å finne om du har plass. Du kan fortsette veiviseren etterpå."
                         }
                       ]
                     },
@@ -2150,7 +2150,7 @@
                   "id": "resultatHurraMenHusk",
                   "type": "Result",
                   "heading": "Dine svar viser at du kan bygge uten å søke!",
-                  "lead": "<p>Når du er ferdig må du melde fra til kommunen om hva du har bygget.</p><p>Du skal bruke meldeskjemaet<a href='https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf'>\"Melding om bygning eller tilbygg som er unntatt søknadsplikt\"</a></p><p>Du kan sjekke svarene dine under for å være sikker på at du har svart riktig. </p><p>Takk for at du prøvde veiviseren!</p>",
+                  "lead": "<p>Når du er ferdig må du melde fra til kommunen om hva du har bygget.</p><p>Du skal bruke meldeskjemaet <a href='https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf'>\"Melding om bygning eller tilbygg som er unntatt søknadsplikt\"</a></p><p>Du kan sjekke svarene dine under for å være sikker på at du har svart riktig. </p><p>Takk for at du prøvde veiviseren!</p>",
                   "errorheading": "Du har ikke svart på alle spørsmålene",
                   "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                 }
