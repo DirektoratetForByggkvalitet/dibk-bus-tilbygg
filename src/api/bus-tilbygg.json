@@ -376,6 +376,10 @@
                                     "Hvis terrasserekkverket er over 0,5m må du snakke med kommunen før du gjør noe."
                                 }
                               ]
+                            },
+                            {
+                              "nodeId": "resultatTakk",
+                              "type": "Reference"
                             }
                           ]
                         }
@@ -1976,23 +1980,23 @@
               ]
             },
             {
-              "id": "jaaaaaaaaaaa.branch",
+              "id": "arealNei.branch",
               "type": "Branch",
               "branches": [
                 {
                   "test": {
-                    "field": "arealGroup",
+                    "field": "areal",
                     "operator": "eq",
                     "value": "nei"
                   },
                   "children": [
                     {
-                      "id": "jaaaaaaaaaaa.error",
+                      "id": "arealNei.error",
                       "type": "Error",
                       "simple": true,
                       "children": [
                         {
-                          "id": "jaaaaaaaaaaa.text",
+                          "id": "arealNei.text",
                           "type": "Text",
                           "warning": true,
                           "heading": "Du må ha stort nok areal til bygningen du ønsker å sette opp"
@@ -2001,6 +2005,38 @@
                     },
                     {
                       "nodeId": "resultatDisp",
+                      "type": "Reference"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "hoydeResultat.branch",
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "areal",
+                    "operator": "eq",
+                    "value": "vetIkke"
+                  },
+                  "children": [
+                    {
+                      "id": "hoydeResultat.error",
+                      "type": "Error",
+                      "simple": true,
+                      "children": [
+                        {
+                          "id": "hoydeResultat.text",
+                          "type": "Text",
+                          "warning": true,
+                          "heading": "du må vite om det er stort nok areal til å bygge"
+                        }
+                      ]
+                    },
+                    {
+                      "nodeId": "resultatTakk",
                       "type": "Reference"
                     }
                   ]
@@ -2059,8 +2095,11 @@
               },
               "children": [
                 {
-                  "nodeId": "resultatJippiUnder05",
-                  "type": "Reference"
+                  "id": "resultatJippiUnder05",
+                  "type": "Result",
+                  "heading": "Dine svar viser at du slipper å søke!",
+                  "lead":
+                    "<p>Du kan plassere terrassen helt inntil nabogrensa, så lenge du ikke har rekkverk.</p><p>Du kan sjekke svarene dine under for å være sikker på at du har svart riktig. </p><p>Takk for at du prøvde veiviseren!</p>"
                 }
               ]
             }
@@ -2100,8 +2139,9 @@
                 {
                   "id": "resultatHurraMenHusk",
                   "type": "Result",
-                  "heading": "Resultat hurra men husk",
-                  "lead": "<p>Her kommer fin tekst</p>"
+                  "heading": "Dine svar viser at du kan bygge uten å søke!",
+                  "lead":
+                    "<p>Når du er ferdig må du melde fra til kommunen om hva du har bygget.</p><p>Du skal bruke meldeskjemaet<a href='https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf'>\"Melding om bygning eller tilbygg som er unntatt søknadsplikt\"</a></p><p>Du kan sjekke svarene dine under for å være sikker på at du har svart riktig. </p><p>Takk for at du prøvde veiviseren!</p>"
                 }
               ]
             }
@@ -2134,38 +2174,6 @@
                 },
                 {
                   "nodeId": "resultatDisp",
-                  "type": "Reference"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "hoydeResultat.branch",
-          "type": "Branch",
-          "branches": [
-            {
-              "test": {
-                "field": "areal",
-                "operator": "eq",
-                "value": "vetIkke"
-              },
-              "children": [
-                {
-                  "id": "hoydeResultat.error",
-                  "type": "Error",
-                  "simple": true,
-                  "children": [
-                    {
-                      "id": "hoydeResultat.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading": "du må vite om det er stort nok areal til å bygge"
-                    }
-                  ]
-                },
-                {
-                  "nodeId": "resultatTakk",
                   "type": "Reference"
                 }
               ]
