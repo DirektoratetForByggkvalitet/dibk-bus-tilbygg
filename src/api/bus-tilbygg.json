@@ -135,6 +135,7 @@
         {
           "id": "bebygdGroup",
           "type": "Group",
+          "property": "bebygdGroup",
           "simple": true,
           "show": {
             "field": "hvaSkalDuBygge",
@@ -215,6 +216,7 @@
         {
           "id": "regulertGroup",
           "type": "Group",
+          "property": "regulertGroup",
           "simple": true,
           "show": {
             "field": "bebygd",
@@ -1771,70 +1773,70 @@
                   "value": "nei"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "grenseresultat.branch",
-          "type": "Branch",
-          "branches": [
+            },
             {
-              "test": {
-                "field": "nabogrense",
-                "operator": "eq",
-                "value": "nei"
-              },
-              "children": [
+              "id": "grenseresultat.branch",
+              "type": "Branch",
+              "branches": [
                 {
-                  "id": "grenseresultat.error",
-                  "type": "Error",
-                  "simple": true,
+                  "test": {
+                    "field": "nabogrense",
+                    "operator": "eq",
+                    "value": "nei"
+                  },
                   "children": [
                     {
-                      "id": "grenseresultat.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading":
-                        "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
+                      "id": "grenseresultat.error",
+                      "type": "Error",
+                      "simple": true,
+                      "children": [
+                        {
+                          "id": "grenseresultat.text",
+                          "type": "Text",
+                          "warning": true,
+                          "heading":
+                            "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
+                        }
+                      ]
+                    },
+                    {
+                      "nodeId": "resultatSokeSelv",
+                      "type": "Reference"
                     }
                   ]
-                },
-                {
-                  "nodeId": "resultatSokeSelv",
-                  "type": "Reference"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "byggegrenseOk.branch",
-          "type": "Branch",
-          "branches": [
+            },
             {
-              "test": {
-                "field": "byggegrenseOk",
-                "operator": "eq",
-                "value": "nei"
-              },
-              "children": [
+              "id": "byggegrenseOk.branch",
+              "type": "Branch",
+              "branches": [
                 {
-                  "id": "byggegrenseOk.error",
-                  "type": "Error",
-                  "simple": true,
+                  "test": {
+                    "field": "byggegrenseOk",
+                    "operator": "eq",
+                    "value": "nei"
+                  },
                   "children": [
                     {
-                      "id": "byggegrenseOk.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading":
-                        "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                      "id": "byggegrenseOk.error",
+                      "type": "Error",
+                      "simple": true,
+                      "children": [
+                        {
+                          "id": "byggegrenseOk.text",
+                          "type": "Text",
+                          "warning": true,
+                          "heading":
+                            "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                        }
+                      ]
+                    },
+                    {
+                      "nodeId": "resultatDisp",
+                      "type": "Reference"
                     }
                   ]
-                },
-                {
-                  "nodeId": "resultatDisp",
-                  "type": "Reference"
                 }
               ]
             }
