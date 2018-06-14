@@ -133,141 +133,159 @@
           ]
         },
         {
-          "id": "bebygd",
-          "property": "bebygd",
-          "type": "Radio",
-          "heading": "Er eiendommen bebygd?",
-          "text":
-            "<p>Eiendommen din er bebygd hvis det for eksempel er et bolighus eller en hytte på eiendommen fra før.</p>",
-          "hide": {
+          "id": "bebygdGroup",
+          "type": "Group",
+          "simple": true,
+          "show": {
             "field": "hvaSkalDuBygge",
-            "operator": "not"
+            "operator": "is"
           },
-          "options": [
+          "children": [
             {
-              "id": "bebygd.ja",
-              "type": "Answer",
-              "heading": "Ja, eiendommen er bebygd.",
-              "value": "ja"
+              "id": "bebygd",
+              "property": "bebygd",
+              "type": "Radio",
+              "heading": "Er eiendommen bebygd?",
+              "text":
+                "<p>Eiendommen din er bebygd hvis det for eksempel er et bolighus eller en hytte på eiendommen fra før.</p>",
+              "options": [
+                {
+                  "id": "bebygd.ja",
+                  "type": "Answer",
+                  "heading": "Ja, eiendommen er bebygd.",
+                  "value": "ja"
+                },
+                {
+                  "id": "bebygd.nei",
+                  "type": "Answer",
+                  "heading": "Nei, eiendommen er ikke bebygd.",
+                  "value": "nei"
+                }
+              ]
             },
             {
-              "id": "bebygd.nei",
-              "type": "Answer",
-              "heading": "Nei, eiendommen er ikke bebygd.",
-              "value": "nei"
-            }
-          ]
-        },
-        {
-          "type": "Branch",
-          "branches": [
-            {
-              "test": {
-                "type": "or",
-                "clauses": [
-                  {
-                    "field": "bebygd",
-                    "operator": "eq",
-                    "value": "nei"
-                  }
-                ]
-              },
-              "children": [
+              "type": "Branch",
+              "branches": [
                 {
-                  "id": "error.bebygd.nei",
-                  "type": "Error",
-                  "show": {
-                    "field": "bebygd",
-                    "operator": "eq",
-                    "value": "nei"
+                  "test": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "bebygd",
+                        "operator": "eq",
+                        "value": "nei"
+                      }
+                    ]
                   },
                   "children": [
                     {
                       "id": "error.bebygd.nei",
-                      "type": "Text",
-                      "heading":
-                        "Du må som regel søke for å bygge noe på en ubebygd eiendom.  Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                      "type": "Error",
+                      "show": {
+                        "field": "bebygd",
+                        "operator": "eq",
+                        "value": "nei"
+                      },
+                      "children": [
+                        {
+                          "id": "error.bebygd.nei",
+                          "type": "Text",
+                          "heading":
+                            "Du må som regel søke for å bygge noe på en ubebygd eiendom.  Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                        }
+                      ]
+                    },
+                    {
+                      "id": "resultatTakk",
+                      "type": "Result",
+                      "text": "ResultatTakk",
+                      "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                      "lead":
+                        "<p>Her kan du se hva du har svart på de ulike spørsmålene. Du kan endre svarene dine i oversikten under. Takk for at du prøvde veiviseren!</p>",
+                      "errorheading": "Du har ikke svart på alle spørsmålene",
+                      "errorlead":
+                        "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                     }
                   ]
-                },
-                {
-                  "id": "resultatTakk",
-                  "type": "Result",
-                  "text": "ResultatTakk",
-                  "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
-                  "lead":
-                    "<p>Her kan du se hva du har svart på de ulike spørsmålene. Du kan endre svarene dine i oversikten under. Takk for at du prøvde veiviseren!</p>",
-                  "errorheading": "Du har ikke svart på alle spørsmålene",
-                  "errorlead":
-                    "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                 }
               ]
             }
           ]
         },
         {
-          "id": "regulert",
-          "property": "regulert",
-          "type": "Radio",
-          "heading": "Finnes det en reguleringsplan for eiendommen?",
-          "text":
-            "<p>Sjekk med kommunen din om det finnes en reguleringsplan for eiendommen. Dette kan du som regel finne på kommunens nettsted.</p>",
-          "hide": {
-            "field": "bebygd",
-            "operator": "not"
+          "id": "bebygdGroup",
+          "type": "Group",
+          "simple": true,
+          "show": {
+            "field": "hvaSkalDuBygge",
+            "operator": "is"
           },
-          "options": [
+          "children": [
             {
-              "id": "regulert.ja",
-              "type": "Answer",
-              "heading": "Ja, det finnes en reguleringsplan.",
-              "value": "ja"
+              "id": "regulert",
+              "property": "regulert",
+              "type": "Radio",
+              "heading": "Finnes det en reguleringsplan for eiendommen?",
+              "text":
+                "<p>Sjekk med kommunen din om det finnes en reguleringsplan for eiendommen. Dette kan du som regel finne på kommunens nettsted.</p>",
+              "hide": {
+                "field": "bebygd",
+                "operator": "not"
+              },
+              "options": [
+                {
+                  "id": "regulert.ja",
+                  "type": "Answer",
+                  "heading": "Ja, det finnes en reguleringsplan.",
+                  "value": "ja"
+                },
+                {
+                  "id": "regulert.nei",
+                  "type": "Answer",
+                  "heading": "Nei, det finnes ikke en reguleringsplan.",
+                  "value": "nei"
+                }
+              ]
             },
             {
-              "id": "regulert.nei",
-              "type": "Answer",
-              "heading": "Nei, det finnes ikke en reguleringsplan.",
-              "value": "nei"
-            }
-          ]
-        },
-        {
-          "type": "Branch",
-          "branches": [
-            {
-              "test": {
-                "field": "regulert",
-                "operator": "eq",
-                "value": "nei"
-              },
-              "children": [
+              "type": "Branch",
+              "branches": [
                 {
-                  "id": "regulert.nei.feil",
-                  "type": "Error",
-                  "show": {
+                  "test": {
                     "field": "regulert",
                     "operator": "eq",
                     "value": "nei"
                   },
                   "children": [
                     {
-                      "id": "regulert.nei.feil.tekst",
-                      "type": "Text",
-                      "warning": true,
-                      "heading":
-                        "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det ikke finnes en reguleringsplan. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                      "id": "regulert.nei.feil",
+                      "type": "Error",
+                      "show": {
+                        "field": "regulert",
+                        "operator": "eq",
+                        "value": "nei"
+                      },
+                      "children": [
+                        {
+                          "id": "regulert.nei.feil.tekst",
+                          "type": "Text",
+                          "warning": true,
+                          "heading":
+                            "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det ikke finnes en reguleringsplan. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                        }
+                      ]
+                    },
+                    {
+                      "id": "resultatDisp",
+                      "type": "Result",
+                      "heading": "Du trenger kanskje dispensasjon",
+                      "lead":
+                        "<p>Du må undersøke om du trenger dispensasjon. Dette er en søknad som har 12 ukers behandlingstid.</p><p><strong>Trenger du dispensasjon?</strong><br />Da bør du undersøke om du kan unngå dispensasjon, for eksempel ved å endre plassering på det du vil bygge.</p>",
+                      "errorheading": "Du har ikke svart på alle spørsmålene",
+                      "errorlead":
+                        "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                     }
                   ]
-                },
-                {
-                  "id": "resultatDisp",
-                  "type": "Result",
-                  "heading": "Du trenger kanskje dispensasjon",
-                  "lead":
-                    "<p>Du må undersøke om du trenger dispensasjon. Dette er en søknad som har 12 ukers behandlingstid.</p><p><strong>Trenger du dispensasjon?</strong><br />Da bør du undersøke om du kan unngå dispensasjon, for eksempel ved å endre plassering på det du vil bygge.</p>",
-                  "errorheading": "Du har ikke svart på alle spørsmålene",
-                  "errorlead":
-                    "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                 }
               ]
             }
@@ -363,7 +381,7 @@
                       ]
                     },
                     {
-                      "id": "dawad",
+                      "id": "terrasseRekkverkResultat",
                       "type": "Branch",
                       "branches": [
                         {
@@ -374,11 +392,11 @@
                           },
                           "children": [
                             {
-                              "id": "resultatTakkTerrasseRekkverk",
+                              "id": "terrasseRekkverkResultat",
                               "type": "Error",
                               "children": [
                                 {
-                                  "id": "terrasseRekkverk.over05m.tekst",
+                                  "id": "terrasseRekkverkResultat.over05m.tekst",
                                   "type": "Text",
                                   "warning": true,
                                   "heading":
