@@ -814,7 +814,7 @@
               ]
             },
             {
-              "id": "tilbyggVerandaFesteRadio",
+              "id": "tilbyggVerandaFeste",
               "property": "tilbyggVerandaFeste",
               "type": "Radio",
               "heading": "Blir det du bygger understøttet og festet til bakken?",
