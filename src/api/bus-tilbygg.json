@@ -787,7 +787,7 @@
               ]
             },
             {
-              "id": "tilbyggVerandaFesteRadio",
+              "id": "tilbyggVerandaFeste",
               "property": "tilbyggVerandaFeste",
               "type": "Radio",
               "heading": "Blir det du bygger understøttet og festet til bakken?",
@@ -974,6 +974,36 @@
           "show": {
             "type": "or",
             "clauses": [
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "hvaSkalDuBygge",
+                    "operator": "eq",
+                    "value": "veranda"
+                  },
+                  {
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "paaBakken"
+                  },
+                  {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "tilbyggVerandaPlassering",
+                        "operator": "eq",
+                        "value": "bodGarasje"
+                      },
+                      {
+                        "field": "tilbyggVerandaPlassering",
+                        "operator": "eq",
+                        "value": "husHytte"
+                      }
+                    ]
+                  }
+                ]
+              },
               {
                 "type": "and",
                 "clauses": [
