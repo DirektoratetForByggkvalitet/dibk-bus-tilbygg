@@ -2046,7 +2046,7 @@
                           "id": "arealNei.text",
                           "type": "Text",
                           "warning": true,
-                          "heading": "Du kan søke om en dispensasjon, og det er opp til kommunen å vurdere om du får lov eller ikke."
+                          "text": "Du kan søke om en dispensasjon, og det er opp til kommunen å vurdere om du får lov eller ikke."
                         }
                       ]
                     },
