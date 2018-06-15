@@ -268,12 +268,8 @@
                       ]
                     },
                     {
-                      "id": "resultatDisp",
-                      "type": "Result",
-                      "heading": "Du trenger kanskje dispensasjon",
-                      "lead": "<p>Du må undersøke om du trenger dispensasjon. Dette er en søknad som har 12 ukers behandlingstid.</p><p><strong>Trenger du dispensasjon?</strong><br />Da bør du undersøke om du kan unngå dispensasjon, for eksempel ved å endre plassering på det du vil bygge.</p>",
-                      "errorheading": "Du har ikke svart på alle spørsmålene",
-                      "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+                      "nodeId": "resultatTakk",
+                      "type": "Reference"
                     }
                   ]
                 }
@@ -2051,8 +2047,12 @@
                       ]
                     },
                     {
-                      "nodeId": "resultatDisp",
-                      "type": "Reference"
+                      "id": "resultatDisp",
+                      "type": "Result",
+                      "heading": "Du trenger kanskje dispensasjon",
+                      "lead": "<p>Ut fra svarene dine vil det du skal bygge være i strid med reguleringsplan eller andre plasseringsregler. Det enkleste er ofte å tilpasse det du skal bygge, for eksempel ved å endre størrelse eller plassering. Hvis dette ikke er mulig bør du forhøre deg med kommunen om det er mulig å få dispensasjon. Søknad om dispensasjon må nabovarsles og har minst 12 ukers behandlingstid.</p>",
+                      "errorheading": "Du har ikke svart på alle spørsmålene",
+                      "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                     }
                   ]
                 }
