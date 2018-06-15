@@ -148,13 +148,13 @@
                 {
                   "id": "bebygd.ja",
                   "type": "Answer",
-                  "heading": "Ja, eiendommen er bebygd.",
+                  "heading": "Ja",
                   "value": "ja"
                 },
                 {
                   "id": "bebygd.nei",
                   "type": "Answer",
-                  "heading": "Nei, eiendommen er ikke bebygd.",
+                  "heading": "Nei",
                   "value": "nei"
                 }
               ]
@@ -186,7 +186,7 @@
                         {
                           "id": "error.bebygd.nei",
                           "type": "Text",
-                          "heading": "Du må som regel søke for å bygge noe på en ubebygd tomt. Hør med kommunen om hva det er lov å gjøre på tomta. Hvis det er noe annet enn hytte eller bolig på tomta kan også kommunen hjelpe deg å vurdere om den er bebygd."
+                          "text": "Du må som regel søke for å bygge noe på en ubebygd tomt. Hør med kommunen om hva det er lov å gjøre på tomta. Hvis det er noe annet enn hytte eller bolig på tomta kan også kommunen hjelpe deg å vurdere om den er bebygd."
                         }
                       ]
                     },
