@@ -1809,7 +1809,7 @@
                       ]
                     },
                     {
-                      "nodeId": "resultatSokeSelv",
+                      "nodeId": "resultatTakk",
                       "type": "Reference"
                     }
                   ]
@@ -1842,7 +1842,7 @@
                       ]
                     },
                     {
-                      "nodeId": "resultatDisp",
+                      "nodeId": "resultatTakk",
                       "type": "Reference"
                     }
                   ]
@@ -1932,15 +1932,9 @@
               },
               "options": [
                 {
-                  "id": "hoyestePunkt.under",
-                  "type": "Answer",
-                  "heading": "Nei, det blir lavere enn 5 meter",
-                  "value": "under"
-                },
-                {
                   "id": "hoyestePunkt.over",
                   "type": "Answer",
-                  "heading": "Ja, det blir høyere enn 5 meter",
+                  "heading": "Ja",
                   "value": "over"
                 },
                 {
@@ -1948,6 +1942,12 @@
                   "type": "Answer",
                   "heading": "Ja, men avklart med kommunen at jeg kan bygge høyere uten å søke",
                   "value": "overOk"
+                },
+                {
+                  "id": "hoyestePunkt.under",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "under"
                 }
               ]
             },
@@ -2119,18 +2119,11 @@
                   },
                   "children": [
                     {
-                      "id": "hoydeResultat.error",
-                      "type": "Error",
-                      "simple": true,
-                      "children": [
-                        {
-                          "id": "hoydeResultat.text",
-                          "type": "Text",
-                          "warning": true,
-                          "text":
-                            "Vi anbefaler å ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp til å finne om du har plass. Du kan fortsette veiviseren etterpå."
-                        }
-                      ]
+                      "id": "hoydeResultat.text",
+                      "type": "Text",
+                      "warning": true,
+                      "text":
+                        "Vi anbefaler å ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp til å finne om du har plass. Du kan fortsette veiviseren etterpå."
                     },
                     {
                       "nodeId": "resultatTakk",
