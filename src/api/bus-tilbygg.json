@@ -2070,25 +2070,10 @@
                   },
                   "children": [
                     {
-<<<<<<< HEAD
-                      "id": "hoydeResultat.error",
-                      "type": "Error",
-                      "simple": true,
-                      "children": [
-                        {
-                          "id": "hoydeResultat.text",
-                          "type": "Text",
-                          "warning": true,
-                          "text": "Vi anbefaler å ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp til å finne om du har plass. Du kan fortsette veiviseren etterpå."
-                        }
-                      ]
-=======
                       "id": "hoydeResultat.text",
                       "type": "Text",
                       "warning": true,
-                      "text":
-                        "Vi anbefaler å ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp til å finne om du har plass. Du kan fortsette veiviseren etterpå."
->>>>>>> 40a036f05193ed6dec06b759d6e50dbd5de328ac
+                      "text": "Vi anbefaler å ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp til å finne om du har plass. Du kan fortsette veiviseren etterpå."
                     },
                     {
                       "nodeId": "resultatTakk",
