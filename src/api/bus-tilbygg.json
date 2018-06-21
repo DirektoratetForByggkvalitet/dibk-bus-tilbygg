@@ -398,7 +398,7 @@
                                   "id": "terrasseRekkverkResultat.over05m.tekst",
                                   "type": "Text",
                                   "warning": true,
-                                  "heading":
+                                  "text":
                                     "Du må høre med kommunen om det du bygger blir søknadspliktig."
                                 }
                               ]
@@ -564,7 +564,7 @@
                                   "id": "frittliggende.mellom.text",
                                   "type": "Text",
                                   "warning": true,
-                                  "heading":
+                                  "text":
                                     "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd."
                                 }
                               ]
@@ -602,7 +602,7 @@
                                   "id": "frittliggende.over.text",
                                   "type": "Text",
                                   "warning": true,
-                                  "heading":
+                                  "text":
                                     "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
                                 }
                               ]
@@ -635,7 +635,7 @@
                                   "id": "terrasseplan.text",
                                   "type": "Text",
                                   "warning": true,
-                                  "heading": "Interessant at den blir høyere enn 0.5 meter"
+                                  "text": "Interessant at den blir høyere enn 0.5 meter"
                                 }
                               ]
                             },
@@ -1002,6 +1002,7 @@
         {
           "id": "tilbyggGarasjeGroup",
           "property": "tilbyggGarasjeGroup",
+          "heading": "Størrelse",
           "type": "Group",
           "simple": false,
           "show": {
@@ -1333,7 +1334,7 @@
                       "id": "ResultatAnsvarligSoker.text",
                       "type": "Text",
                       "warning": true,
-                      "heading": "feilmelding"
+                      "text": "feilmelding"
                     }
                   ]
                 },
@@ -1368,7 +1369,7 @@
                   "id": "ResultatAnsvarligSoker.text",
                   "type": "Text",
                   "warning": true,
-                  "heading": "feilmelding"
+                  "text": "feilmelding"
                 }
               ]
             }
@@ -1487,7 +1488,7 @@
                 },
                 {
                   "type": "Reference",
-                  "nodeId": "resultatTakk"
+                  "nodeId": "resultatSokeSelv"
                 }
               ]
             }
@@ -1588,7 +1589,7 @@
                           "id": "sokeSelvResultat.text",
                           "type": "Text",
                           "warning": true,
-                          "heading":
+                          "text":
                             "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
                         }
                       ]
@@ -1772,7 +1773,7 @@
               "type": "Radio",
               "heading": "Blir det du skal bygge minst 4 meter fra nabogrensa?",
               "text":
-                "<p>Hvis det ikke finnes byggegrense mot naboer, er hovedregelen at du kan bygge 4,0 meter fra nabogrensa. Det du bygger, kan ikke på noe som helst punkt være nærmere naboen enn 4,0 meter.</p>",
+                "<p>Hvis det ikke finnes byggegrense mot naboer, er hovedregelen at du kan bygge 4,0 meter fra nabogrensa. Det du bygger kan ikke på noe som helst punkt være nærmere naboen enn 4,0 meter.</p>",
               "show": {
                 "field": "byggegrense",
                 "operator": "eq",
@@ -1813,7 +1814,7 @@
                           "id": "grenseresultat.text",
                           "type": "Text",
                           "warning": true,
-                          "heading":
+                          "text":
                             "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
                         }
                       ]
@@ -1942,12 +1943,6 @@
               },
               "options": [
                 {
-                  "id": "hoyestePunkt.under",
-                  "type": "Answer",
-                  "heading": "Nei, det blir lavere enn 5 meter",
-                  "value": "under"
-                },
-                {
                   "id": "hoyestePunkt.over",
                   "type": "Answer",
                   "heading": "Ja, det blir høyere enn 5 meter",
@@ -1958,6 +1953,12 @@
                   "type": "Answer",
                   "heading": "Ja, men avklart med kommunen at jeg kan bygge høyere uten å søke",
                   "value": "overOk"
+                },
+                {
+                  "id": "hoyestePunkt.under",
+                  "type": "Answer",
+                  "heading": "Nei, det blir lavere enn 5 meter",
+                  "value": "under"
                 }
               ]
             },
@@ -1981,7 +1982,7 @@
                           "id": "forHoy.text",
                           "type": "Text",
                           "warning": true,
-                          "heading":
+                          "text":
                             "Du må høre med kommunen din om det du skal bygge blir så høyt at du må søke."
                         }
                       ]
@@ -2014,7 +2015,7 @@
                           "id": "hoyestePunkt.text",
                           "type": "Text",
                           "warning": true,
-                          "heading":
+                          "text":
                             "Du må høre med kommunen din om det du skal bygge blir så høyt at du må søke."
                         }
                       ]
@@ -2213,7 +2214,7 @@
                 {
                   "id": "resultatJippiUnder05",
                   "type": "Result",
-                  "heading": "Dine svar viser at du slipper å søke!",
+                  "heading": "Du kan bygge uten å søke!",
                   "lead":
                     "<p>Du kan plassere terrassen helt inntil nabogrensa, så lenge du ikke har rekkverk.</p><p>Du kan sjekke svarene dine under for å være sikker på at du har svart riktig. </p><p>Takk for at du prøvde veiviseren!</p>",
                   "errorheading": "Du har ikke svart på alle spørsmålene",
