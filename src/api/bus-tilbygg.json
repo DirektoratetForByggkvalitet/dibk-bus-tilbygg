@@ -50,7 +50,7 @@
     {
       "id": "kartlegging",
       "type": "Page",
-      "heading": "Plan for bygningen",
+      "heading": "Det du skal bygge",
       "children": [
         {
           "id": "hvaSkalDuBygge",
@@ -64,7 +64,7 @@
               "heading": "Terrasse eller platting",
               "value": "terrasse",
               "image": {
-                "url": "/images/Forside_terrasse.png",
+                "url": "/images/Forside_terrasse.jpg",
                 "alt": "Hus med terrasse"
               }
             },
@@ -74,7 +74,7 @@
               "heading": "Veranda eller glassveranda",
               "value": "veranda",
               "image": {
-                "url": "/images/Forside_veranda.png",
+                "url": "/images/Forside_veranda.jpg",
                 "alt": "Hus med veranda"
               }
             },
@@ -84,7 +84,7 @@
               "heading": "Tilbygg (f.eks. bod, sykkelskur eller trapperom)",
               "value": "tilbygg",
               "image": {
-                "url": "/images/Forside_tilbygg.png",
+                "url": "/images/Forside_tilbygg.jpg",
                 "alt": "Hus med tilbygg"
               }
             },
@@ -92,7 +92,11 @@
               "id": "hvaSkalDuBygge.takterrasse",
               "type": "Answer",
               "heading": "Takterrasse",
-              "value": "takterrasse"
+              "value": "takterrasse",
+              "image": {
+                "url": "/images/Forside_takterrasse.jpg",
+                "alt": "Hus med takterrasse"
+              }
             }
           ]
         },
@@ -191,7 +195,7 @@
                           "id": "error.bebygd.nei",
                           "type": "Text",
                           "text":
-                            "Du må som regel søke for å bygge noe på en ubebygd tomt. Hør med kommunen om hva det er lov å gjøre på tomta. Hvis det er noe annet enn hytte eller bolig på tomta kan også kommunen hjelpe deg å vurdere om den er bebygd."
+                            "Du må som regel søke hvis det ikke er et bolighus eller hytte på tomta fra før. Gjelder det en næringseiendommen må du snakke med kommunen."
                         }
                       ]
                     },
@@ -353,7 +357,7 @@
                       "type": "Radio",
                       "heading": "Blir noe av terrassen høyere enn 0,5 meter over bakken?",
                       "text":
-                        "<p>Husk å regne med for eksempel rekkverk, levegg, glassvegger og annet som er festet i terrassegulvet.</p>",
+                        "<p>Dette kan for eksempel være rekkverk, levegger, glassvegger eller annet som er fastmontert i terrassen.</p>",
                       "show": {
                         "field": "terrasseOverBakken",
                         "operator": "eq",
@@ -395,7 +399,7 @@
                                   "type": "Text",
                                   "warning": true,
                                   "heading":
-                                    "Hvis terrasserekkverket er over 0,5 meter må du snakke med kommunen før du gjør noe."
+                                    "Du må høre med kommunen om det du bygger blir søknadspliktig."
                                 }
                               ]
                             },
@@ -528,8 +532,14 @@
                                 "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>. Den er laget for boder og garasjer, men samme reglene gjelder for bygging av terrasser som er høyere enn 0,5 meter over bakken."
                             },
                             {
-                              "nodeId": "resultatTakk",
-                              "type": "Reference"
+                              "id": "resultatFrittliggende",
+                              "type": "Result",
+                              "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                              "lead":
+                                "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>. Den er laget for boder og garasjer, men samme reglene gjelder for bygging av terrasser som er høyere enn 0,5 meter over bakken.",
+                              "errorheading": "Du har ikke svart på alle spørsmålene",
+                              "errorlead":
+                                "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                             }
                           ]
                         }
@@ -965,7 +975,6 @@
                     {
                       "type": "Error",
                       "id": "tilbyggVerandaHvor.error",
-                      "text": "feilmelding frittliggende over",
                       "show": {
                         "field": "tilbyggVerandaHvor",
                         "operator": "eq",
@@ -975,7 +984,8 @@
                         {
                           "id": "tilbyggGarasje.error.text",
                           "type": "Text",
-                          "heading": "det kan ikke bli så lite"
+                          "heading":
+                            "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen. "
                         }
                       ]
                     },
@@ -1185,8 +1195,14 @@
                         "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>, og svare som om du skal bygge en ny bygning under 50 kvm.  Finner du ikke begrensninger der, kan du utvide bygningen som står der i dag slik du ønsker."
                     },
                     {
-                      "nodeId": "resultatTakk",
-                      "type": "Reference"
+                      "id": "resultatGarasje",
+                      "type": "Result",
+                      "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                      "lead":
+                        "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>, og svare som om du skal bygge en ny bygning under 50 kvm.  Finner du ikke begrensninger der, kan du utvide bygningen som står der i dag slik du ønsker.",
+                      "errorheading": "Du har ikke svart på alle spørsmålene",
+                      "errorlead":
+                        "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                     }
                   ]
                 }
@@ -1716,8 +1732,9 @@
               "id": "byggegrenseOk",
               "property": "byggegrenseOk",
               "type": "Radio",
-              "heading": "Blir tilbygget innenfor byggegrensene?",
-              "text": "<p>For å slippe å søke, må bygningen være innenfor byggegrensene.</p>",
+              "heading": "Blir det du skal bygge innenfor byggegrensene?",
+              "text":
+                "<p>For å slippe å søke, må det du skal bygge være innenfor byggegrensene.</p>",
               "show": {
                 "type": "or",
                 "clauses": [
@@ -1849,7 +1866,7 @@
           "property": "hoydeGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Høyde på bygget",
+          "heading": "Høyde på det du skal bygge",
           "show": {
             "type": "or",
             "clauses": [
@@ -1880,7 +1897,7 @@
                 "operator": "eq",
                 "value": true
               },
-              "heading": "Blir det du skal bygge høyere enn bygget som står der fra før?",
+              "heading": "Blir det du skal bygge høyere enn bygningen som står der fra før?",
               "options": [
                 {
                   "id": "forHoy.ja",
@@ -2139,7 +2156,7 @@
               "heading":
                 "Finnes det begrensninger i kommuneplanens arealdel eller reguleringsplan?",
               "text":
-                "<p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette kan du finne informasjon om i kommunale dokumenter som reguleringsplan, kommuneplanens arealdel eller situasjonskart.</p><p>Eksempel på slike begrensninger er om du skal gjøre noe i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Er du usikker bør du sjekke med kommunen.</p>",
+                "<p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette kan du ofte finne informasjon om i kommunale dokumenter som reguleringsplan, kommuneplanens arealdel eller situasjonskart.</p><p>Eksempel på slike begrensninger er om du skal gjøre noe i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Er du usikker bør du sjekke med kommunen.</p>",
               "show": {
                 "type": "or",
                 "clauses": [
