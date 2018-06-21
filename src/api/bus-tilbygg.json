@@ -416,7 +416,6 @@
                       "property": "terrassePlassering",
                       "type": "Radio",
                       "heading": "Hvor skal terrassen eller plattingen ligge?",
-                      "text": "<p></p>",
                       "show": {
                         "field": "terrasseOverBakken",
                         "operator": "eq",
@@ -822,7 +821,7 @@
               "type": "Radio",
               "heading": "Blir det du bygger understøttet og festet til bakken?",
               "text":
-                "<p>Du kan svare ja hvis du for eksempel skal bygge en veranda med en bærekonstruksjon som står på bakken.</p>",
+                "<p>Du kan svare ja hvis du for eksempel skal bygge:</p><ul><li>en bygning som står på bakken</li><li>en veranda med en bærekonstruksjon som står på bakken</li></ul>",
               "show": {
                 "field": "tilbyggVerandaHvor",
                 "operator": "eq",
