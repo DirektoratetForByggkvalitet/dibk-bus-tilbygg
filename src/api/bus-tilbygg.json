@@ -515,8 +515,12 @@
                               "text": "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>. Den er laget for boder og garasjer, men samme reglene gjelder for bygging av terrasser som er høyere enn 0,5 meter over bakken."
                             },
                             {
-                              "nodeId": "resultatTakk",
-                              "type": "Reference"
+                              "id": "resultatFrittliggende",
+                              "type": "Result",
+                              "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                              "lead": "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>. Den er laget for boder og garasjer, men samme reglene gjelder for bygging av terrasser som er høyere enn 0,5 meter over bakken.",
+                              "errorheading": "Du har ikke svart på alle spørsmålene",
+                              "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                             }
                           ]
                         }
@@ -1159,8 +1163,12 @@
                       "text": "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>, og svare som om du skal bygge en ny bygning under 50 kvm.  Finner du ikke begrensninger der, kan du utvide bygningen som står der i dag slik du ønsker."
                     },
                     {
-                      "nodeId": "resultatTakk",
-                      "type": "Reference"
+                      "id": "resultatGarasje",
+                      "type": "Result",
+                      "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                      "lead": "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>, og svare som om du skal bygge en ny bygning under 50 kvm.  Finner du ikke begrensninger der, kan du utvide bygningen som står der i dag slik du ønsker.",
+                      "errorheading": "Du har ikke svart på alle spørsmålene",
+                      "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                     }
                   ]
                 }
