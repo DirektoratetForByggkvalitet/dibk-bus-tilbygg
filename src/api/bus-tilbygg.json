@@ -403,7 +403,6 @@
                       "property": "terrassePlassering",
                       "type": "Radio",
                       "heading": "Hvor skal terrassen eller plattingen ligge?",
-                      "text": "<p></p>",
                       "show": {
                         "field": "terrasseOverBakken",
                         "operator": "eq",
