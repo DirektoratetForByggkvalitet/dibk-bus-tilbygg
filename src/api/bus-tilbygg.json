@@ -304,7 +304,6 @@
                   "id": "terrasseRekkverkGroup",
                   "property": "terrasseRekkverkGroup",
                   "simple": false,
-                  "heading": "Størrelse og plassering",
                   "show": {
                     "type": "or",
                     "clauses": [
