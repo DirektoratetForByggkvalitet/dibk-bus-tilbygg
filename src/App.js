@@ -11,6 +11,10 @@ import Intro from './pages/Intro';
 import store from './store';
 
 export default class App extends Component {
+  static trackIntro() {
+    track(data.meta.name, 'intro', 'Tilbygg - Bod, sykkelbod, vedbod, søppelskur');
+  }
+
   static propTypes = {
     translations: PropTypes.object,
   };
@@ -19,9 +23,6 @@ export default class App extends Component {
     translations: {},
   };
 
-  static trackIntro() {
-    track(data.meta.name, 'intro', 'Tilbygg - Bod, sykkelbod, vedbod, søppelskur');
-  }
 
   constructor(props) {
     super(props);
