@@ -1553,7 +1553,7 @@
                           "id": "sokeSelvResultat.text",
                           "type": "Text",
                           "warning": true,
-                          "text": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
+                          "text": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd."
                         }
                       ]
                     },
@@ -1733,7 +1733,7 @@
               "property": "nabogrense",
               "type": "Radio",
               "heading": "Blir det du skal bygge minst 4 meter fra nabogrensa?",
-              "text": "<p>Hvis det ikke finnes byggegrense mot naboer, er hovedregelen at du kan bygge 4,0 meter fra nabogrensa. Det du bygger kan ikke på noe som helst punkt være nærmere naboen enn 4,0 meter.</p>",
+              "text": "<p>Hvis det ikke finnes byggegrense mot naboer, er hovedregelen at du kan bygge 4,0 meter fra nabogrensa. Det du bygger kan ikke på noe som helst punkt være nærmere nabogrensa enn 4,0 meter.</p>",
               "show": {
                 "field": "byggegrense",
                 "operator": "eq",
