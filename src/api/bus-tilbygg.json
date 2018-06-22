@@ -1323,66 +1323,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "Branch",
-          "id": "resultatAnsvarligSoker.branch",
-          "branches": [
-            {
-              "test": {
-                "field": "resultatAnsvarligSoker",
-                "operator": "eq",
-                "value": "yes"
-              },
-              "children": [
-                {
-                  "id": "ResultatAnsvarligSoker.error",
-                  "type": "Error",
-                  "children": [
-                    {
-                      "id": "ResultatAnsvarligSoker.text",
-                      "type": "Text",
-                      "warning": true,
-                      "text": "feilmelding"
-                    }
-                  ]
-                },
-                {
-                  "type": "Reference",
-                  "nodeId": "ResultatAnsvarligSoker"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "Result",
-          "id": "ResultatAnsvarligSoker",
-          "heading": "Du må søke",
-          "lead":
-            "<p>Det er søknadspliktig å bygge det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. En liste over disse finner du <a href=\"https://sgregister.dibk.no/\">her</a>.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
-          "errorheading": "Du har ikke svart på alle spørsmålene",
-          "errorlead":
-            "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
-          "show": {
-            "field": "inntilBygning",
-            "operator": "eq",
-            "value": "over"
-          },
-          "children": [
-            {
-              "id": "ResultatAnsvarligSoker.error",
-              "type": "Error",
-              "children": [
-                {
-                  "id": "ResultatAnsvarligSoker.text",
-                  "type": "Text",
-                  "warning": true,
-                  "text": "feilmelding"
-                }
-              ]
-            }
-          ]
         }
       ]
     },
