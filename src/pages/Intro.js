@@ -27,6 +27,7 @@ function Intro({ close, data }) {
           <li>må søke om dispensasjon</li>
           <li>kan tilpasse bygningen slik at du slipper å søke</li>
         </ul>
+        <br />
         <Primitives.Heading.H2>Før du begynner</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
           Før du begynner er det lurt å kontakte kommunen for å få tak i:
@@ -46,11 +47,13 @@ function Intro({ close, data }) {
           <li>hvor mye du har lov til å bygge på eiendommen din</li>
         </ul>
         <Primitives.Paragraphs.P>Husk at det er du som er ansvarlig for at alle lover og regler blir fulgt når du bygger.</Primitives.Paragraphs.P>
+        <br />
         <Primitives.Heading.H2>Usikker?</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
           Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere.
           Nettleseren husker hvor du var. Du kan kontakte kommunen din om du er usikker på om du kan bygge uten å søke.
         </Primitives.Paragraphs.P>
+        <br />
         <Primitives.Heading.H2>Har du funnet ut det du trenger?</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
           Da er det bare å sette i gang med veiviseren! Du får hjelp til hvert spørsmål underveis.
