@@ -637,7 +637,6 @@
           "property": "tilbyggVerandaHvorGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Plassering",
           "show": {
             "type": "or",
             "clauses": [
@@ -662,6 +661,12 @@
               "text": "<p>Vi tar utgangspunkt i at du skal plassere det du bygger på en bygning som står der fra før.</p>",
               "options": [
                 {
+                  "id": "tilbyggVerandaHvor.paaBakken",
+                  "type": "Answer",
+                  "heading": "På bakken inntil en bygning",
+                  "value": "paaBakken"
+                },
+                {
                   "id": "tilbyggVerandaHvor.veggTilEksisterende",
                   "type": "Answer",
                   "heading": "På veggen til et eksisterende bygg",
@@ -672,12 +677,6 @@
                   "type": "Answer",
                   "heading": "På taket til en eksisterende bygning",
                   "value": "takTilEksisterende"
-                },
-                {
-                  "id": "tilbyggVerandaHvor.paaBakken",
-                  "type": "Answer",
-                  "heading": "På bakken inntil en bygning",
-                  "value": "paaBakken"
                 },
                 {
                   "id": "tilbyggVerandaHvor.underBakken",
@@ -975,7 +974,6 @@
         {
           "id": "tilbyggGarasjeGroup",
           "property": "tilbyggGarasjeGroup",
-          "heading": "Størrelse",
           "type": "Group",
           "simple": false,
           "show": {
@@ -1118,7 +1116,7 @@
               "id": "tilbyggGarasje",
               "property": "tilbyggGarasje",
               "type": "Radio",
-              "heading": "Hvor stor blir bod/garasje og det du bygger til sammen?",
+              "heading": "Hvor stor blir det som står der nå og det du skal bygge til sammen?",
               "text": "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
               "summary": "Hva er BRA/BYA?",
               "details": "<p>Alle regulerte eiendommer har regler på hvor mye du kan bygge på eiendommen. Det finnes flere måter å beregne hvor mye du kan bygge, men det er kun én type som gjelder for din eiendom. Noen ganger er det hvor stort \"fotavtrykk\" bygninger har på eiendommen (BYA), andre ganger skal man regne sammen bruksareal i alle etasjer (BRA). Du finner beregningsmåten i kommuneplanen eller i reguleringsbestemmelsene. <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Les mer om BRA/BYA på DiBKs nettsider.</a></p>",
@@ -1141,7 +1139,7 @@
                 {
                   "id": "tilbyggGarasje.under50kvm",
                   "type": "Answer",
-                  "heading": "Under 50 kvm",
+                  "heading": "Inntil 50 kvm",
                   "value": "under50kvm"
                 },
                 {
@@ -1212,7 +1210,7 @@
                 {
                   "id": "inntilBygning.under",
                   "type": "Answer",
-                  "heading": "Under 15 kvm",
+                  "heading": "Inntil 15 kvm",
                   "value": "under"
                 },
                 {
@@ -1666,7 +1664,6 @@
           "property": "grenseGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Grense mot naboeiendom",
           "hide": {
             "field": "terrasseRekkverk",
             "operator": "is"
