@@ -148,7 +148,8 @@
               "id": "bebygd",
               "property": "bebygd",
               "type": "Radio",
-              "heading": "Er det bolighus eller hytte på tomta fra før?",
+              "heading": "Er eiendommen bebygd?",
+              "text": "<p>Eiendommen din er bebygd hvis det for eksempel er et bolighus eller en hytte på eiendommen fra før. Står det kun et skur eller garasje regnes ikke eiendommen som bebygd.</p>",
               "options": [
                 {
                   "id": "bebygd.ja",
@@ -656,6 +657,7 @@
               "id": "tilbyggVerandaHvor",
               "property": "tilbyggVerandaHvor",
               "heading": "Hvor skal du plassere det du bygger?",
+              "text": "<p>Vi tar utgangspunkt i at du skal plassere det du bygger på en bygning som står der fra før.</p>",
               "options": [
                 {
                   "id": "tilbyggVerandaHvor.veggTilEksisterende",
@@ -672,7 +674,7 @@
                 {
                   "id": "tilbyggVerandaHvor.paaBakken",
                   "type": "Answer",
-                  "heading": "Rett på bakken",
+                  "heading": "På bakken inntil en bygning",
                   "value": "paaBakken"
                 },
                 {
