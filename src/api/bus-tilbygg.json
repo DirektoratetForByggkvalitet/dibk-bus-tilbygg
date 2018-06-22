@@ -470,7 +470,9 @@
                       "property": "frittliggende",
                       "type": "Radio",
                       "heading": "Hvor stort blir det du skal bygge?",
-                      "text": "<p>Husk å regne med rekkverk og sånnt</p>",
+                      "text": "<p>Vi er ute etter samlet bruksareal (BRA) og bebygd areal (BYA). Oppgi det som har størst areal av BRA og BYA.</p>",
+                      "summary": "Hva er BRA/BYA?",
+                      "details": "<p>Alle regulerte eiendommer har regler på hvor mye du kan bygge på eiendommen. Det finnes flere måter å beregne hvor mye du kan bygge, men det er kun én type som gjelder for din eiendom. Noen ganger er det hvor stort \"fotavtrykk\" bygninger har på eiendommen (BYA), andre ganger skal man regne sammen bruksareal i alle etasjer (BRA). Du finner beregningsmåten i kommuneplanen eller i reguleringsbestemmelsene. <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Les mer om BRA/BYA på DiBKs nettsider.</a></p>",
                       "show": {
                         "field": "terrassePlassering",
                         "operator": "eq",
@@ -480,7 +482,7 @@
                         {
                           "id": "frittliggende.under",
                           "type": "Answer",
-                          "heading": "Under 50 kvm",
+                          "heading": "Inntil 50 kvm",
                           "value": "under"
                         },
                         {
@@ -2017,7 +2019,7 @@
                 "value": true
               },
               "heading": "Har eiendommen din stort nok areal til bygningen du ønsker å sette opp?",
-              "text": "<p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p><ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul><p>For å finne ut hvor mye plass du har igjen å bygge på, må du regne ut hvor mye plass de eksisterende bygningene opptar.</p><p>Du kan ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp.</p>",
+              "text": "<p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p><ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul><p>For å finne ut hvor mye plass du har igjen å bygge på, må du regne ut hvor mye plass de eksisterende bygningene opptar.</p><p>Du kan ta vår veiviser <a href=\"http://hvorstortkandubygge.dibk.no/\">Hvor stort kan du bygge</a> for å få hjelp.</p>",
               "options": [
                 {
                   "id": "areal.ja",
@@ -2090,7 +2092,7 @@
                       "id": "hoydeResultat.text",
                       "type": "Text",
                       "warning": true,
-                      "text": "Vi anbefaler å ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp til å finne om du har plass. Du kan fortsette veiviseren etterpå."
+                      "text": "Vi anbefaler å ta vår veiviser <a href=\"http://hvorstortkandubygge.dibk.no/\">Hvor stort kan du bygge</a> for å få hjelp til å finne om du har plass. Du kan fortsette veiviseren etterpå."
                     },
                     {
                       "nodeId": "resultatTakk",
@@ -2104,8 +2106,8 @@
               "id": "plan",
               "property": "plan",
               "type": "Radio",
-              "heading": "Finnes det begrensninger i kommuneplanens arealdel eller reguleringsplan?",
-              "text": "<p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette kan du ofte finne informasjon om i kommunale dokumenter som reguleringsplan, kommuneplanens arealdel eller situasjonskart.</p><p>Eksempel på slike begrensninger er om du skal gjøre noe i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Er du usikker bør du sjekke med kommunen.</p>",
+              "heading": "Er det andre forhold som hindrer deg i å bygge der du ønsker?",
+              "text": "<p>Dette kan du ofte finne informasjon om i kommunale dokumenter som reguleringsplan, kommuneplanens arealdel eller situasjonskart.</p><p>Eksempel på begrensninger er om du skal gjøre noe i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Er du usikker bør du sjekke med kommunen.</p>",
               "show": {
                 "type": "or",
                 "clauses": [
@@ -2125,13 +2127,13 @@
                 {
                   "id": "plan.ja",
                   "type": "Answer",
-                  "heading": "Ja, det finnes begrensninger",
+                  "heading": "Ja",
                   "value": "ja"
                 },
                 {
                   "id": "plan.nei",
                   "type": "Answer",
-                  "heading": "Nei, det finnes ikke begrensninger",
+                  "heading": "Nei",
                   "value": "nei"
                 }
               ]
