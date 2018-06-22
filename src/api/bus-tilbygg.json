@@ -1805,7 +1805,7 @@
                           "id": "byggegrenseOk.text",
                           "type": "Text",
                           "warning": true,
-                          "text": "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                          "text": "Du bør vurdere en annen plassering. Er ikke det mulig, må du høre med kommunen om hva det er lov å gjøre på eiendommen."
                         }
                       ]
                     },
@@ -1989,7 +1989,6 @@
           "property": "arealGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Regler for din eiendom",
           "show": {
             "type": "or",
             "clauses": [
@@ -2058,7 +2057,7 @@
                           "id": "arealNei.text",
                           "type": "Text",
                           "warning": true,
-                          "text": "Du kan søke om en dispensasjon, og det er opp til kommunen å vurdere om du får lov eller ikke."
+                          "text": "Du bør bygge mindre. Er ikke det mulig, må du høre med kommunen om mulighetene for å søke om dispensasjon."
                         }
                       ]
                     },
