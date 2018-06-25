@@ -20,7 +20,7 @@ function Intro({ close, data }) {
   return (
     <Primitives.Wizard>
       <IntroMain>
-        <Primitives.Heading.H1>Bygg uten å søke: Tilbygg</Primitives.Heading.H1>
+        <Primitives.Heading.H1>Bygg uten å søke</Primitives.Heading.H1>
         <Primitives.Paragraphs.P>Skal du utvide huset ditt med f eks en terrasse, veranda eller et annet tilbygg? Svar på spørsmålene i denne veiviseren for å finne ut om du:</Primitives.Paragraphs.P>
         <ul>
           <li>må sende byggesøknad til kommunen</li>
