@@ -35,9 +35,6 @@ export const IntroMain = styled.main`
   figure img {
     width: 100%;
   }
-  ol, p {
-    margin-bottom: 40px;
-  }
   ol {
     list-style: none;
     margin: 1.8em 0 3em 4em;

@@ -3,17 +3,17 @@
   "version": "0.1.2",
   "private": true,
   "dependencies": {
-    "losen": "^2.2.0",
     "lodash.get": "^4.4.2",
-    "prop-types": "^15.6.0",
-    "react": "^16.3.0",
+    "losen": "^3.1.2",
+    "prop-types": "^15.6.2",
+    "react": "^15.6.1",
     "react-autobind": "^1.0.6",
-    "react-dom": "^16.4.0",
+    "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-persist": "^4.10.1",
-    "styled-components": "^2.2.0"
+    "styled-components": "^2.4.1"
   },
   "scripts": {
     "start": "PORT=8080 react-scripts start",
@@ -28,9 +28,9 @@
   "devDependencies": {
     "eslint": "^4.7.2",
     "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.4.0"
+    "eslint-plugin-react": "^7.9.1"
   },
   "eslintConfig": {
     "parser": "babel-eslint",

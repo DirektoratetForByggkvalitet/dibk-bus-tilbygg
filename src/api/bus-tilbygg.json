@@ -1,7 +1,8 @@
 {
   "meta": {
-    "title": "Bygg uten å søke: Tilbygg",
-    "name": "tilbygg"
+    "title": "Bygg uten å søke",
+    "name": "tilbygg",
+    "footer": "fooooter"
   },
   "computed": {
     "grenser": {
@@ -49,7 +50,7 @@
     {
       "id": "kartlegging",
       "type": "Page",
-      "heading": "Plan for bygningen",
+      "heading": "Det du skal bygge",
       "children": [
         {
           "id": "hvaSkalDuBygge",
@@ -63,7 +64,7 @@
               "heading": "Terrasse eller platting",
               "value": "terrasse",
               "image": {
-                "url": "/images/Forside_terrasse.png",
+                "url": "/images/Forside_terrasse.jpg",
                 "alt": "Hus med terrasse"
               }
             },
@@ -73,7 +74,7 @@
               "heading": "Veranda eller glassveranda",
               "value": "veranda",
               "image": {
-                "url": "/images/Forside_veranda.png",
+                "url": "/images/Forside_veranda.jpg",
                 "alt": "Hus med veranda"
               }
             },
@@ -83,7 +84,7 @@
               "heading": "Tilbygg (f.eks. bod, sykkelskur eller trapperom)",
               "value": "tilbygg",
               "image": {
-                "url": "/images/Forside_tilbygg.png",
+                "url": "/images/Forside_tilbygg.jpg",
                 "alt": "Hus med tilbygg"
               }
             },
@@ -91,7 +92,11 @@
               "id": "hvaSkalDuBygge.takterrasse",
               "type": "Answer",
               "heading": "Takterrasse",
-              "value": "takterrasse"
+              "value": "takterrasse",
+              "image": {
+                "url": "/images/Forside_takterrasse.jpg",
+                "alt": "Hus med takterrasse"
+              }
             }
           ]
         },
@@ -113,7 +118,8 @@
                     {
                       "id": "hvaSkalDuByggeBranch.text",
                       "type": "Text",
-                      "heading": "Det er søknadspliktig å bygge takterrasse, og du må bruke fagpersoner i hele byggeprosessen."
+                      "text":
+                        "Det er søknadspliktig å bygge takterrasse, og du må bruke fagpersoner i hele byggeprosessen."
                     }
                   ]
                 },
@@ -121,9 +127,11 @@
                   "type": "Result",
                   "id": "resultatAnsvarligSoker",
                   "heading": "Du må søke og bruke fagpersoner",
-                  "lead": "<p>Det er søknadspliktig å bygge det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. En liste over disse finner du <a href=\"https://sgregister.dibk.no/\">her</a>.</p><p>Takk for at du prøvde veiviseren!</p>",
+                  "lead":
+                    "<p>Det er søknadspliktig å bygge det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. En liste over disse finner du <a href=\"https://sgregister.dibk.no/\">her</a>.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
                   "errorheading": "Du har ikke svart på alle spørsmålene",
-                  "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+                  "errorlead":
+                    "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                 }
               ]
             }
@@ -132,6 +140,7 @@
         {
           "id": "bebygdGroup",
           "type": "Group",
+          "property": "bebygdGroup",
           "simple": true,
           "show": {
             "field": "hvaSkalDuBygge",
@@ -143,18 +152,19 @@
               "property": "bebygd",
               "type": "Radio",
               "heading": "Er eiendommen bebygd?",
-              "text": "<p>Eiendommen din er bebygd hvis det for eksempel er et bolighus eller en hytte på eiendommen fra før.</p>",
+              "text":
+                "<p>Eiendommen din er bebygd hvis det for eksempel er et bolighus eller en hytte på eiendommen fra før. Står det kun et skur eller garasje regnes ikke eiendommen som bebygd.</p>",
               "options": [
                 {
                   "id": "bebygd.ja",
                   "type": "Answer",
-                  "heading": "Ja, eiendommen er bebygd.",
+                  "heading": "Ja",
                   "value": "ja"
                 },
                 {
                   "id": "bebygd.nei",
                   "type": "Answer",
-                  "heading": "Nei, eiendommen er ikke bebygd.",
+                  "heading": "Nei",
                   "value": "nei"
                 }
               ]
@@ -186,7 +196,8 @@
                         {
                           "id": "error.bebygd.nei",
                           "type": "Text",
-                          "heading": "Du må som regel søke for å bygge noe på en ubebygd eiendom.  Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                          "text":
+                            "Du må som regel søke hvis det ikke er et bolighus eller hytte på tomta fra før. Gjelder det en næringseiendommen må du snakke med kommunen."
                         }
                       ]
                     },
@@ -195,9 +206,11 @@
                       "type": "Result",
                       "text": "ResultatTakk",
                       "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
-                      "lead": "<p>Her kan du se hva du har svart på de ulike spørsmålene. Du kan endre svarene dine i oversikten under. Takk for at du prøvde veiviseren!</p>",
+                      "lead":
+                        "<p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
                       "errorheading": "Du har ikke svart på alle spørsmålene",
-                      "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+                      "errorlead":
+                        "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                     }
                   ]
                 }
@@ -208,6 +221,7 @@
         {
           "id": "regulertGroup",
           "type": "Group",
+          "property": "regulertGroup",
           "simple": true,
           "show": {
             "field": "bebygd",
@@ -219,7 +233,8 @@
               "property": "regulert",
               "type": "Radio",
               "heading": "Finnes det en reguleringsplan for eiendommen?",
-              "text": "<p>Sjekk med kommunen din om det finnes en reguleringsplan for eiendommen. Dette kan du som regel finne på kommunens nettsted.</p>",
+              "text":
+                "<p>Sjekk med kommunen din om det finnes en reguleringsplan for eiendommen. Dette kan du som regel finne på kommunens nettsted.</p>",
               "hide": {
                 "field": "bebygd",
                 "operator": "not"
@@ -262,17 +277,14 @@
                           "id": "regulert.nei.feil.tekst",
                           "type": "Text",
                           "warning": true,
-                          "heading": "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det ikke finnes en reguleringsplan. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                          "text":
+                            "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det ikke finnes en reguleringsplan. Hør med kommunen om hva det er lov å gjøre på eiendommen."
                         }
                       ]
                     },
                     {
-                      "id": "resultatDisp",
-                      "type": "Result",
-                      "heading": "Du trenger kanskje dispensasjon",
-                      "lead": "<p>Du må undersøke om du trenger dispensasjon. Dette er en søknad som har 12 ukers behandlingstid.</p><p><strong>Trenger du dispensasjon?</strong><br />Da bør du undersøke om du kan unngå dispensasjon, for eksempel ved å endre plassering på det du vil bygge.</p>",
-                      "errorheading": "Du har ikke svart på alle spørsmålene",
-                      "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+                      "nodeId": "resultatTakk",
+                      "type": "Reference"
                     }
                   ]
                 }
@@ -302,7 +314,6 @@
                   "id": "terrasseRekkverkGroup",
                   "property": "terrasseRekkverkGroup",
                   "simple": false,
-                  "heading": "Størrelse og plassering",
                   "show": {
                     "type": "or",
                     "clauses": [
@@ -318,7 +329,8 @@
                       "id": "terrasseOverBakken",
                       "property": "terrasseOverBakken",
                       "type": "Radio",
-                      "heading": "Blir terrassegulvet eller plattingen på noe som helst punkt høyere enn 0,5 meter over bakken?",
+                      "heading":
+                        "Blir terrassegulvet eller plattingen på noe som helst punkt høyere enn 0,5 meter over bakken?",
                       "show": {
                         "field": "hvaSkalDuBygge",
                         "operator": "eq",
@@ -328,7 +340,8 @@
                         {
                           "id": "terrasseOverBakken.ja",
                           "type": "Answer",
-                          "heading": "Ja, hele eller deler av gulvet blir høyere enn 0,5 meter over bakken",
+                          "heading":
+                            "Ja, hele eller deler av gulvet blir høyere enn 0,5 meter over bakken",
                           "value": "ja"
                         },
                         {
@@ -344,7 +357,8 @@
                       "property": "terrasseRekkverk",
                       "type": "Radio",
                       "heading": "Blir noe av terrassen høyere enn 0,5 meter over bakken?",
-                      "text": "<p>Husk å regne med for eksempel rekkverk, levegg, glassvegger og annet som er festet i terrassegulvet.</p>",
+                      "text":
+                        "<p>Dette kan for eksempel være rekkverk, levegger, glassvegger eller annet som er fastmontert i terrassen.</p>",
                       "show": {
                         "field": "terrasseOverBakken",
                         "operator": "eq",
@@ -354,7 +368,8 @@
                         {
                           "id": "terrasseRekkverk.ja",
                           "type": "Answer",
-                          "heading": "Ja, hele eller deler av terrassen blir høyere enn 0,5 meter over bakken",
+                          "heading":
+                            "Ja, hele eller deler av terrassen blir høyere enn 0,5 meter over bakken",
                           "value": "ja"
                         },
                         {
@@ -384,7 +399,8 @@
                                   "id": "terrasseRekkverkResultat.over05m.tekst",
                                   "type": "Text",
                                   "warning": true,
-                                  "heading": "Hvis terrasserekkverket er over 0,5 meter må du snakke med kommunen før du gjør noe."
+                                  "text":
+                                    "Du må høre med kommunen om det du bygger blir søknadspliktig."
                                 }
                               ]
                             },
@@ -401,7 +417,6 @@
                       "property": "terrassePlassering",
                       "type": "Radio",
                       "heading": "Hvor skal terrassen eller plattingen ligge?",
-                      "text": "<p></p>",
                       "show": {
                         "field": "terrasseOverBakken",
                         "operator": "eq",
@@ -423,7 +438,8 @@
                         {
                           "id": "terrassePlassering.frittliggende",
                           "type": "Answer",
-                          "heading": "Terrassen blir frittliggende og minst 1 meter fra andre bygninger",
+                          "heading":
+                            "Terrassen blir frittliggende og minst 1 meter fra andre bygninger",
                           "value": "frittliggende"
                         },
                         {
@@ -452,7 +468,8 @@
                                 {
                                   "id": "terrasseplasseringAnnetResult.text",
                                   "type": "Text",
-                                  "heading": "Veiviseren dekker dessverre ikke ditt tilfelle. Takk for at du prøvde veiviseren!"
+                                  "text":
+                                    "Veiviseren dekker dessverre ikke ditt tilfelle. Takk for at du prøvde veiviseren!"
                                 }
                               ]
                             },
@@ -469,7 +486,11 @@
                       "property": "frittliggende",
                       "type": "Radio",
                       "heading": "Hvor stort blir det du skal bygge?",
-                      "text": "<p>Husk å regne med rekkverk og sånnt</p>",
+                      "text":
+                        "<p>Vi er ute etter samlet bruksareal (BRA) og bebygd areal (BYA). Oppgi det som har størst areal av BRA og BYA.</p>",
+                      "summary": "Hva er BRA/BYA?",
+                      "details":
+                        "<p>Alle regulerte eiendommer har regler på hvor mye du kan bygge på eiendommen. Det finnes flere måter å beregne hvor mye du kan bygge, men det er kun én type som gjelder for din eiendom. Noen ganger er det hvor stort \"fotavtrykk\" bygninger har på eiendommen (BYA), andre ganger skal man regne sammen bruksareal i alle etasjer (BRA). Du finner beregningsmåten i kommuneplanen eller i reguleringsbestemmelsene. <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Les mer om BRA/BYA på DiBKs nettsider.</a></p>",
                       "show": {
                         "field": "terrassePlassering",
                         "operator": "eq",
@@ -479,7 +500,7 @@
                         {
                           "id": "frittliggende.under",
                           "type": "Answer",
-                          "heading": "Under 50 kvm",
+                          "heading": "Inntil 50 kvm",
                           "value": "under"
                         },
                         {
@@ -511,11 +532,18 @@
                               "id": "frittliggende.under.text",
                               "type": "Text",
                               "warning": true,
-                              "text": "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>. Den er laget for boder og garasjer, men samme reglene gjelder for bygging av terrasser som er høyere enn 0,5 meter over bakken."
+                              "text":
+                                "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>. Den er laget for boder og garasjer, men samme reglene gjelder for bygging av terrasser som er høyere enn 0,5 meter over bakken."
                             },
                             {
-                              "nodeId": "resultatTakk",
-                              "type": "Reference"
+                              "id": "resultatFrittliggende",
+                              "type": "Result",
+                              "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                              "lead":
+                                "<p>Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>. Den er laget for boder og garasjer, men samme reglene gjelder for bygging av terrasser som er høyere enn 0,5 meter over bakken.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                              "errorheading": "Du har ikke svart på alle spørsmålene",
+                              "errorlead":
+                                "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                             }
                           ]
                         }
@@ -540,7 +568,8 @@
                                   "id": "frittliggende.mellom.text",
                                   "type": "Text",
                                   "warning": true,
-                                  "heading": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd."
+                                  "text":
+                                    "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd."
                                 }
                               ]
                             },
@@ -548,9 +577,11 @@
                               "id": "resultatSokeSelv",
                               "type": "Result",
                               "heading": "Du må søke",
-                              "lead": "Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan å få en komplett byggesøknad i vår guide <a href=\"https://dibk.no/om-oss/pilot-veien-til-komplett-byggesoknad/\">\"Veien til komplett byggesøknad\"</a>",
+                              "lead":
+                                "<p>Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan du lager en komplett byggesøknad i vår guide <a href=\"https://dibk.no/om-oss/pilot-veien-til-komplett-byggesoknad/\">\"Veien til komplett byggesøknad\"</a>.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
                               "errorheading": "Du har ikke svart på alle spørsmålene",
-                              "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+                              "errorlead":
+                                "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                             }
                           ]
                         }
@@ -575,7 +606,8 @@
                                   "id": "frittliggende.over.text",
                                   "type": "Text",
                                   "warning": true,
-                                  "heading": "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
+                                  "text":
+                                    "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
                                 }
                               ]
                             },
@@ -607,7 +639,7 @@
                                   "id": "terrasseplan.text",
                                   "type": "Text",
                                   "warning": true,
-                                  "heading": "Interessant at den blir høyere enn 0.5 meter"
+                                  "text": "Interessant at den blir høyere enn 0.5 meter"
                                 }
                               ]
                             },
@@ -630,7 +662,6 @@
           "property": "tilbyggVerandaHvorGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Plassering",
           "show": {
             "type": "or",
             "clauses": [
@@ -648,19 +679,19 @@
           },
           "children": [
             {
-              "type": "Image",
-              "id": "tilbyggVerandaHvorImage",
-              "image": {
-                "url": "/images/plasseringbygning.png",
-                "alt": "Room"
-              }
-            },
-            {
               "type": "Radio",
-              "id": "tilbyggVerandaHvorRadio",
+              "id": "tilbyggVerandaHvor",
               "property": "tilbyggVerandaHvor",
               "heading": "Hvor skal du plassere det du bygger?",
+              "text":
+                "<p>Vi tar utgangspunkt i at du skal plassere det du bygger på en bygning som står der fra før.</p>",
               "options": [
+                {
+                  "id": "tilbyggVerandaHvor.paaBakken",
+                  "type": "Answer",
+                  "heading": "På bakken inntil en bygning",
+                  "value": "paaBakken"
+                },
                 {
                   "id": "tilbyggVerandaHvor.veggTilEksisterende",
                   "type": "Answer",
@@ -672,12 +703,6 @@
                   "type": "Answer",
                   "heading": "På taket til en eksisterende bygning",
                   "value": "takTilEksisterende"
-                },
-                {
-                  "id": "tilbyggVerandaHvor.paaBakken",
-                  "type": "Answer",
-                  "heading": "Rett på bakken",
-                  "value": "paaBakken"
                 },
                 {
                   "id": "tilbyggVerandaHvor.underBakken",
@@ -711,7 +736,8 @@
                         {
                           "id": "error.bebygd.nei",
                           "type": "Text",
-                          "heading": "Veiviseren dekker dessverre ikke ditt tilfelle. Takk for at du prøvde veiviseren!"
+                          "text":
+                            "Veiviseren dekker dessverre ikke ditt tilfelle. Takk for at du prøvde veiviseren!"
                         }
                       ]
                     },
@@ -751,7 +777,8 @@
                         {
                           "id": "tilbygVerandaHvorResult.text",
                           "type": "Text",
-                          "heading": "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
+                          "text":
+                            "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
                         }
                       ]
                     },
@@ -781,7 +808,8 @@
                         {
                           "id": "tilbyggUnderBakken.text",
                           "type": "Text",
-                          "heading": "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
+                          "text":
+                            "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
                         }
                       ]
                     },
@@ -794,24 +822,12 @@
               ]
             },
             {
-              "type": "Image",
-              "id": "tilbyggVerandaFesteImage",
-              "image": {
-                "url": "/images/Feste.png",
-                "alt": "Room"
-              },
-              "show": {
-                "field": "tilbyggVerandaHvor",
-                "operator": "eq",
-                "value": "veggTilEksisterende"
-              }
-            },
-            {
-              "id": "tilbyggVerandaFesteRadio",
+              "id": "tilbyggVerandaFeste",
               "property": "tilbyggVerandaFeste",
               "type": "Radio",
               "heading": "Blir det du bygger understøttet og festet til bakken?",
-              "text": "<p>Du kan svare ja hvis du for eksempel skal bygge en veranda med en bærekonstruksjon som står på bakken.</p>",
+              "text":
+                "<p>Du kan svare ja hvis du for eksempel skal bygge:</p><ul><li>en bygning som står på bakken</li><li>en veranda med en bærekonstruksjon som står på bakken</li></ul>",
               "show": {
                 "field": "tilbyggVerandaHvor",
                 "operator": "eq",
@@ -850,7 +866,8 @@
                         {
                           "id": "error.feste.nei",
                           "type": "Text",
-                          "heading": "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
+                          "text":
+                            "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
                         }
                       ]
                     },
@@ -863,7 +880,7 @@
               ]
             },
             {
-              "id": "tilbyggVerandaPlasseringRadio",
+              "id": "tilbyggVerandaPlassering",
               "property": "tilbyggVerandaPlassering",
               "type": "Radio",
               "heading": "Hva skal det du bygger ligge inntil?",
@@ -921,7 +938,8 @@
                         {
                           "id": "tilbyggVerandaResult.text",
                           "type": "Text",
-                          "heading": "Veiviseren dekker dessverre ikke ditt tilfelle. Takk for at du prøvde veiviseren!"
+                          "text":
+                            "Veiviseren dekker dessverre ikke ditt tilfelle. Takk for at du prøvde veiviseren!"
                         }
                       ]
                     },
@@ -932,55 +950,55 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "Branch",
-          "id": "tilbyggVerandaHvorBranch",
-          "branches": [
+            },
             {
-              "test": {
-                "type": "or",
-                "clauses": [
-                  {
-                    "field": "tilbyggVerandaHvor",
-                    "operator": "eq",
-                    "value": "underBakken"
-                  },
-                  {
-                    "field": "tilbyggVerandaHvor",
-                    "operator": "eq",
-                    "value": "takTilEksisterende"
-                  },
-                  {
-                    "field": "tilbyggVerandaFeste",
-                    "operator": "eq",
-                    "value": "nei"
-                  }
-                ]
-              },
-              "children": [
+              "type": "Branch",
+              "id": "tilbyggVerandaHvorBranch",
+              "branches": [
                 {
-                  "type": "Error",
-                  "id": "tilbyggVerandaHvor.error",
-                  "text": "feilmelding frittliggende over",
-                  "show": {
-                    "field": "tilbyggVerandaHvor",
-                    "operator": "eq",
-                    "value": "underBakken"
+                  "test": {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "tilbyggVerandaHvor",
+                        "operator": "eq",
+                        "value": "underBakken"
+                      },
+                      {
+                        "field": "tilbyggVerandaHvor",
+                        "operator": "eq",
+                        "value": "takTilEksisterende"
+                      },
+                      {
+                        "field": "tilbyggVerandaFeste",
+                        "operator": "eq",
+                        "value": "nei"
+                      }
+                    ]
                   },
                   "children": [
                     {
-                      "id": "tilbyggGarasje.error.text",
-                      "type": "Text",
-                      "heading": "det kan ikke bli så lite"
+                      "type": "Error",
+                      "id": "tilbyggVerandaHvor.error",
+                      "show": {
+                        "field": "tilbyggVerandaHvor",
+                        "operator": "eq",
+                        "value": "underBakken"
+                      },
+                      "children": [
+                        {
+                          "id": "tilbyggGarasje.error.text",
+                          "type": "Text",
+                          "text":
+                            "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen. "
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Reference",
+                      "nodeId": "resultatAnsvarligSoker"
                     }
                   ]
-                },
-                {
-                  "type": "Reference",
-                  "nodeId": "resultatAnsvarligSoker"
                 }
               ]
             }
@@ -990,10 +1008,40 @@
           "id": "tilbyggGarasjeGroup",
           "property": "tilbyggGarasjeGroup",
           "type": "Group",
-          "simple": true,
+          "simple": false,
           "show": {
             "type": "or",
             "clauses": [
+              {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "hvaSkalDuBygge",
+                    "operator": "eq",
+                    "value": "veranda"
+                  },
+                  {
+                    "field": "tilbyggVerandaHvor",
+                    "operator": "eq",
+                    "value": "paaBakken"
+                  },
+                  {
+                    "type": "or",
+                    "clauses": [
+                      {
+                        "field": "tilbyggVerandaPlassering",
+                        "operator": "eq",
+                        "value": "bodGarasje"
+                      },
+                      {
+                        "field": "tilbyggVerandaPlassering",
+                        "operator": "eq",
+                        "value": "husHytte"
+                      }
+                    ]
+                  }
+                ]
+              },
               {
                 "type": "and",
                 "clauses": [
@@ -1101,8 +1149,12 @@
               "id": "tilbyggGarasje",
               "property": "tilbyggGarasje",
               "type": "Radio",
-              "heading": "Hvor stor blir bod/garasje og det du bygger til sammen?",
-              "text": "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA). <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Hva er BRA/BYA?</a></p>",
+              "heading": "Hvor stor blir det som står der nå og det du skal bygge til sammen?",
+              "text":
+                "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
+              "summary": "Hva er BRA/BYA?",
+              "details":
+                "<p>Alle regulerte eiendommer har regler på hvor mye du kan bygge på eiendommen. Det finnes flere måter å beregne hvor mye du kan bygge, men det er kun én type som gjelder for din eiendom. Noen ganger er det hvor stort \"fotavtrykk\" bygninger har på eiendommen (BYA), andre ganger skal man regne sammen bruksareal i alle etasjer (BRA). Du finner beregningsmåten i kommuneplanen eller i reguleringsbestemmelsene. <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Les mer om BRA/BYA på DiBKs nettsider.</a></p>",
               "show": {
                 "type": "or",
                 "clauses": [
@@ -1122,7 +1174,7 @@
                 {
                   "id": "tilbyggGarasje.under50kvm",
                   "type": "Answer",
-                  "heading": "Under 50 kvm",
+                  "heading": "Inntil 50 kvm",
                   "value": "under50kvm"
                 },
                 {
@@ -1147,11 +1199,18 @@
                     {
                       "id": "tilbyggGarasje.error.text",
                       "type": "Text",
-                      "text": "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>, og svare som om du skal bygge en ny bygning under 50 kvm.  Finner du ikke begrensninger der, kan du utvide bygningen som står der i dag slik du ønsker."
+                      "text":
+                        "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>, og svare som om du skal bygge en ny bygning under 50 kvm.  Finner du ikke begrensninger der, kan du utvide bygningen som står der i dag slik du ønsker."
                     },
                     {
-                      "nodeId": "resultatTakk",
-                      "type": "Reference"
+                      "id": "resultatGarasje",
+                      "type": "Result",
+                      "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
+                      "lead":
+                        "<p>Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>, og svare som om du skal bygge en ny bygning under 50 kvm. Finner du ikke begrensninger der, kan du utvide bygningen som står der i dag slik du ønsker.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                      "errorheading": "Du har ikke svart på alle spørsmålene",
+                      "errorlead":
+                        "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                     }
                   ]
                 }
@@ -1162,7 +1221,11 @@
               "property": "inntilBygning",
               "type": "Radio",
               "heading": "Hvor stort blir det du skal bygge?",
-              "text": "<p>Her er vi kun ute etter arealet på det du skal bygge, og ikke på det som står der fra før. Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA). <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Hva er BRA/BYA?</a></p>",
+              "text":
+                "<p>Her er vi kun ute etter arealet på det du skal bygge, og ikke på det som står der fra før. Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
+              "summary": "Hva er BRA/BYA?",
+              "details":
+                "<p>Alle regulerte eiendommer har regler på hvor mye du kan bygge på eiendommen. Det finnes flere måter å beregne hvor mye du kan bygge, men det er kun én type som gjelder for din eiendom. Noen ganger er det hvor stort \"fotavtrykk\" bygninger har på eiendommen (BYA), andre ganger skal man regne sammen bruksareal i alle etasjer (BRA). Du finner beregningsmåten i kommuneplanen eller i reguleringsbestemmelsene. <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Les mer om BRA/BYA på DiBKs nettsider.</a></p>",
               "show": {
                 "type": "or",
                 "clauses": [
@@ -1187,7 +1250,7 @@
                 {
                   "id": "inntilBygning.under",
                   "type": "Answer",
-                  "heading": "Under 15 kvm",
+                  "heading": "Inntil 15 kvm",
                   "value": "under"
                 },
                 {
@@ -1222,7 +1285,8 @@
                         {
                           "id": "inntilBygningBranch.text",
                           "type": "Text",
-                          "heading": "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
+                          "text":
+                            "Dette er søknadspliktig, og du må bruke ansvarlige foretak i hele byggeprosessen."
                         }
                       ]
                     },
@@ -1246,7 +1310,7 @@
                         {
                           "id": "inntilBygningBranch.text",
                           "type": "Text",
-                          "heading": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd."
+                          "text": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd."
                         }
                       ]
                     },
@@ -1255,64 +1319,6 @@
                       "nodeId": "resultatSokeSelv"
                     }
                   ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "Branch",
-          "id": "resultatAnsvarligSoker.branch",
-          "branches": [
-            {
-              "test": {
-                "field": "resultatAnsvarligSoker",
-                "operator": "eq",
-                "value": "yes"
-              },
-              "children": [
-                {
-                  "id": "ResultatAnsvarligSoker.error",
-                  "type": "Error",
-                  "children": [
-                    {
-                      "id": "ResultatAnsvarligSoker.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading": "feilmelding"
-                    }
-                  ]
-                },
-                {
-                  "type": "Reference",
-                  "nodeId": "ResultatAnsvarligSoker"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "Result",
-          "id": "ResultatAnsvarligSoker",
-          "heading": "Du må søke",
-          "lead": "<p>Det er søknadspliktig å bygge det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. En liste over disse finner du <a href=\"https://sgregister.dibk.no/\">her</a>.</p><p>Takk for at du prøvde veiviseren!</p>",
-          "errorheading": "Du har ikke svart på alle spørsmålene",
-          "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>",
-          "show": {
-            "field": "inntilBygning",
-            "operator": "eq",
-            "value": "over"
-          },
-          "children": [
-            {
-              "id": "ResultatAnsvarligSoker.error",
-              "type": "Error",
-              "children": [
-                {
-                  "id": "ResultatAnsvarligSoker.text",
-                  "type": "Text",
-                  "warning": true,
-                  "heading": "feilmelding"
                 }
               ]
             }
@@ -1377,36 +1383,6 @@
           ]
         },
         {
-          "id": "tilbyggRomAnnet",
-          "type": "Branch",
-          "branches": [
-            {
-              "test": {
-                "field": "tilbyggRom.annet",
-                "operator": "eq",
-                "value": true
-              },
-              "children": [
-                {
-                  "id": "tilbyggRomAnnet.error",
-                  "type": "Error",
-                  "children": [
-                    {
-                      "id": "tilbyggRomAnnet.text",
-                      "type": "Text",
-                      "heading": "Du må høre med kommunen om det du bygger er søknadspliktig."
-                    }
-                  ]
-                },
-                {
-                  "type": "Reference",
-                  "nodeId": "resultatTakk"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "id": "tilbyggRomStue",
           "type": "Branch",
           "branches": [
@@ -1424,7 +1400,38 @@
                     {
                       "id": "tilbyggRomStue.text",
                       "type": "Text",
-                      "heading": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
+                      "text":
+                        "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
+                    }
+                  ]
+                },
+                {
+                  "type": "Reference",
+                  "nodeId": "resultatSokeSelv"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tilbyggRomAnnet",
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "tilbyggRom.annet",
+                "operator": "eq",
+                "value": true
+              },
+              "children": [
+                {
+                  "id": "tilbyggRomAnnet.error",
+                  "type": "Error",
+                  "children": [
+                    {
+                      "id": "tilbyggRomAnnet.text",
+                      "type": "Text",
+                      "text": "Du må høre med kommunen om det du bygger er søknadspliktig."
                     }
                   ]
                 },
@@ -1479,7 +1486,8 @@
               "property": "verandaIsolasjon",
               "type": "Radio",
               "heading": "Skal du isolere denne delen?",
-              "text": "<p>Dette gjelder hvis du for eksempel vil bygge en vinterhage eller en innglasset veranda som er isolert.</p>",
+              "text":
+                "<p>Dette gjelder hvis du for eksempel vil bygge en vinterhage eller en innglasset veranda som er isolert.</p>",
               "show": {
                 "field": "verandaRom",
                 "operator": "eq",
@@ -1530,7 +1538,7 @@
                           "id": "sokeSelvResultat.text",
                           "type": "Text",
                           "warning": true,
-                          "heading": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
+                          "text": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd."
                         }
                       ]
                     },
@@ -1641,7 +1649,6 @@
           "property": "grenseGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Grense mot naboeiendom",
           "hide": {
             "field": "terrasseRekkverk",
             "operator": "is"
@@ -1652,7 +1659,8 @@
               "property": "byggegrense",
               "type": "Radio",
               "heading": "Finnes det en byggegrense mot naboeiendommer i reguleringsplanen?",
-              "text": "<p>En byggegrense bestemmer hvor langt unna du kan bygge mot f eks vei eller nabo. Du finner informasjon om byggegrense i reguleringsplanen, reguleringsbestemmelser eller i kommuneplanens arealdel. </p>",
+              "text":
+                "<p>En byggegrense bestemmer hvor langt unna du kan bygge mot f eks vei eller nabo. Du finner informasjon om byggegrense i reguleringsplanen, reguleringsbestemmelser eller i kommuneplanens arealdel. </p>",
               "options": [
                 {
                   "id": "byggegrense.ja",
@@ -1672,8 +1680,9 @@
               "id": "byggegrenseOk",
               "property": "byggegrenseOk",
               "type": "Radio",
-              "heading": "Blir tilbygget innenfor byggegrensene?",
-              "text": "<p>For å slippe å søke, må bygningen være innenfor byggegrensene.</p>",
+              "heading": "Blir det du skal bygge innenfor byggegrensene?",
+              "text":
+                "<p>For å slippe å søke, må det du skal bygge være innenfor byggegrensene.</p>",
               "show": {
                 "type": "or",
                 "clauses": [
@@ -1710,7 +1719,8 @@
               "property": "nabogrense",
               "type": "Radio",
               "heading": "Blir det du skal bygge minst 4 meter fra nabogrensa?",
-              "text": "<p>Hvis det ikke finnes byggegrense mot naboer, er hovedregelen at du kan bygge 4,0 meter fra nabogrensa. Det du bygger, kan ikke på noe som helst punkt være nærmere naboen enn 4,0 meter.</p>",
+              "text":
+                "<p>Hvis det ikke finnes byggegrense mot naboer, er hovedregelen at du kan bygge 4,0 meter fra nabogrensa. Det du bygger kan ikke på noe som helst punkt være nærmere nabogrensa enn 4,0 meter.</p>",
               "show": {
                 "field": "byggegrense",
                 "operator": "eq",
@@ -1730,68 +1740,70 @@
                   "value": "nei"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "grenseresultat.branch",
-          "type": "Branch",
-          "branches": [
+            },
             {
-              "test": {
-                "field": "nabogrense",
-                "operator": "eq",
-                "value": "nei"
-              },
-              "children": [
+              "id": "grenseresultat.branch",
+              "type": "Branch",
+              "branches": [
                 {
-                  "id": "grenseresultat.error",
-                  "type": "Error",
-                  "simple": true,
+                  "test": {
+                    "field": "nabogrense",
+                    "operator": "eq",
+                    "value": "nei"
+                  },
                   "children": [
                     {
-                      "id": "grenseresultat.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
+                      "id": "grenseresultat.error",
+                      "type": "Error",
+                      "simple": true,
+                      "children": [
+                        {
+                          "id": "grenseresultat.text",
+                          "type": "Text",
+                          "warning": true,
+                          "text":
+                            "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd. Les mer på resultatsiden."
+                        }
+                      ]
+                    },
+                    {
+                      "nodeId": "resultatSokeSelv",
+                      "type": "Reference"
                     }
                   ]
-                },
-                {
-                  "nodeId": "resultatSokeSelv",
-                  "type": "Reference"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "id": "byggegrenseOk.branch",
-          "type": "Branch",
-          "branches": [
+            },
             {
-              "test": {
-                "field": "byggegrenseOk",
-                "operator": "eq",
-                "value": "nei"
-              },
-              "children": [
+              "id": "byggegrenseOk.branch",
+              "type": "Branch",
+              "branches": [
                 {
-                  "id": "byggegrenseOk.error",
-                  "type": "Error",
-                  "simple": true,
+                  "test": {
+                    "field": "byggegrenseOk",
+                    "operator": "eq",
+                    "value": "nei"
+                  },
                   "children": [
                     {
-                      "id": "byggegrenseOk.text",
-                      "type": "Text",
-                      "warning": true,
-                      "heading": "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                      "id": "byggegrenseOk.error",
+                      "type": "Error",
+                      "simple": true,
+                      "children": [
+                        {
+                          "id": "byggegrenseOk.text",
+                          "type": "Text",
+                          "warning": true,
+                          "text":
+                            "Du bør vurdere en annen plassering. Er ikke det mulig, må du høre med kommunen om hva det er lov å gjøre på eiendommen."
+                        }
+                      ]
+                    },
+                    {
+                      "nodeId": "resultatDisp",
+                      "type": "Reference"
                     }
                   ]
-                },
-                {
-                  "nodeId": "resultatDisp",
-                  "type": "Reference"
                 }
               ]
             }
@@ -1802,7 +1814,7 @@
           "property": "hoydeGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Høyde på bygget",
+          "heading": "Høyde på det du skal bygge",
           "show": {
             "type": "or",
             "clauses": [
@@ -1833,7 +1845,7 @@
                 "operator": "eq",
                 "value": true
               },
-              "heading": "Blir det du skal bygge høyere enn bygget som står der fra før?",
+              "heading": "Blir det du skal bygge høyere enn bygningen som står der fra før?",
               "options": [
                 {
                   "id": "forHoy.ja",
@@ -1844,7 +1856,8 @@
                 {
                   "id": "forHoy.kommuneOk",
                   "type": "Answer",
-                  "heading": "Ja, men det er avklart med kommunen at jeg kan bygge høyere uten å søke",
+                  "heading":
+                    "Ja, men det er avklart med kommunen at jeg kan bygge høyere uten å søke",
                   "value": "kommuneOk"
                 },
                 {
@@ -1877,12 +1890,6 @@
               },
               "options": [
                 {
-                  "id": "hoyestePunkt.under",
-                  "type": "Answer",
-                  "heading": "Nei, det blir lavere enn 5 meter",
-                  "value": "under"
-                },
-                {
                   "id": "hoyestePunkt.over",
                   "type": "Answer",
                   "heading": "Ja, det blir høyere enn 5 meter",
@@ -1893,6 +1900,12 @@
                   "type": "Answer",
                   "heading": "Ja, men avklart med kommunen at jeg kan bygge høyere uten å søke",
                   "value": "overOk"
+                },
+                {
+                  "id": "hoyestePunkt.under",
+                  "type": "Answer",
+                  "heading": "Nei, det blir lavere enn 5 meter",
+                  "value": "under"
                 }
               ]
             },
@@ -1916,7 +1929,8 @@
                           "id": "forHoy.text",
                           "type": "Text",
                           "warning": true,
-                          "heading": "Du må høre med kommunen din om det du skal bygge blir så høyt at du må søke."
+                          "text":
+                            "Du må høre med kommunen din om det du skal bygge blir så høyt at du må søke."
                         }
                       ]
                     },
@@ -1948,7 +1962,8 @@
                           "id": "hoyestePunkt.text",
                           "type": "Text",
                           "warning": true,
-                          "heading": "Du må høre med kommunen din om det du skal bygge blir så høyt at du må søke."
+                          "text":
+                            "Du må høre med kommunen din om det du skal bygge blir så høyt at du må søke."
                         }
                       ]
                     },
@@ -1967,7 +1982,6 @@
           "property": "arealGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Regler for din eiendom",
           "show": {
             "type": "or",
             "clauses": [
@@ -1994,7 +2008,8 @@
                 "value": true
               },
               "heading": "Har eiendommen din stort nok areal til bygningen du ønsker å sette opp?",
-              "text": "<p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p><ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul><p>For å finne ut hvor mye plass du har igjen å bygge på, må du regne ut hvor mye plass de eksisterende bygningene opptar.</p><p>Du kan ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp.</p>",
+              "text":
+                "<p>Eiendommen din har en begrensning på hvor mye areal eller volum du kan ha bygninger på. Dette er som regel oppgitt i situasjonskart eller reguleringsplan som:</p><ul><li>BYA: Bebygd areal. Se etter prosent BYA eller antall kvadratmeter BYA</li><li>BRA: Bruksareal. Se etter prosent BRA eller antall kvadratmeter BRA</li><li>TU: Tomteutnyttelse. Se etter prosent TU. Finnes kun på eldre planer</li></ul><p>For å finne ut hvor mye plass du har igjen å bygge på, må du regne ut hvor mye plass de eksisterende bygningene opptar.</p><p>Du kan ta vår veiviser <a href=\"http://hvorstortkandubygge.dibk.no/\">Hvor stort kan du bygge</a> for å få hjelp.</p>",
               "options": [
                 {
                   "id": "areal.ja",
@@ -2036,13 +2051,20 @@
                           "id": "arealNei.text",
                           "type": "Text",
                           "warning": true,
-                          "heading": "Du kan søke om en dispensasjon, og det er opp til kommunen å vurdere om du får lov eller ikke."
+                          "text":
+                            "Du bør bygge mindre. Er ikke det mulig, må du høre med kommunen om mulighetene for å søke om dispensasjon."
                         }
                       ]
                     },
                     {
-                      "nodeId": "resultatDisp",
-                      "type": "Reference"
+                      "id": "resultatDisp",
+                      "type": "Result",
+                      "heading": "Du trenger kanskje dispensasjon",
+                      "lead":
+                        "<p>Ut fra svarene dine vil det du skal bygge være i strid med reguleringsplan eller andre plasseringsregler. Det enkleste er ofte å tilpasse det du skal bygge, for eksempel ved å endre størrelse eller plassering.</p><p>Hvis det ikke er mulig å tilpasse det du skal bygge, bør du forhøre deg med kommunen om det er mulig å få dispensasjon. Søknad om dispensasjon må nabovarsles og har minst 12 ukers behandlingstid.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                      "errorheading": "Du har ikke svart på alle spørsmålene",
+                      "errorlead":
+                        "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                     }
                   ]
                 }
@@ -2060,17 +2082,11 @@
                   },
                   "children": [
                     {
-                      "id": "hoydeResultat.error",
-                      "type": "Error",
-                      "simple": true,
-                      "children": [
-                        {
-                          "id": "hoydeResultat.text",
-                          "type": "Text",
-                          "warning": true,
-                          "text": "Vi anbefaler å ta vår veiviser <a href=\"#\">Hvor stort kan du bygge</a> for å få hjelp til å finne om du har plass. Du kan fortsette veiviseren etterpå."
-                        }
-                      ]
+                      "id": "hoydeResultat.text",
+                      "type": "Text",
+                      "warning": true,
+                      "text":
+                        "Vi anbefaler å ta vår veiviser <a href=\"http://hvorstortkandubygge.dibk.no/\">Hvor stort kan du bygge</a> for å få hjelp til å finne om du har plass. Du kan fortsette veiviseren etterpå."
                     },
                     {
                       "nodeId": "resultatTakk",
@@ -2084,8 +2100,9 @@
               "id": "plan",
               "property": "plan",
               "type": "Radio",
-              "heading": "Finnes det begrensninger i kommuneplanens arealdel eller reguleringsplan?",
-              "text": "<p>Det kan være andre forhold som hindrer deg i å bygge slik du ønsker. Dette kan du finne informasjon om i kommunale dokumenter som reguleringsplan, kommuneplanens arealdel eller situasjonskart.</p><p>Eksempel på slike begrensninger er om du skal gjøre noe i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Er du usikker bør du sjekke med kommunen.</p>",
+              "heading": "Er det andre forhold som hindrer deg i å bygge der du ønsker?",
+              "text":
+                "<p>Dette kan du ofte finne informasjon om i kommunale dokumenter som reguleringsplan, kommuneplanens arealdel eller situasjonskart.</p><p>Eksempel på begrensninger er om du skal gjøre noe i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Er du usikker bør du sjekke med kommunen.</p>",
               "show": {
                 "type": "or",
                 "clauses": [
@@ -2105,13 +2122,13 @@
                 {
                   "id": "plan.ja",
                   "type": "Answer",
-                  "heading": "Ja, det finnes begrensninger",
+                  "heading": "Ja",
                   "value": "ja"
                 },
                 {
                   "id": "plan.nei",
                   "type": "Answer",
-                  "heading": "Nei, det finnes ikke begrensninger",
+                  "heading": "Nei",
                   "value": "nei"
                 }
               ]
@@ -2142,10 +2159,12 @@
                 {
                   "id": "resultatJippiUnder05",
                   "type": "Result",
-                  "heading": "Dine svar viser at du slipper å søke!",
-                  "lead": "<p>Du kan plassere terrassen helt inntil nabogrensa, så lenge du ikke har rekkverk.</p><p>Du kan sjekke svarene dine under for å være sikker på at du har svart riktig. </p><p>Takk for at du prøvde veiviseren!</p>",
+                  "heading": "Du kan bygge uten å søke!",
+                  "lead":
+                    "<p>Du kan plassere terrassen helt inntil nabogrensa, så lenge du ikke har rekkverk.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
                   "errorheading": "Du har ikke svart på alle spørsmålene",
-                  "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+                  "errorlead":
+                    "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                 }
               ]
             }
@@ -2185,10 +2204,12 @@
                 {
                   "id": "resultatHurraMenHusk",
                   "type": "Result",
-                  "heading": "Dine svar viser at du kan bygge uten å søke!",
-                  "lead": "<p>Når du er ferdig må du melde fra til kommunen om hva du har bygget.</p><p>Du skal bruke meldeskjemaet <a href='https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf'>\"Melding om bygning eller tilbygg som er unntatt søknadsplikt\"</a></p><p>Du kan sjekke svarene dine under for å være sikker på at du har svart riktig. </p><p>Takk for at du prøvde veiviseren!</p>",
+                  "heading": "Du kan bygge uten å søke!",
+                  "lead":
+                    "<p>Når du er ferdig må du melde fra til kommunen om hva du har bygget.</p><p>Du skal bruke meldeskjemaet <a href='https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf'>\"Melding om bygning eller tilbygg som er unntatt søknadsplikt\"</a></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
                   "errorheading": "Du har ikke svart på alle spørsmålene",
-                  "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+                  "errorlead":
+                    "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                 }
               ]
             }
@@ -2214,7 +2235,8 @@
                       "id": "planJa.text",
                       "type": "Text",
                       "warning": true,
-                      "heading": "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
+                      "text":
+                        "Du trenger som regel en dispensasjon for å bygge noe på en eiendom hvor det finnes slike begrensninger. Hør med kommunen om hva det er lov å gjøre på eiendommen."
                     }
                   ]
                 },
@@ -2231,9 +2253,10 @@
     {
       "type": "Result",
       "id": "resultatIkkeFerdig",
-      "heading": "Du har ikke svart på alle spørsmålene",
+      "heading": "Du skal aldri se denne resultatsiden",
       "errorheading": "Du har ikke svart på alle spørsmålene",
-      "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
+      "errorlead":
+        "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
     }
   ]
 }
