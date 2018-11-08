@@ -514,13 +514,13 @@
                               "id": "frittliggende.under.text",
                               "type": "Text",
                               "warning": true,
-                              "text": "Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>. Den er laget for boder og garasjer, men samme reglene gjelder for bygging av terrasser som er høyere enn 0,5 meter over bakken."
+                              "text": "Du må høre med kommunen om det du vil gjøre er søknadspliktig."
                             },
                             {
                               "id": "resultatFrittliggende",
                               "type": "Result",
                               "heading": "Veiviseren dekker dessverre ikke ditt tilfelle",
-                              "lead": "<p>Vi anbefaler deg å ta veiviseren <a href=\"http://byggutenåsøke.dibk.no\">Bygg uten å søke</a>. Den er laget for boder og garasjer, men samme reglene gjelder for bygging av terrasser som er høyere enn 0,5 meter over bakken.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                              "lead": "<p>Du må høre med kommunen om det du vil gjøre er søknadspliktig.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
                               "errorheading": "Du har ikke svart på alle spørsmålene",
                               "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                             }
