@@ -2103,7 +2103,7 @@
                   "id": "resultatJippiUnder05",
                   "type": "Result",
                   "heading": "Du kan bygge uten å søke!",
-                  "lead": "<p>Du kan plassere terrassen helt inntil nabogrensa, så lenge du ikke har rekkverk.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                  "lead": "<p>Ut fra de opplysnigenen du har gitt, kan du bygge uten å søke.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
                   "errorheading": "Du har ikke svart på alle spørsmålene",
                   "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                 }
