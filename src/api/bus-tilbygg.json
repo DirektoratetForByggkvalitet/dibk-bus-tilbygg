@@ -1612,6 +1612,44 @@
           },
           "children": [
             {
+              "id": "avstandTilNaboeiendom",
+              "property": "avstandTilNaboeiendom",
+              "type": "Radio",
+              "heading": "Blir det mindre enn 8,0 meter til nærmeste bygning på naboeiendommen?",
+              "text": "<p>Da må du brannsikre de delene av bygningen eller tilbygget som blir nærmere naboen enn 8,0 meter. Dette gjelder også de delene av bygningen din som var nærmere enn 8,0 meter fra før.</p>",
+              "options": [
+                {
+                  "id": "avstandTilNaboeiendom.ja",
+                  "type": "Answer",
+                  "heading": "Ja, det blir mindre enn 8,0 meter til bygning på naboeiendom",
+                  "value": "ja"
+                },
+                {
+                  "id": "avstandTilNaboeiendom.nei",
+                  "type": "Answer",
+                  "heading": "Nei, det blir minst 8,0 meter til bygning på naboeiendom",
+                  "value": "nei"
+                }
+              ]
+            },
+            {
+              "id": "avstandTilNaboeiendom.error",
+              "type": "Error",
+              "show": {
+                "type": "and",
+                "clauses": [{ "field": "avstandTilNaboeiendom", "operator": "eq", "value": "ja" }]
+              },
+              "children": [
+                {
+                  "id": "avstandTilNaboeiendom.msg",
+                  "type": "Text",
+                  "warning": true,
+                  "heading": "",
+                  "text": "Du må brannsikre de delene av bygningen eller tilbygget som blir nærmere naboen enn 8,0 meter. Brannmotstanden må være på minst El 30 (motstandsdyktig mot brann i 30 minutter). Be om hjelp fra fagperson om du er usikker på hva slags brannsikring du trenger."
+                }
+              ]
+            },
+            {
               "id": "byggegrense",
               "property": "byggegrense",
               "type": "Radio",
