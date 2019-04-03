@@ -2133,6 +2133,11 @@
                     "field": "hvaSkalDuBygge",
                     "operator": "eq",
                     "value": "terrasse"
+                  },
+                  {
+                    "field": "terrasseOverBakken",
+                    "operator": "eq",
+                    "value": "nei"
                   }
                 ]
               },
@@ -2155,25 +2160,55 @@
           "branches": [
             {
               "test": {
-                "type": "and",
+                "type": "or",
                 "clauses": [
                   {
-                    "field": "plan",
-                    "operator": "eq",
-                    "value": "nei"
-                  },
-                  {
-                    "type": "or",
+                    "type": "and",
                     "clauses": [
                       {
-                        "field": "hvaSkalDuBygge",
+                        "field": "plan",
                         "operator": "eq",
-                        "value": "veranda"
+                        "value": "nei"
                       },
                       {
-                        "field": "hvaSkalDuBygge",
+                        "type": "or",
+                        "clauses": [
+                          {
+                            "field": "hvaSkalDuBygge",
+                            "operator": "eq",
+                            "value": "veranda"
+                          },
+                          {
+                            "field": "hvaSkalDuBygge",
+                            "operator": "eq",
+                            "value": "tilbygg"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "and",
+                    "clauses": [
+                      {
+                        "field": "plan",
                         "operator": "eq",
-                        "value": "tilbygg"
+                        "value": "nei"
+                      },
+                      {
+                        "type": "or",
+                        "clauses": [
+                          {
+                            "field": "hvaSkalDuBygge",
+                            "operator": "eq",
+                            "value": "terrasseEllerPlatting"
+                          },
+                          {
+                            "field": "terrasseOverBakken",
+                            "operator": "eq",
+                            "value": "ja"
+                          }
+                        ]
                       }
                     ]
                   }
