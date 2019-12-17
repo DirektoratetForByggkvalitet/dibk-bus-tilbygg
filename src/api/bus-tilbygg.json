@@ -71,7 +71,7 @@
             {
               "id": "hvaSkalDuBygge.verandaEllerGlassveranda",
               "type": "Answer",
-              "heading": "Veranda",
+              "heading": "Veranda eller vinterhage",
               "value": "veranda",
               "image": {
                 "url": "/images/Forside_veranda.jpg",
@@ -1354,13 +1354,13 @@
             {
               "id": "tilbyggRom.bod",
               "type": "Answer",
-              "text": "Bod, sykkelskur, vedskjul, gang, trapp eller trapperom",
+              "text": "Bod, gang, entré, sykkelskur, vedskjul, trapp eller trapperom",
               "value": "bod"
             },
             {
               "id": "tilbyggRom.stue",
               "type": "Answer",
-              "text": "Stue, kjøkken, soverom, verksted, atelier eller kontor",
+              "text": "Stue, kjøkken, soverom, verksted, atelier, bad, toalett eller kontor",
               "value": "stue"
             },
             {
@@ -1436,7 +1436,7 @@
           "property": "verandaGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Isolasjon av veranda",
+          "heading": "Isolasjon av veranda eller vinterhage",
           "show": {
             "field": "hvaSkalDuBygge",
             "operator": "eq",
@@ -1448,7 +1448,7 @@
               "property": "verandaRom",
               "type": "Radio",
               "heading": "Skal det du bygger ha vegger eller være innglasset?",
-              "text": "<p>Dette gjelder for eksempel om du skal bygge en innglasset veranda.</p>",
+              "text": "<p>Dette gjelder for eksempel om du skal bygge en innglasset veranda eller en vinterhage.</p>",
               "show": {
                 "field": "hvaSkalDuBygge",
                 "operator": "eq",
@@ -1474,7 +1474,7 @@
               "property": "verandaIsolasjon",
               "type": "Radio",
               "heading": "Skal du isolere denne delen?",
-              "text": "<p>Dette gjelder hvis du for eksempel vil bygge en vinterhage eller en innglasset veranda som er isolert.</p>",
+              "text": "<p>Du må søke kommunen hvis du skal isolere en innglasset veranda eller en vinterhage. Dette skyldes at du får et nytt oppholdsrom som kan brukes hele året.</p>",
               "show": {
                 "field": "verandaRom",
                 "operator": "eq",
