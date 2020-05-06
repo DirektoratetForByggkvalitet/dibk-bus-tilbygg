@@ -71,7 +71,7 @@
             {
               "id": "hvaSkalDuBygge.verandaEllerGlassveranda",
               "type": "Answer",
-              "heading": "Veranda",
+              "heading": "Veranda eller vinterhage",
               "value": "veranda",
               "image": {
                 "url": "/images/Forside_veranda.jpg",
@@ -386,7 +386,7 @@
                                   "id": "terrasseRekkverkResultat.over05m.tekst",
                                   "type": "Text",
                                   "warning": true,
-                                  "text": "Du må høre med kommunen om det du bygger blir søknadspliktig."
+                                  "text": "Du må høre med kommunen om det du vil bygge er søknadspliktig."
                                 }
                               ]
                             },
@@ -424,7 +424,7 @@
                         {
                           "id": "terrassePlassering.frittliggende",
                           "type": "Answer",
-                          "heading": "Terrassen blir frittliggende og minst 1 meter fra andre bygninger",
+                          "heading": "Terrassen blir frittliggende",
                           "value": "frittliggende"
                         },
                         {
@@ -466,8 +466,38 @@
                       ]
                     },
                     {
-                      "id": "frittliggende",
-                      "property": "frittliggende",
+                      "id": "terrasseplasseringFrittliggendeResult",
+                      "type": "Branch",
+                      "branches": [
+                        {
+                          "test": {
+                            "field": "terrassePlassering",
+                            "operator": "eq",
+                            "value": "frittliggende"
+                          },
+                          "children": [
+                            {
+                              "id": "terrasseplasseringFrittliggendeResult.error",
+                              "type": "Error",
+                              "children": [
+                                {
+                                  "id": "terrasseplasseringFrittliggendeResult.text",
+                                  "type": "Text",
+                                  "text": "Du må høre med kommunen om det du vil bygge er søknadspliktig. Takk for at du prøvde veiviseren!"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Reference",
+                              "nodeId": "resultatTakk"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "frittliggendeINTAKTIV",
+                      "property": "frittliggendeINAKTIV",
                       "type": "Radio",
                       "heading": "Hvor stort blir det du skal bygge?",
                       "text": "<p>Vi er ute etter samlet bruksareal (BRA) og bebygd areal (BYA). Oppgi det som har størst areal av BRA og BYA.</p>",
@@ -476,7 +506,7 @@
                       "show": {
                         "field": "terrassePlassering",
                         "operator": "eq",
-                        "value": "frittliggende"
+                        "value": "frittliggendeINAKTIV"
                       },
                       "options": [
                         {
@@ -514,7 +544,7 @@
                               "id": "frittliggende.under.text",
                               "type": "Text",
                               "warning": true,
-                              "text": "Du må høre med kommunen om det du vil gjøre er søknadspliktig."
+                              "text": "Du må høre med kommunen om det du vil gjøre er søknadspliktig. Takk for at du prøvde veiviseren!"
                             },
                             {
                               "id": "resultatFrittliggende",
@@ -547,7 +577,7 @@
                                   "id": "frittliggende.mellom.text",
                                   "type": "Text",
                                   "warning": true,
-                                  "text": "Dette blir søknadspliktig, men du kan søke og bygge på egenhånd."
+                                  "text": "Du må høre med kommunen din om dette er søknadspliktig, og om du kan søke og bygge på egenhånd."
                                 }
                               ]
                             },
@@ -1324,13 +1354,13 @@
             {
               "id": "tilbyggRom.bod",
               "type": "Answer",
-              "heading": "Bod, sykkelskur, vedskjul, gang, trapp eller trapperom",
+              "heading": "Bod, gang, entré, sykkelskur, vedskjul, trapp eller trapperom",
               "value": "bod"
             },
             {
               "id": "tilbyggRom.stue",
               "type": "Answer",
-              "heading": "Stue, kjøkken, soverom, verksted, atelier eller kontor",
+              "heading": "Stue, kjøkken, soverom, verksted, atelier, bad, toalett eller kontor",
               "value": "stue"
             },
             {
@@ -1406,7 +1436,7 @@
           "property": "verandaGroup",
           "type": "Group",
           "simple": false,
-          "heading": "Isolasjon av veranda",
+          "heading": "Isolasjon av veranda eller vinterhage",
           "show": {
             "field": "hvaSkalDuBygge",
             "operator": "eq",
@@ -1418,7 +1448,7 @@
               "property": "verandaRom",
               "type": "Radio",
               "heading": "Skal det du bygger ha vegger eller være innglasset?",
-              "text": "<p>Dette gjelder for eksempel om du skal bygge en innglasset veranda.</p>",
+              "text": "<p>Dette gjelder for eksempel om du skal bygge en innglasset veranda eller en vinterhage.</p>",
               "show": {
                 "field": "hvaSkalDuBygge",
                 "operator": "eq",
@@ -1444,7 +1474,7 @@
               "property": "verandaIsolasjon",
               "type": "Radio",
               "heading": "Skal du isolere denne delen?",
-              "text": "<p>Dette gjelder hvis du for eksempel vil bygge en vinterhage eller en innglasset veranda som er isolert.</p>",
+              "text": "<p>Du må søke kommunen hvis du skal isolere en innglasset veranda eller en vinterhage. Dette skyldes at du får et nytt oppholdsrom som kan brukes hele året.</p>",
               "show": {
                 "field": "verandaRom",
                 "operator": "eq",
