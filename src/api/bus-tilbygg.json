@@ -1146,7 +1146,7 @@
               "id": "tilbyggGarasje",
               "property": "tilbyggGarasje",
               "type": "Radio",
-              "heading": "Hvor stor blir det som står der nå og det du skal bygge til sammen?",
+              "heading": "Hvor stort blir det som står der nå og det du skal bygge til sammen?",
               "text": "<p>Oppgi det arealet som er størst av enten bruksareal (BRA) eller bebygd areal (BYA).</p>",
               "summary": "Hva er BRA/BYA?",
               "details": "<p>Alle regulerte eiendommer har regler på hvor mye du kan bygge på eiendommen. Det finnes flere måter å beregne hvor mye du kan bygge, men det er kun én type som gjelder for din eiendom. Noen ganger er det hvor stort \"fotavtrykk\" bygninger har på eiendommen (BYA), andre ganger skal man regne sammen bruksareal i alle etasjer (BRA). Du finner beregningsmåten i kommuneplanen eller i reguleringsbestemmelsene. <a href=\"https://dibk.no/verktoy-og-veivisere/andre-fagomrader/sporsmal-og-svar-om-grad-av-utnytting/?_t_id=L6a5TUcEWyjt15qe1H2HIQ%3d%3d&_t_q=bruksareal&_t_tags=language%3ano%2csiteid%3aa8fed669-6208-4354-8fe6-9c93cb91a133&_t_ip=195.159.248.98%3a54423&_t_hit.id\">Les mer om BRA/BYA på DiBKs nettsider.</a></p>",
@@ -1306,6 +1306,105 @@
                     {
                       "type": "Reference",
                       "nodeId": "resultatSokeSelv"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "soknadsBygning",
+              "property": "soknadsBygning",
+              "type": "Radio",
+              "heading": "Er bygningen som står det fra før blitt søkt om og godkjent av kommunen?",
+              "text": "<p>Dette kan du finne ut ved å sjekke tidligere byggesaker på eiendommen din. Du finner ofte svar på dette i kommunens arkiv. Spør kommunen om du trenger hjelp til å finne fram.</p>",
+              "summary": "Hvorfor spør dere om dette?",
+              "details": "<p>Det er ulike regler basert på hvorvidt bygningen som står der fra før er søkt om eller ikke.</p>",
+              "show": {
+                "type": "and",
+                "clauses": [
+                  {
+                    "field": "tilbyggGarasje",
+                    "operator": "eq",
+                    "value": "over50kvm"
+                  },
+                  {
+                    "field": "inntilBygning",
+                    "operator": "eq",
+                    "value": "under"
+                  }
+                ]
+              },
+              "options": [
+                {
+                  "id": "soknadsBygning.ja",
+                  "type": "Answer",
+                  "heading": "Ja, den er omsøkt og godkjent",
+                  "value": "ja"
+                },
+                {
+                  "id": "soknadsBygning.nei",
+                  "type": "Answer",
+                  "heading": "Nei",
+                  "value": "nei"
+                },
+                {
+                  "id": "soknadsBygning.vetikke",
+                  "type": "Answer",
+                  "heading": "Vet ikke",
+                  "value": "vetikke"
+                }
+              ]
+            },
+            {
+              "id": "soknadsBygningBranch",
+              "type": "Branch",
+              "branches": [
+                {
+                  "test": {
+                    "field": "soknadsBygning",
+                    "operator": "eq",
+                    "value": "nei"
+                  },
+                  "children": [
+                    {
+                      "id": "soknadsBygningBranch.error",
+                      "type": "Error",
+                      "children": [
+                        {
+                          "id": "soknadsBygningBranch.text",
+                          "type": "Text",
+                          "text": "Når du skal sette opp for eksempel et tilbygg inntil en søknadsfri bygning, må du vanligvis søke dersom arealet blir større enn 50 kvm. Er du usikker på hva du har lov til, må du snakke med kommunen."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Reference",
+                      "nodeId": "resultatTakk"
+                    }
+                  ]
+                },
+                {
+                  "test": {
+                    "field": "soknadsBygning",
+                    "operator": "eq",
+                    "value": "vetikke"
+                  },
+                  "children": [
+                    {
+                      "id": "soknadsBygningBranch.error",
+                      "type": "Error",
+                      "warning": true,
+                      "children": [
+                        {
+                          "id": "soknadsBygningBranch.text",
+                          "type": "Text",
+                          "text": "Sjekk byggesaken din hos kommunen. Har kommunen et digitalt arkiv kan du ofte sjekke dette selv på nett. Finner du ikke informasjon om bygningen, kan du få hjelp av byggesak i kommunen."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "Reference",
+                      "nodeId": "resultatTakk"
                     }
                   ]
                 }
