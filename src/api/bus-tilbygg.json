@@ -1453,19 +1453,19 @@
             {
               "id": "tilbyggRom.bod",
               "type": "Answer",
-              "text": "Bod, gang, entré, sykkelskur, vedskjul, trapp eller trapperom",
+              "heading": "Bod, gang, entré, sykkelskur, vedskjul, trapp eller trapperom",
               "value": "bod"
             },
             {
               "id": "tilbyggRom.stue",
               "type": "Answer",
-              "text": "Stue, kjøkken, soverom, verksted, atelier, bad, toalett eller kontor",
+              "heading": "Stue, kjøkken, soverom, verksted, atelier, bad, toalett eller kontor",
               "value": "stue"
             },
             {
               "id": "tilbyggRom.annet",
               "type": "Answer",
-              "text": "Noe annet",
+              "heading": "Noe annet",
               "value": "annet"
             }
           ]
@@ -1766,7 +1766,13 @@
               "type": "Error",
               "show": {
                 "type": "and",
-                "clauses": [{ "field": "avstandTilNaboeiendom", "operator": "eq", "value": "ja" }]
+                "clauses": [
+                  {
+                    "field": "avstandTilNaboeiendom",
+                    "operator": "eq",
+                    "value": "ja"
+                  }
+                ]
               },
               "children": [
                 {
