@@ -20,11 +20,14 @@ function Intro({ close, data }) {
   return (
     <Primitives.Wizard>
       <IntroMain>
-        <Primitives.Heading.H1>Bygg uten å søke</Primitives.Heading.H1>
-        <Primitives.Paragraphs.Lead>Skal du utvide huset ditt med en terrasse, veranda eller et nytt rom? Svar på spørsmålene i denne veiviseren for å finne ut om du må sende byggesøknad til kommunen, eller om du kan slippe å søke.</Primitives.Paragraphs.Lead>
+        <Primitives.Heading.H1>Bygg uten å søke - terrasser og tilbygg</Primitives.Heading.H1>
+        <Primitives.Paragraphs.Lead>Skal du utvide huset ditt med en terrasse, veranda eller et nytt rom? Svar på spørsmålene i denne veiviseren for å finne ut om du må sende byggesøknad til kommunen.</Primitives.Paragraphs.Lead>
+        <Primitives.Paragraphs.P>
+          <Primitives.Heading.H2>Oppdatert med endringene fra 1. mai 2021.</Primitives.Heading.H2>
+        </Primitives.Paragraphs.P>
         <Primitives.Heading.H2>Før du begynner</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
-          Før du begynner er det lurt å finne fram til kommunale regler som gjelder for din eiendom. Dette er typisk:
+          Finn fram til reglene som gjelder eiendommen din. Dette kan påvirke hva du kan bygge uten å søke. Let på kommunens nettside etter:
         </Primitives.Paragraphs.P>
         <ul>
           <li>Situasjonskart for din eiendom</li>
@@ -33,20 +36,11 @@ function Intro({ close, data }) {
           <li>Kommunale vedtekter</li>
         </ul>
         <Primitives.Paragraphs.P>
-          Disse dokumentene gir blant annet svar på:
-        </Primitives.Paragraphs.P>
-        <ul>
-          <li>hva du har lov til å bygge på eiendommen din</li>
-          <li>hvor du har lov til å bygge på eiendommen din</li>
-          <li>hvor mye du har lov til å bygge på eiendommen din</li>
-        </ul>
-        <Primitives.Paragraphs.P>Dette kan hjelpe deg å svare riktig i veiviseren. </Primitives.Paragraphs.P>
-        <br />
+          Du vil også trenge disse dokumentene for å svare riktig i veiviseren. </Primitives.Paragraphs.P>
         <Primitives.Heading.H2>Start nå og fullfør senere</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
-          Det er du som er ansvarlig for at alle lover og regler blir fulgt når du bygger. Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere. Nettleseren husker hvor du var.
+          Er det noen spørsmål du er usikker på underveis? Du kan ta en pause og fortsette senere. Nettleseren husker hvor du var.
         </Primitives.Paragraphs.P>
-        <br />
         <Primitives.Heading.H2>Har du funnet ut det du trenger?</Primitives.Heading.H2>
         <Primitives.Paragraphs.P>
           Da er det bare å sette i gang med veiviseren! Du får hjelp til hvert spørsmål underveis.
