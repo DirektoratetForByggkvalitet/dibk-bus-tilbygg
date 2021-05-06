@@ -534,7 +534,7 @@
                           "id": "terrassePlassering.inntilBod",
                           "type": "Answer",
                           "heading": "Inntil en garasje, bod eller drivhus",
-                          "value": "inntilBod"
+                          "value": "annet2"
                         },
                         {
                           "id": "terrassePlassering.frittliggende",
@@ -547,6 +547,36 @@
                           "type": "Answer",
                           "heading": "Ingen av alternativene passer",
                           "value": "annet"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "terrasseplasseringAnnetResult",
+                      "type": "Branch",
+                      "branches": [
+                        {
+                          "test": {
+                            "field": "terrassePlassering",
+                            "operator": "eq",
+                            "value": "annet2"
+                          },
+                          "children": [
+                            {
+                              "id": "terrasseplasseringAnnetResult.error",
+                              "type": "Error",
+                              "children": [
+                                {
+                                  "id": "terrasseplasseringAnnetResult.text",
+                                  "type": "Text",
+                                  "text": "Veiviseren dekker dessverre ikke ditt tilfelle. Takk for at du prøvde veiviseren!"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "Reference",
+                              "nodeId": "resultatTakk"
+                            }
+                          ]
                         }
                       ]
                     },
