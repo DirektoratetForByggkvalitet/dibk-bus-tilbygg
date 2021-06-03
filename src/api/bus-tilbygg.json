@@ -2031,8 +2031,8 @@
               "id": "plattingplan",
               "property": "plattingplan",
               "type": "Radio",
-              "heading": "Er det andre forhold som hindrer deg i å bygge der du ønsker?",
-              "text": "<p>Det er ditt ansvar å finne ut om du har lov å bygge uten å søke. Det er derfor viktig å sette seg inn i kommunens planbestemmelser. Bygger du ulovlig kan det bli dyrt og tidkrevende å rydde opp i ettertid.</p><p>Eksempel på begrensninger er om du skal gjøre noe i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Er du usikker bør du sjekke med kommunen.</p>",
+              "heading": "Er det andre begrensninger som hindrer deg i å bygge?",
+              "text": "<p>Sett deg godt inn i reguleringsplanen, kommuneplanens arealdel og kommunale vedtekter. Disse inneholder ofte andre begrensninger som kan hindre deg i å bygge det du ønsker. For eksempel om du vil utvide en bevaringsverdig bygning eller bygge i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Bygger du ulovlig kan det bli dyrt og tidkrevende å rydde opp i ettertid. Er du usikker bør du sjekke med kommunen.</p>",
               "show": {
                 "type": "or",
                 "clauses": [
@@ -2801,8 +2801,8 @@
               "id": "plan",
               "property": "plan",
               "type": "Radio",
-              "heading": "Er det andre forhold som hindrer deg i å bygge der du ønsker?",
-              "text": "<p>Det er ditt ansvar å finne ut om du har lov å bygge uten å søke. Det er derfor viktig å sette seg inn i kommunens planbestemmelser. Bygger du ulovlig kan det bli dyrt og tidkrevende å rydde opp i ettertid.</p><p>Eksempel på begrensninger er om du skal gjøre noe i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Er du usikker bør du sjekke med kommunen.</p>",
+              "heading": "Er det andre begrensninger som hindrer deg i å bygge?",
+              "text": "<p>Sett deg godt inn i reguleringsplanen, kommuneplanens arealdel og kommunale vedtekter. Disse inneholder ofte andre begrensninger som kan hindre deg i å bygge det du ønsker. For eksempel om du vil utvide en bevaringsverdig bygning eller bygge i nærheten av:</p><ul><li>sjø og vassdrag</li><li>vei, trikk eller jernbane</li><li>flom- og skredsområder</li><li>kulturminner</li><li>sjeldne plante- og dyrearter</li><li>kraftlinjer</li></ul><p>Bygger du ulovlig kan det bli dyrt og tidkrevende å rydde opp i ettertid. Er du usikker bør du sjekke med kommunen.</p>",
               "show": {
                 "type": "or",
                 "clauses": [
