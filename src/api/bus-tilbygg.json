@@ -444,7 +444,7 @@
                                   "id": "terrasseRekkverkResultat.over05m.tekst",
                                   "type": "Text",
                                   "warning": true,
-                                  "text": "Blir hele terrassen under 15 kvadratmeter? Da kan det hende det du vil gjøre er unntatt søknadsplikt. For å få svar må du ta veiviseren på nytt og velge svaralternativet «Veranda, vinterhage eller overbygget inngangsparti til bolig»"
+                                  "text": "En slik terrasse er i utgangspunktet søknadspliktig. Blir hele terrassen under 15 kvadratmeter? Da kan det hende det du vil gjøre likevel er unntatt søknadsplikt. For å få svar må du ta veiviseren på nytt og velge svaralternativet «Veranda, vinterhage eller overbygget inngangsparti til bolig»"
                                 }
                               ]
                             },
@@ -905,7 +905,7 @@
                               "id": "resultatSokeSelv",
                               "type": "Result",
                               "heading": "Du må søke",
-                              "lead": "<p>Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv. Du kan få veiledning om hvordan du lager en komplett byggesøknad i vår guide <a href=\"https://dibk.no/atte-steg-til-soknad\">\"Åtte steg fra idé til ferdig søknad\"</a>.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
+                              "lead": "<p>Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv.<p>Du kan få tips og råd til søknadsprosessen i kortfilmen <a target=‘blank’ href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Hva må til for å sende inn byggesøknad?“</a> og i vår veiledning <a target=‘blank’ href=\"https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/\">“Åtte steg fra idé til ferdig søknad“</a>. Skjema for nabovarsling og byggesøknad finner du på siden <a target=‘blank’ href=\"https://dibk.no/bygge-selv/soknadsskjema-for-mindre-byggeprosjekter-pa-boligeiendom/\">“Søknadsskjemaer for mindre byggeprosjekter på boligeiendom“</a>.<p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>",
                               "errorheading": "Du har ikke svart på alle spørsmålene",
                               "errorlead": "<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>"
                             }
