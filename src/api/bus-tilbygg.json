@@ -285,7 +285,7 @@
                         {
                           "id": "error.bebygd.nei",
                           "type": "Text",
-                          "text": "Du må som regel søke hvis det ikke er et bolighus eller hytte på tomta fra før. Gjelder det en næringseiendommen må du snakke med kommunen."
+                          "text": "Du må som regel søke hvis det ikke er et bolighus eller hytte på tomta fra før. Gjelder det en næringseiendom må du snakke med kommunen."
                         }
                       ]
                     },
@@ -2212,7 +2212,7 @@
               "property": "firemeterTilbygg",
               "type": "Radio",
               "heading": "Blir tilbygget minst 4 meter fra nabogrensa?",
-              "text": "<p>Hvis det ikke finnes byggegrense mot naboer, er hovedregelen at du kan bygge 4,0 meter fra nabogrensa. Det du bygger kan ikke på noe som helst punkt være nærmere nabogrensa enn 4,0 meter.</p>",
+              "text": "<p>Når det ikke finnes byggegrense mot naboeiendommer, må det du bygger plasseres minst 4,0 meter fra nabogrensa.</p>",
               "show": {
                 "type": "and",
                 "clauses": [
@@ -2248,7 +2248,7 @@
               "property": "firemeterVeranda",
               "type": "Radio",
               "heading": "Blir det du skal bygge minst 4 meter fra nabogrensa?",
-              "text": "<p>Hvis det ikke finnes byggegrense mot naboer, er hovedregelen at du kan bygge 4,0 meter fra nabogrensa. Det du bygger kan ikke på noe som helst punkt være nærmere nabogrensa enn 4,0 meter.</p>",
+              "text": "<p>Når det ikke finnes byggegrense mot naboeiendommer, må det du bygger plasseres minst 4,0 meter fra nabogrensa.</p>",
               "show": {
                 "type": "and",
                 "clauses": [
