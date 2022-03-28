@@ -66,30 +66,30 @@
             {
               "id": "hvaSkalDuBygge.terrasseEllerPlatting",
               "type": "Answer",
-              "heading": "Terrasse eller platting til bolig",
+              "heading": "Terrasse eller platting til helårsbolig eller fritidsbolig",
               "value": "terrasse",
               "image": {
-                "url": "/images/Forside_terrasse.jpg",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/Forside_terrasse.jpg",
                 "alt": "Hus med terrasse"
               }
             },
             {
               "id": "hvaSkalDuBygge.verandaEllerGlassveranda",
               "type": "Answer",
-              "heading": "Veranda, vinterhage eller overbygd inngangsparti til bolig",
+              "heading": "Veranda, vinterhage eller overbygd inngangsparti til helårsbolig eller fritidsbolig",
               "value": "veranda",
               "image": {
-                "url": "/images/Forside_veranda.jpg",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/Forside_veranda.jpg",
                 "alt": "Hus med veranda"
               }
             },
             {
               "id": "hvaSkalDuBygge.tilbygg",
               "type": "Answer",
-              "heading": "Tilbygg til bolig, bod eller garasje",
+              "heading": "Tilbygg til helårsbolig, fritidsbolig, bod eller garasje",
               "value": "tilbygg",
               "image": {
-                "url": "/images/Forside_tilbygg.jpg",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/Forside_tilbygg.jpg",
                 "alt": "Hus med tilbygg"
               }
             },
@@ -106,10 +106,10 @@
             {
               "id": "hvaSkalDuBygge.takterrasse",
               "type": "Answer",
-              "heading": "Takterrasse til bolig",
+              "heading": "Takterrasse til helårsbolig eller fritidsbolig",
               "value": "takterrasse",
               "image": {
-                "url": "/images/Forside_takterrasse.jpg",
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/Forside_takterrasse.jpg",
                 "alt": "Hus med takterrasse"
               }
             },
@@ -527,7 +527,7 @@
                         {
                           "id": "terrassePlassering.inntilHus",
                           "type": "Answer",
-                          "heading": "Inntil et hus, en hytte eller annen bolig",
+                          "heading": "Inntil en helårsbolig eller fritdsbolig",
                           "value": "inntilHus"
                         },
                         {
@@ -1222,7 +1222,7 @@
                 {
                   "id": "tilbyggVerandaPlassering.inntilHusHytte",
                   "type": "Answer",
-                  "heading": "Inntil hus, hytte, eller annen bolig",
+                  "heading": "Inntil en helårsbolig eller en fritidsbolig",
                   "value": "husHytte"
                 },
                 {
@@ -1835,8 +1835,8 @@
           "id": "regulert",
           "property": "regulert",
           "type": "Radio",
-          "heading": "Finnes det en reguleringsplan for eiendommen?",
-          "text": "<p>Sjekk med kommunen om det finnes en reguleringsplan for eiendommen din. Du kan som regel finne ut dette på kommunens nettsted.</p>",
+          "heading": "Har du funnet frem reguleringsplanen for eiendommen?",
+          "text": "<p>Sjekk med kommunen om det finnes en reguleringsplan for eiendommen din. Du kan som regel finne ut dette på kommunens nettsted. Du trenger reguleringsplanen for å svare på de neste spørsmålene.</p>",
           "hide": {
             "field": "bebygd",
             "operator": "not"
@@ -1845,7 +1845,7 @@
             {
               "id": "regulert.ja",
               "type": "Answer",
-              "heading": "Ja, det finnes en reguleringsplan.",
+              "heading": "Ja, jeg har funnet frem reguleringsplan.",
               "value": "ja"
             },
             {
@@ -1906,8 +1906,8 @@
               "id": "hvisregulert",
               "property": "hvisregulert",
               "type": "Radio",
-              "heading": "Er eiendommen din regulert til boligformål?",
-              "text": "<p>Dette står vanligvis i arealplankartet til reguleringsplanen. Spør kommunen om du er usikker hva eiendommen din er regulert til.</p>",
+              "heading": "Er eiendommen din regulert til enten bolig eller fritidsbolig?",
+              "text": "<p>Dette finner du vanligvis i arealplankartet til reguleringsplanen. Spør kommunen om du er usikker hva eiendommen din er regulert til.</p>",
               "hide": {
                 "field": "regulert",
                 "operator": "eq",
@@ -1917,7 +1917,7 @@
                 {
                   "id": "hvisregulert.ja",
                   "type": "Answer",
-                  "heading": "Ja, eiendommen er regulert til boligformål",
+                  "heading": "Ja, eiendommen er regulert til bolig eller fritidsbolig",
                   "value": "ja"
                 },
                 {
