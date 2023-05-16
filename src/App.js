@@ -12,7 +12,7 @@ import store from './store';
 
 export default class App extends Component {
   static trackIntro() {
-    track(data.meta.name, 'intro', 'Tilbygg - Bod, sykkelbod, vedbod, søppelskur');
+    track(data.meta.name, 'intro', 'Bygg uten å søke - tilbygg');
   }
 
   static propTypes = {
@@ -35,7 +35,7 @@ export default class App extends Component {
   closeIntro() {
     this.setState({ intro: false });
     window.scrollTo(0, 0);
-    trackEvent('close-intro');
+    trackEvent('Close intro');
   }
 
   showIntro() {
