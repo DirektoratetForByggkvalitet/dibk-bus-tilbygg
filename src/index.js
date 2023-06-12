@@ -9,6 +9,8 @@ let translations = JSON.parse(root.getAttribute('data-bind') || '{}');
 translations = Object.keys(translations).reduce((res, id) => {
   const { title: heading, ...rest } = translations[id];
 
+  if (!heading) return res;
+
   return {
     ...res,
     [id]: {
