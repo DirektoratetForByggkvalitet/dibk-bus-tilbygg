@@ -64,9 +64,19 @@
           "heading": "Hva skal du bygge?",
           "options": [
             {
+              "id": "hvaSkalDuBygge.tilbygg",
+              "type": "Answer",
+              "heading": "Tilbygg til bolig, bod eller garasje",
+              "value": "tilbygg",
+              "image": {
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/Forside_tilbygg.jpg",
+                "alt": "Hus med tilbygg"
+              }
+            },
+            {
               "id": "hvaSkalDuBygge.terrasseEllerPlatting",
               "type": "Answer",
-              "heading": "Terrasse eller platting til helårsbolig eller fritidsbolig",
+              "heading": "Terrasse eller platting inntil bolig",
               "value": "terrasse",
               "image": {
                 "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/Forside_terrasse.jpg",
@@ -76,7 +86,7 @@
             {
               "id": "hvaSkalDuBygge.verandaEllerGlassveranda",
               "type": "Answer",
-              "heading": "Veranda, vinterhage eller overbygd inngangsparti til helårsbolig eller fritidsbolig",
+              "heading": "Veranda, vinterhage eller overbygd inngangsparti til bolig",
               "value": "veranda",
               "image": {
                 "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/Forside_veranda.jpg",
@@ -84,13 +94,13 @@
               }
             },
             {
-              "id": "hvaSkalDuBygge.tilbygg",
+              "id": "hvaSkalDuBygge.pergola",
               "type": "Answer",
-              "heading": "Tilbygg til helårsbolig, fritidsbolig, bod eller garasje",
-              "value": "tilbygg",
+              "heading": "Pergola inntil bolig",
+              "value": "pergola",
               "image": {
-                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/Forside_tilbygg.jpg",
-                "alt": "Hus med tilbygg"
+                "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/Forside_pergola.png",
+                "alt": "Pergola inntil hus"
               }
             },
             {
@@ -106,7 +116,7 @@
             {
               "id": "hvaSkalDuBygge.takterrasse",
               "type": "Answer",
-              "heading": "Takterrasse til helårsbolig eller fritidsbolig",
+              "heading": "Takterrasse til bolig",
               "value": "takterrasse",
               "image": {
                 "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/Forside_takterrasse.jpg",
@@ -122,6 +132,27 @@
                 "url": "https://dibk.no/globalassets/2.-verktoy-og-veivisere/bygg-uten-a-soke-tilbygg/forside_annet.jpg",
                 "alt": "Annet"
               }
+            }
+          ]
+        },
+        {
+          "type": "Branch",
+          "branches": [
+            {
+              "test": {
+                "field": "hvaSkalDuBygge",
+                "operator": "eq",
+                "value": "pergola"
+              },
+              "children": [
+                {
+                  "id": "hvaSkalDuBygge.pergola.result",
+                  "type": "Result",
+                  "heading": "Pergola til bolig",
+                  "lead":
+                  "<p><strong>Hva er en pergola?</strong></br>Begrepet pergola har ikke en klar definisjon. Tradisjonelt var pergola et byggverk med åpne tak og vegger, som skulle bli overgrodd av slyngplanter. Nå brukes pergola også om konstruksjoner med tak og vegger.</p><p><strong>Skal pergolaen ha tak og vegger, for eksempel skyvbare lameller eller i glass?</strong></br> En pergola med tak og vegger som er inntil 15 kvm, kan være unntatt søknadsplikt. <a href=\"https://dibk.no/tilbygg/\">For å finne ut om du må søke, start veiviseren på nytt og velg stien « Veranda, vinterhage eller overbygd inngangsparti til bolig».</a></p><p><strong>Usikker på om du må søke?</strong></br>Spør alltid kommunen din om du er i tvil om du må søke. Dette gjelder for eksempel om du vil sette opp en terrassemarkise, pergolamarkise eller andre løsninger med understøtting.</p><p><strong>Når får en pergola areal?</strong></br>Dersom det legges tak eller skvvbare lameller over pergolaen, skal arealet regnes med i bebygd areal (BYA). Derfor må du gjøre deg kjent med hvor mye som er tillatt å bygge på eiendommen. En klassisk pergola med bjelker, men uten tak, regnes ikke med i bebygd areal (BYA). Det kan også gjelde begrensninger i kommunens planbestemmelser om utforming og plassering.</p>" 
+                }
+              ]
             }
           ]
         },
@@ -211,7 +242,7 @@
                     {
                       "id": "hvaSkalDuByggeBranch.text",
                       "type": "Text",
-                      "text": "Denne veiviseren dekker dessverre ikke deg."
+                      "text": "Denne veiviseren dekker dessverre ikke deg. Sjekk i stedet vår nettside <a href=\"https://dibk.no/bygge-eller-endre/arbeid-pa-eksisterende-bygg/\">«Arbeid på eksisterende bygg»</a>"
                     }
                   ]
                 },
@@ -2320,7 +2351,7 @@
               "property": "byggegrenseOk",
               "type": "Radio",
               "heading": "Blir det du skal bygge innenfor byggegrensene?",
-              "text": "<p>For å slippe å søke, må det du skal bygge være innenfor byggegrensene.</p>",
+              "text": "<p>For å slippe å søke, må det du skal bygge være innenfor byggegrensene. </p>",
               "show": {
                 "type": "or",
                 "clauses": [
