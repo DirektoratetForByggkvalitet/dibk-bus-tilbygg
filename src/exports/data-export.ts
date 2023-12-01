@@ -1,6 +1,6 @@
 import get from 'lodash.get';
 
-export default function exportData(state) {
+export default function exportData(state: any) {
   return {
     fraSluttbrukersystem: 'katteveiviser',
     eiendomByggested: {

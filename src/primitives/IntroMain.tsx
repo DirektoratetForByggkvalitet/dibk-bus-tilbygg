@@ -13,7 +13,7 @@ export const IntroMain = styled.main`
     line-height: 1.2;
     margin-bottom: 30px;
     &::before {
-      content: "Veiviser";
+      content: 'Veiviser';
       display: block;
       color: gray;
       text-transform: uppercase;
@@ -96,4 +96,6 @@ export const IntroMain = styled.main`
   }
 `;
 
-export const H2 = styled.h1`background-color: pink;`;
+export const H2 = styled.h1`
+  background-color: pink;
+`;
