@@ -140,8 +140,8 @@ const data: WizardDefinition = {
           ],
         },
         {
-          id: 'some-id',
           type: 'Branch',
+          id: 'hvaSkalDuByggeBranch',
           branches: [
             {
               test: {
@@ -187,17 +187,20 @@ const data: WizardDefinition = {
                   id: 'resultatAnsvarligSoker',
                   heading: {
                     complete: 'Du må søke og bruke fagpersoner',
-                    completeWithError: '',
+                    completeWithError: 'Du har ikke svart på alle spørsmålene',
                     incomplete: 'Du har ikke svart på alle spørsmålene',
-                    incompleteWithError: '',
+                    incompleteWithError:
+                      'Du har ikke svart på alle spørsmålene',
                   },
                   lead: {
                     complete:
                       '<p>Det er søknadspliktig å bygge det du ønsker, og du må bruke fagpersoner i hele byggeprosessen.</p><p>I små byggeprosjekter kan du ofte bruke en byggmester til å gjøre alt. Han/hun blir da ansvarlig for å:</p><ol><li>å sende inn byggesøknaden for deg (ansvarlig søker), </li><li>å planlegge prosjektet ditt (ansvarlig prosjekterende) og</li><li>å bygge (ansvarlig utførende).</li></ol><p>Vi anbefaler å bruke foretak med sentral godkjenning. En liste over disse finner du <a href="https://sgregister.dibk.no/">her</a>.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>',
-                    completeWithError: '',
+                    completeWithError:
+                      '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                    incompleteWithError:
+                      '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                     incomplete:
                       '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                    incompleteWithError: '',
                   },
                 },
               ],
@@ -232,16 +235,19 @@ const data: WizardDefinition = {
                   heading: {
                     complete: 'Denne veiviseren dekker ikke deg',
                     incomplete: 'Du har ikke svart på alle spørsmålene',
-                    incompleteWithError: '',
-                    completeWithError: '',
+                    incompleteWithError:
+                      'Du har ikke svart på alle spørsmålene',
+                    completeWithError: 'Du har ikke svart på alle spørsmålene',
                   },
                   lead: {
                     complete:
                       '<p>Denne veiviseren dekker dessverre ikke deg.</p>',
                     incomplete:
                       '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                    incompleteWithError: '',
-                    completeWithError: '',
+                    incompleteWithError:
+                      '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                    completeWithError:
+                      '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                   },
                 },
               ],
@@ -273,19 +279,22 @@ const data: WizardDefinition = {
                 {
                   type: 'Result',
                   id: 'resultatAnnet',
+                  heading: {
+                    complete: 'Denne veiviseren dekker ikke deg',
+                    incomplete: 'Du har ikke svart på alle spørsmålene',
+                    incompleteWithError:
+                      'Du har ikke svart på alle spørsmålene',
+                    completeWithError: 'Du har ikke svart på alle spørsmålene',
+                  },
                   lead: {
                     complete:
                       '<p>Denne veiviseren dekker dessverre ikke deg.</p>',
                     incomplete:
                       '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                    completeWithError: '',
-                    incompleteWithError: '',
-                  },
-                  heading: {
-                    complete: 'Denne veiviseren dekker ikke deg',
-                    incomplete: 'Du har ikke svart på alle spørsmålene',
-                    incompleteWithError: '',
-                    completeWithError: '',
+                    incompleteWithError:
+                      '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                    completeWithError:
+                      '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                   },
                 },
               ],
@@ -360,16 +369,20 @@ const data: WizardDefinition = {
                         complete:
                           'Veiviseren dekker dessverre ikke ditt tilfelle',
                         incomplete: 'Du har ikke svart på alle spørsmålene',
-                        incompleteWithError: '',
-                        completeWithError: '',
+                        incompleteWithError:
+                          'Du har ikke svart på alle spørsmålene',
+                        completeWithError:
+                          'Du har ikke svart på alle spørsmålene',
                       },
                       lead: {
                         complete:
                           '<p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>',
                         incomplete:
                           '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                        incompleteWithError: '',
-                        completeWithError: '',
+                        incompleteWithError:
+                          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                        completeWithError:
+                          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                       },
                     },
                   ],
@@ -960,17 +973,20 @@ const data: WizardDefinition = {
                                   'Veiviseren dekker dessverre ikke ditt tilfelle',
                                 incomplete:
                                   'Du har ikke svart på alle spørsmålene',
-                                incompleteWithError: '',
-                                completeWithError: '',
+                                incompleteWithError:
+                                  'Du har ikke svart på alle spørsmålene',
+                                completeWithError:
+                                  'Du har ikke svart på alle spørsmålene',
                               },
                               lead: {
                                 complete:
                                   '<p>Du må høre med kommunen om det du vil gjøre er søknadspliktig.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>',
-
                                 incomplete:
                                   '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                                incompleteWithError: '',
-                                completeWithError: '',
+                                incompleteWithError:
+                                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                                completeWithError:
+                                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                               },
                             },
                           ],
@@ -1007,16 +1023,20 @@ const data: WizardDefinition = {
                                 complete: 'Du må søke',
                                 incomplete:
                                   'Du har ikke svart på alle spørsmålene',
-                                incompleteWithError: '',
-                                completeWithError: '',
+                                incompleteWithError:
+                                  'Du har ikke svart på alle spørsmålene',
+                                completeWithError:
+                                  'Du har ikke svart på alle spørsmålene',
                               },
                               lead: {
                                 complete:
                                   '<p>Det er søknadsplikt for det du ønsker å bygge, men du kan søke og bygge selv.<p>Du kan få tips og råd til søknadsprosessen i kortfilmen <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Hva må til for å sende inn byggesøknad?“</a> og i vår veiledning <a target=‘blank’ href="https://dibk.no/verktoy-og-veivisere/atte-steg-fra-ide-til-ferdig-soknad/">“Åtte steg fra idé til ferdig søknad“</a>. Skjema for nabovarsling og byggesøknad finner du på siden <a target=‘blank’ href="https://dibk.no/bygge-selv/soknadsskjema-for-mindre-byggeprosjekter-pa-boligeiendom/">“Søknadsskjemaer for mindre byggeprosjekter på boligeiendom“</a>.<p>Husk at det er ditt ansvar at du bygger lovlig. Dersom bygningen er ulovlig kan den i verste fall rives.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>',
                                 incomplete:
                                   '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                                incompleteWithError: '',
-                                completeWithError: '',
+                                incompleteWithError:
+                                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                                completeWithError:
+                                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                               },
                             },
                           ],
@@ -1600,16 +1620,20 @@ const data: WizardDefinition = {
                         complete:
                           'Veiviseren dekker dessverre ikke ditt tilfelle',
                         incomplete: 'Du har ikke svart på alle spørsmålene',
-                        incompleteWithError: '',
-                        completeWithError: '',
+                        incompleteWithError:
+                          'Du har ikke svart på alle spørsmålene',
+                        completeWithError:
+                          'Du har ikke svart på alle spørsmålene',
                       },
                       lead: {
                         complete:
                           '<p>Vi anbefaler deg å ta veiviseren <a href="http://byggutenåsøke.dibk.no">Bygg uten å søke</a>, og svare som om du skal bygge en ny bygning under 50 kvadratmeter. Finner du ikke begrensninger der, kan du utvide bygningen som står der i dag slik du ønsker.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>',
                         incomplete:
                           '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                        incompleteWithError: '',
-                        completeWithError: '',
+                        incompleteWithError:
+                          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                        completeWithError:
+                          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                       },
                     },
                   ],
@@ -2095,7 +2119,7 @@ const data: WizardDefinition = {
             },
             {
               type: 'Branch',
-              id: 'hvisregulertBranch',
+              id: 'hvisregulertVetikkeBranch',
               branches: [
                 {
                   test: {
@@ -2243,16 +2267,18 @@ const data: WizardDefinition = {
               heading: {
                 complete: 'Du kan bygge uten å søke!',
                 incomplete: 'Du har ikke svart på alle spørsmålene',
-                incompleteWithError: '',
-                completeWithError: '',
+                incompleteWithError: 'Du har ikke svart på alle spørsmålene',
+                completeWithError: 'Du har ikke svart på alle spørsmålene',
               },
               lead: {
                 complete:
                   '<p>Ut fra de opplysnigenen du har gitt, kan du bygge uten å søke. Er du usikker på om du har svart riktig bør du kontakte kommunen.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>',
                 incomplete:
                   '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                incompleteWithError: '',
-                completeWithError: '',
+                incompleteWithError:
+                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                completeWithError:
+                  '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
               },
             },
           ],
@@ -2261,7 +2287,7 @@ const data: WizardDefinition = {
     },
     {
       type: 'Branch',
-      id: 'plattingplanBranch',
+      id: 'tilbyggSjekkePlanerBranch',
       branches: [
         {
           test: {
@@ -2838,16 +2864,20 @@ const data: WizardDefinition = {
                       heading: {
                         complete: 'Du trenger dispensasjon',
                         incomplete: 'Du har ikke svart på alle spørsmålene',
-                        incompleteWithError: '',
-                        completeWithError: '',
+                        incompleteWithError:
+                          'Du har ikke svart på alle spørsmålene',
+                        completeWithError:
+                          'Du har ikke svart på alle spørsmålene',
                       },
                       lead: {
                         complete:
                           '<p>Ut fra svarene dine vil det du skal bygge være i strid med reguleringsplan eller andre plasseringsregler. Det enkleste er ofte å tilpasse det du skal bygge, for eksempel ved å endre størrelse eller plassering.</p><p>Hvis det ikke er mulig å tilpasse det du skal bygge, bør du forhøre deg med kommunen om det er mulig å få dispensasjon. Søknad om dispensasjon må nabovarsles og har minst 12 ukers behandlingstid.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>',
                         incomplete:
                           '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                        incompleteWithError: '',
-                        completeWithError: '',
+                        incompleteWithError:
+                          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                        completeWithError:
+                          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                       },
                     },
                   ],
@@ -3002,20 +3032,22 @@ const data: WizardDefinition = {
                 {
                   id: 'resultatJippiUnder10',
                   type: 'Result',
-
                   heading: {
                     complete: 'Du kan bygge uten å søke!',
                     incomplete: 'Du har ikke svart på alle spørsmålene',
-                    incompleteWithError: '',
-                    completeWithError: '',
+                    incompleteWithError:
+                      'Du har ikke svart på alle spørsmålene',
+                    completeWithError: 'Du har ikke svart på alle spørsmålene',
                   },
                   lead: {
                     complete:
                       '<p>Ut fra de opplysnigenen du har gitt, kan du bygge uten å søke. Er du usikker på om du har svart riktig bør du kontakte kommunen.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>',
                     incomplete:
                       '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                    incompleteWithError: '',
-                    completeWithError: '',
+                    incompleteWithError:
+                      '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                    completeWithError:
+                      '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                   },
                 },
               ],
@@ -3089,16 +3121,19 @@ const data: WizardDefinition = {
                   heading: {
                     complete: 'Du kan bygge uten å søke!',
                     incomplete: 'Du har ikke svart på alle spørsmålene',
-                    incompleteWithError: '',
-                    completeWithError: '',
+                    incompleteWithError:
+                      'Du har ikke svart på alle spørsmålene',
+                    completeWithError: 'Du har ikke svart på alle spørsmålene',
                   },
                   lead: {
                     complete:
-                      '<p>Ut fra de opplysnigenen du har gitt, kan du bygge uten å søke. Er du usikker på om du har svart riktig bør du kontakte kommunen.</p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>',
+                      '<p>Ut fra de opplysnigenen du har gitt, kan du bygge uten å søke. Er du usikker på om du har svart riktig bør du kontakte kommunen.</p><p>Når du er ferdig å bygge, må du melde fra til kommunen om hva du har bygget.</p><p>Du skal bruke meldeskjemaet <a href=\'https://dibk.no/globalassets/blanketter_utfyllbare/alle-blanketter/5188-melding-om-bygning-eller-tilbygg-som-er-unntatt-soknadsplikt.pdf\'>"Melding om bygning eller tilbygg som er unntatt søknadsplikt"</a></p><p><strong>Takk for at du prøvde veiviseren!</strong><br />Under kan du se en oppsummering av hva du har svart. Du kan også gå inn på hvert steg i veiviseren og endre svarene dine.</p>',
                     incomplete:
                       '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-                    incompleteWithError: '',
-                    completeWithError: '',
+                    incompleteWithError:
+                      '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+                    completeWithError:
+                      '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
                   },
                 },
               ],
@@ -3143,19 +3178,21 @@ const data: WizardDefinition = {
       id: 'resultatIkkeFerdig',
       heading: {
         complete: 'Du skal aldri se denne resultatsiden',
-        incomplete: 'Du skal aldri se denne resultatsiden',
-        incompleteWithError: '',
-        completeWithError: '',
+        incomplete: 'Du har ikke svart på alle spørsmålene',
+        incompleteWithError: 'Du har ikke svart på alle spørsmålene',
+        completeWithError: 'Du har ikke svart på alle spørsmålene',
       },
       lead: {
-        complete: 'Du har ikke svart på alle spørsmålene',
+        complete:
+          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
+        completeWithError:
+          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
         incomplete:
           '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
-        incompleteWithError: '',
-        completeWithError: '',
+        incompleteWithError:
+          '<p>Vi kan derfor ikke gi deg svar på om du må søke eller ikke. Du kan se hvilke spørsmål du ikke har svart på i oppsummeringen under. Der kan du også klikke deg inn på hvert steg i veiviseren for å legge til og endre dine svar.</p>',
       },
     },
   ],
 };
-
 export default data;
